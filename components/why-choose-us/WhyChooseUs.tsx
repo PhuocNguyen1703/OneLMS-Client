@@ -10,7 +10,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="flex gap-14 mt-[135px] mx-16 pb-[400px]">
+    <section className="flex gap-14 mt-[135px] mx-16">
       <div className="flex-1">
         <p className="text-5xl font-bold">Why Choose Us?</p>
         <div className="flex mt-[60px] ml-6 w-[880px] shrink-0">

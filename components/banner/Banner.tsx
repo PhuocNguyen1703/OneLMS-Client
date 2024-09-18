@@ -14,7 +14,7 @@ const Banner = () => {
         className="w-full h-full max-h-[850px] object-cover object-center"
       />
       <h1 className="absolute top-[10rem] left-1/2 -translate-x-1/2  w-full max-w-5xl text-center text-primary text-6xl font-bold">
-        Drive Your Adventure with Rabiot
+        Drive Your Adventure with Rainbow
         <br></br>
         Your Journey, Our Wheels
       </h1>

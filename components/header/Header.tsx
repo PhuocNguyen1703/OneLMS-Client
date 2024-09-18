@@ -17,7 +17,7 @@ const Header = () => {
       <div className="flex justify-between items-center w-full h-full px-4">
         <Link href="/" className="flex items-center gap-2 ml-2">
           <Logo width={40} height={40} />
-          <p className="text-primary text-4xl font-bold select-none">Rabiot</p>
+          <p className="text-primary text-4xl font-bold select-none">Rainbow</p>
         </Link>
         <div className="flex items-center h-full">
           <NavigationMenu>
