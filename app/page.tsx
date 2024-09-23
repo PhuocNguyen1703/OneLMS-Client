@@ -2,7 +2,7 @@ import Banner from "@/components/banner/Banner";
 import SearchBar from "@/components/search-bar/SearchBar";
 import HowWorks from "../components/how-work/HowWorks";
 import WhyChooseUs from "@/components/why-choose-us/WhyChooseUs";
-import OurVehicle from "@/components/our-vehicles/OurVehicle";
+import WhyYouChoose from "@/components/why-you-choose/WhyYouChoose";
 
 const Home = () => {
   return (
@@ -11,6 +11,7 @@ const Home = () => {
       <SearchBar />
       <HowWorks />
       <WhyChooseUs />
+      <WhyYouChoose />
     </main>
   );
 };
