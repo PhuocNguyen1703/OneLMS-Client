@@ -1,4 +1,5 @@
 "use client";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -13,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "../../ui/checkbox";
+import { Eye, EyeOff } from "lucide-react";
 
 const FormSchema = z.object({
   email: z.string().min(2, {
@@ -44,7 +46,7 @@ const SignInForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-base">Email address</FormLabel>
+              <FormLabel className="text-base">Email</FormLabel>
               <FormControl>
                 <Input
                   className="h-12 rounded-[8px] text-base"
