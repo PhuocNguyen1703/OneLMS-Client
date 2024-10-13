@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "../../ui/checkbox";
 import { Eye, EyeOff } from "lucide-react";
+import { PasswordInput } from "@/components/ui/password-input";
 
 const FormSchema = z.object({
   email: z.string().min(2, {
@@ -64,8 +65,8 @@ const SignInForm = () => {
             <FormItem className="mt-5">
               <FormLabel className="text-base">Password</FormLabel>
               <FormControl>
-                <Input
-                  className="h-12 rounded-[8px] text-base"
+                <PasswordInput
+                  className="h-12 rounded-[8px] text-base pr-10"
                   placeholder="Enter your password"
                   {...field}
                 />
