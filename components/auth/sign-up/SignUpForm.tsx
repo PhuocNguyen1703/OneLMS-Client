@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "../../ui/checkbox";
+import { PasswordInput } from "@/components/ui/password-input";
 
 const FormSchema = z.object({
   firstName: z.string().min(2, {
@@ -105,8 +106,8 @@ const SignUpForm = () => {
             <FormItem className="mt-5">
               <FormLabel className="text-base">Password</FormLabel>
               <FormControl>
-                <Input
-                  className="h-12 rounded-[8px] text-base"
+                <PasswordInput
+                  className="h-12 rounded-[8px] text-base pr-10"
                   placeholder="Enter your password"
                   {...field}
                 />
@@ -121,11 +122,8 @@ const SignUpForm = () => {
           </span>
         </div>
         <Button className="w-full h-12 mt-10 text-base" type="submit">
-          Sign Up
+          Continue
         </Button>
-        <span className="block mt-5 text-center">
-          Already have an account? <strong>Sign In</strong>
-        </span>
       </form>
     </Form>
   );
