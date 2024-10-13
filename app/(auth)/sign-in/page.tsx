@@ -1,6 +1,6 @@
 import OtpForm from "@/components/auth/OtpForm";
 import ResetPasswordForm from "@/components/auth/ResetPasswordForm";
-import SignInForm from "@/components/auth/SignInForm";
+import SignInForm from "@/components/auth/sign-in/SignInForm";
 
 const SignIn = () => {
   return (

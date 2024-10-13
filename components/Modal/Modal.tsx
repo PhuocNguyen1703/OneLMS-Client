@@ -1,24 +1,28 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Portal from "../Portal/Portal";
+import { cn } from "@/lib/utils";
 
 const Modal = ({
   children,
   overlay = true,
+  itemCenter = true,
 }: {
   children: React.ReactNode;
-  overlay: boolean;
+  overlay?: boolean;
+  itemCenter?: boolean;
 }) => {
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-  }, []);
-
   return (
     <Portal>
-      <div className="fixed left-0 top-0 w-screen h-screen z-[100] ">
-        {overlay && <div className="overlay"></div>}
-        modal
+      <div
+        className={cn(
+          "fixed left-0 top-0 w-screen h-screen z-[999]",
+          overlay && "overlay",
+          itemCenter && "item-center"
+        )}
+      >
+        {children}
       </div>
     </Portal>
   );

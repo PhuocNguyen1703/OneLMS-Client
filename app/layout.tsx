@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { poppins, roboto } from "@/utils/fonts";
 import "@/styles/globals.css";
 import StoreProvider from "./StoreProvider";
-import Modal from "@/components/Modal/Modal";
+import { ModalProvider } from "@/components/Modal";
 
 export const metadata: Metadata = {
   title: "Car Rental",
@@ -19,6 +19,7 @@ export default function RootLayout({
       <StoreProvider>
         <body className={`${roboto.className} ${poppins.variable}`}>
           {children}
+          <ModalProvider />
         </body>
       </StoreProvider>
     </html>
