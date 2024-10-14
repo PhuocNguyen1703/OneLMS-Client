@@ -11,32 +11,30 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "../../ui/checkbox";
-import { Eye, EyeOff } from "lucide-react";
 import { PasswordInput } from "@/components/ui/password-input";
-
-const FormSchema = z.object({
-  email: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  password: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
+import { SignInSchema } from "@/lib/zod";
+import { handleCredentialsSignIn } from "@/actions/authActions";
 
 const SignInForm = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  const form = useForm<z.infer<typeof SignInSchema>>({
+    resolver: zodResolver(SignInSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof SignInSchema>) => {
+    try {
+      const result = await handleCredentialsSignIn(data);
+      console.log(data);
+    } catch (error) {
+      console.log("An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
@@ -55,6 +53,7 @@ const SignInForm = () => {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -71,16 +70,11 @@ const SignInForm = () => {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
-        <div className="flex justify-between items-center mt-5 text-sm font-medium leading-none">
-          <div className="flex items-center space-x-2">
-            <Checkbox id="remember" />
-            <label htmlFor="remember">Remember</label>
-          </div>
-          <span>Forgot Password?</span>
-        </div>
+        <p className="mt-5 text-right text-sm font-medium">Forgot Password?</p>
         <Button className="w-full h-12 mt-10 text-base" type="submit">
           Sign In
         </Button>

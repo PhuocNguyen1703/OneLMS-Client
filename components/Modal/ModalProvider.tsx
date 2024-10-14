@@ -4,8 +4,8 @@ import SignUp from "../auth/sign-up/SignUp";
 const ModalProvider = () => {
   return (
     <>
-      {/* <SignIn /> */}
-      <SignUp />
+      <SignIn />
+      {/* <SignUp /> */}
     </>
   );
 };

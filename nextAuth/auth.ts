@@ -1,3 +1,4 @@
+import { SignInSchema } from "@/lib/zod";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
@@ -14,6 +15,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         let user = null;
 
         // validate credentials
+        const parsedCredentials = SignInSchema.safeParse(credentials);
+        if (!parsedCredentials.success) {
+          console.error("Invalid credentiald:", parsedCredentials.error.errors);
+          return null;
+        }
+
         // get user
 
         user = {
