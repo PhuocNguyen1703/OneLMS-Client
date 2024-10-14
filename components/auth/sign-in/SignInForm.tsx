@@ -14,12 +14,15 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "../../ui/checkbox";
 import { PasswordInput } from "@/components/ui/password-input";
 import { SignInSchema } from "@/lib/zod";
 import { handleCredentialsSignIn } from "@/actions/authActions";
+import { useDispatch } from "react-redux";
+import { setModalOnClose } from "@/Redux/slices/modalSlice";
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
+
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -32,6 +35,7 @@ const SignInForm = () => {
     try {
       const result = await handleCredentialsSignIn(data);
       console.log(data);
+      dispatch(setModalOnClose());
     } catch (error) {
       console.log("An unexpected error occurred. Please try again.");
     }
