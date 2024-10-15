@@ -5,8 +5,8 @@ import StoreProvider from "./StoreProvider";
 import { ModalProvider } from "@/components/Modal";
 
 export const metadata: Metadata = {
-  title: "Car Rental",
-  description: "Car rental service",
+  title: "OneLMS service",
+  description: "OneLMS service",
 };
 
 export default function RootLayout({
