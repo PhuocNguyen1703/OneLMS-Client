@@ -72,24 +72,6 @@
   }
 }
 
-/* custom swipperjs style*/
-.swiper-pagination-bullet-active {
-  background: hsl(var(--primary)) !important;
-}
-
-.swiper-slide-active img {
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
-  animation: scale 0.5s ease forwards;
-}
-@keyframes scale {
-  from {
-    transform: translateY(-50%) scale(1);
-  }
-  to {
-    transform: translateY(-50%) scale(1.2);
-  }
-}
-
 .background-auth {
   background-image: url(../public/images/clock2.jpg);
   background-repeat: no-repeat;
