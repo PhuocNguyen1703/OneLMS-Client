@@ -17,79 +17,77 @@ import {
   UserRoundCheck,
 } from "lucide-react";
 
-const ICONSIZE = 16;
-
 export const menuItems: MenuItems[] = [
   {
     title: "MENU",
     items: [
       {
-        icon: <LayoutGrid size={ICONSIZE} />,
+        icon: <LayoutGrid />,
         label: "Home",
         href: "",
       },
       {
-        icon: <GraduationCap size={ICONSIZE} />,
+        icon: <GraduationCap />,
         label: "Teachers",
         href: "",
       },
       {
-        icon: <User size={ICONSIZE} />,
+        icon: <User />,
         label: "Students",
         href: "",
       },
       {
-        icon: <User size={ICONSIZE} />,
+        icon: <User />,
         label: "Parents",
         href: "",
       },
       {
-        icon: <NotebookText size={ICONSIZE} />,
+        icon: <NotebookText />,
         label: "Subjects",
         href: "",
       },
       {
-        icon: <Building size={ICONSIZE} />,
+        icon: <Building />,
         label: "Classes",
         href: "",
       },
       {
-        icon: <NotebookText size={ICONSIZE} />,
+        icon: <NotebookText />,
         label: "Lessons",
         href: "",
       },
       {
-        icon: <FilePenLine size={ICONSIZE} />,
+        icon: <FilePenLine />,
         label: "Exams",
         href: "",
       },
       {
-        icon: <NotebookPen size={ICONSIZE} />,
+        icon: <NotebookPen />,
         label: "Assignments",
         href: "",
       },
       {
-        icon: <Award size={ICONSIZE} />,
+        icon: <Award />,
         label: "Results",
         href: "",
       },
       {
-        icon: <UserRoundCheck size={ICONSIZE} />,
+        icon: <UserRoundCheck />,
         label: "Attendance",
         href: "",
       },
       {
-        icon: <CalendarClock size={ICONSIZE} />,
+        icon: <CalendarClock />,
         label: "Events",
         href: "",
       },
       {
-        icon: <MessageCircleMore size={ICONSIZE} />,
+        icon: <MessageCircleMore />,
         label: "Messages",
         href: "",
       },
       {
-        icon: <Megaphone size={ICONSIZE} />,
+        icon: <Megaphone />,
         label: "Announcements",
         href: "",
       },
@@ -99,17 +97,17 @@ export const menuItems: MenuItems[] = [
     title: "OTHER",
     items: [
       {
-        icon: <Contact size={ICONSIZE} />,
+        icon: <Contact />,
         label: "Profile",
         href: "",
       },
       {
-        icon: <Settings size={ICONSIZE} />,
+        icon: <Settings />,
         label: "Settings",
         href: "",
       },
       {
-        icon: <LogOut size={ICONSIZE} />,
+        icon: <LogOut />,
         label: "Logout",
         href: "",
       },

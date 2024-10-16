@@ -1,3 +1,4 @@
+import Header from "@/components/header/Header";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 export default function DashboardLayout({
@@ -10,7 +11,10 @@ export default function DashboardLayout({
       <section className="w-[200px]">
         <Sidebar />
       </section>
-      <section className="flex-1 bg-slate-400">navbar</section>
+      <section className="flex-1 bg-primary-foreground">
+        <Header />
+        {children}
+      </section>
     </main>
   );
 }

@@ -72,13 +72,6 @@
   }
 }
 
-.background-auth {
-  background-image: url(../public/images/clock2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: saturate(120%) blur(1px);
@@ -88,4 +81,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* lucide icon custom */
+.lucide {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1px;
 }
