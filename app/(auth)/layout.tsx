@@ -1,4 +1,5 @@
 import ImageSlide from "@/components/auth/ImageSlide";
+import Logo from "@/components/Logo";
 
 export default function AuthLayout({
   children,
@@ -11,7 +12,15 @@ export default function AuthLayout({
         <div className="rounded-lg">
           <ImageSlide />
         </div>
-        {children}
+        <div className="flex flex-col">
+          <div className="flex items-center justify-center gap-2 mt-6">
+            <Logo width={50} height={50} />
+            <p className="text-primary text-4xl font-bold select-none">
+              OneLMS
+            </p>
+          </div>
+          {children}
+        </div>
       </div>
     </section>
   );
