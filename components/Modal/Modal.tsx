@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Portal from "../Portal/Portal";
+import Portal from "../portal/Portal";
 import { cn } from "@/lib/utils";
 
 const Modal = ({

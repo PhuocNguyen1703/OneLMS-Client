@@ -11,3 +11,5 @@ export const navLinks = [
   { title: "FAQ", href: "/faq" },
   { title: "CONTACT US", href: "/" },
 ];
+
+export const DOTS = "...";

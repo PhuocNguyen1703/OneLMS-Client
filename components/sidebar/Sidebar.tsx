@@ -4,7 +4,7 @@ import { menuItems } from "@/data";
 
 const Sidebar = () => {
   return (
-    <div className="border-l">
+    <div className="border-r">
       <Link href="/" className="flex items-center gap-2 pt-3 ml-2">
         <Logo width={32} height={32} />
         <p className="text-primary text-lg font-bold select-none">OneLMS</p>

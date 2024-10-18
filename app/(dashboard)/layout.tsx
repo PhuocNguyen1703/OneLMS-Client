@@ -8,9 +8,9 @@ export default function DashboardLayout({
 }>) {
   return (
     <main className="flex h-screen">
-      <section className="w-[200px]">
+      {/* <section className="w-[200px]">
         <Sidebar />
-      </section>
+      </section> */}
       <section className="flex-1 bg-primary-foreground">
         <Header />
         {children}
