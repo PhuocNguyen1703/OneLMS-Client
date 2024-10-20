@@ -9,16 +9,17 @@ const NavigationLink = ({ item, subMenu }: any) => {
     <Link
       href={item.href}
       className={cn(
-        "flex items-center gap-2 p-2 rounded-sm select-none hover:bg-slate-200",
-        subMenu && "pl-4 text-sm"
+        "flex items-center h-9 p-2 gap-2 rounded-sm select-none text-nowrap hover:bg-slate-200",
+        subMenu && "pl-4 text-sm",
+        sidebarCollapsed & subMenu && "px-[10px]"
       )}
     >
       <span
-        className={cn("flex items-center justify-center", subMenu && "w-4 h-4")}
+        className={cn("flex items-center justify-center", subMenu && "w-4")}
       >
         {item.icon}
       </span>
-      {!sidebarCollapsed && item.label}
+      {!sidebarCollapsed && <span>{item.label}</span>}
     </Link>
   );
 };

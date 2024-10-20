@@ -5,6 +5,8 @@ import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 import NavigationLink from "./NavigationLink";
 import { useSelector } from "react-redux";
+import { AnimatePresence, motion } from "framer-motion";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const SidebarItem = ({ menu }: any) => {
   const { sidebarCollapsed } = useSelector((state: any) => state.layout);
@@ -20,7 +22,7 @@ const SidebarItem = ({ menu }: any) => {
       >
         <div
           className={cn(
-            "flex items-center gap-2 p-2 rounded-sm cursor-pointer hover:bg-slate-200",
+            "flex items-center gap-2 p-2 h-9 rounded-sm cursor-pointer hover:bg-slate-200",
             toggleSubMenu && "border-b"
           )}
           onClick={handleToggleSubMenu}
@@ -36,6 +38,7 @@ const SidebarItem = ({ menu }: any) => {
             </span>
           )}
         </div>
+
         {toggleSubMenu && (
           <div>
             {menu.subMenu.map((item: any) => (

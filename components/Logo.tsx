@@ -1,5 +1,3 @@
-"use client";
-
 import { LogoProps } from "@/types";
 import Image from "next/image";
 
