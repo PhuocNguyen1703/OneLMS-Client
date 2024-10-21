@@ -19,7 +19,7 @@ const Sidebar = () => {
       },
     },
     closed: {
-      width: "52px",
+      width: "56px",
       transition: {
         damping: 40,
       },
@@ -30,15 +30,17 @@ const Sidebar = () => {
     <motion.section
       variants={sidebarAnimation}
       animate={sidebarCollapsed ? "closed" : "open"}
-      className={cn("sticky h-screen w-[226px] p-1 bg-white z-[999]")}
+      className={cn("sticky h-screen w-[226px] p-2 bg-white")}
     >
-      <Link href="/" className="flex items-center gap-2 p-1">
-        <Logo width={36} height={36} />
-        <p className="text-primary text-lg font-bold select-none">OneLMS</p>
+      <Link href="/" className="flex items-center">
+        <Logo width={40} height={40} />
+        <p className="ml-4 text-primary text-lg font-bold select-none">
+          OneLMS
+        </p>
       </Link>
-      <div className="flex flex-col h-full gap-1 overflow-x-hidden">
+      <div className="flex flex-col h-full mt-3 space-y-2 overflow-x-hidden">
         {menu.map((menuGroup: any) => (
-          <div key={menuGroup.title} className="p-1">
+          <div key={menuGroup.title}>
             <div className="relative h-6">
               <span className="absolute top-1/2 -translate-y-1/2 w-full h-[1px] bg-gray-300 rounded-full"></span>
               {!sidebarCollapsed && (
