@@ -54,7 +54,7 @@ const UserMenu = () => {
           </Avatar>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 mr-1">
+      <DropdownMenuContent className="w-fit min-w-40 mr-1">
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <User className="mr-2 h-4 w-4" />

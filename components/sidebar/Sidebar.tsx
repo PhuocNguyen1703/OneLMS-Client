@@ -30,10 +30,10 @@ const Sidebar = () => {
     <motion.section
       variants={sidebarAnimation}
       animate={sidebarCollapsed ? "closed" : "open"}
-      className={cn("sticky h-screen w-[226px] p-2 bg-white")}
+      className={cn("sticky h-screen w-[226px] p-2 bg-white border-r")}
     >
       <Link href="/" className="flex items-center">
-        <Logo width={40} height={40} />
+        <Logo width={39} height={39} />
         <p className="ml-4 text-primary text-lg font-bold select-none">
           OneLMS
         </p>
