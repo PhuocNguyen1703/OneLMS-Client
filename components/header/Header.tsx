@@ -5,7 +5,7 @@ import SearchBar from "./Search";
 import UserMenu from "./UserMenu";
 import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
-import { setSidebarCollapsed } from "@/Redux/slices/layoutSlice";
+import { setSidebarCollapsed } from "@/redux/slices/layoutSlice";
 
 const Header = () => {
   const dispatch = useDispatch();

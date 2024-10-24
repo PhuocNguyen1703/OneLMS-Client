@@ -186,10 +186,15 @@ export const menu: MenuItems[] = [
     menuItems: [
       {
         icon: <School size={MAIN_ICON_SIZE} />,
+        label: "Campuses",
+        href: "/campuses",
+      },
+      {
+        icon: <Building2 size={MAIN_ICON_SIZE} />,
         label: "Classes",
         subMenu: [
           {
-            icon: <Building2 size={SUB_ICON_SIZE} />,
+            icon: <BookText size={SUB_ICON_SIZE} />,
             label: "All Classes",
             href: "/",
           },

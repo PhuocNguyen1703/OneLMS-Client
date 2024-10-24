@@ -17,9 +17,9 @@ const Modal = ({
     <Portal>
       <div
         className={cn(
-          "fixed left-0 top-0 w-screen h-screen z-[999]",
-          overlay && "overlay",
-          itemCenter && "item-center"
+          "absolute left-0 top-0 w-screen h-screen z-50",
+          overlay && "bg-black/50",
+          itemCenter && "flex items-center justify-center"
         )}
       >
         {children}

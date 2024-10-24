@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn, signOut } from "@/nextAuth/auth";
+import { signIn, signOut } from "@/next-auth/auth";
 import { AuthError } from "next-auth";
 
 export const handleCredentialsSignIn = async ({

@@ -18,7 +18,7 @@ import { PasswordInput } from "@/components/ui/password-input";
 import { SignInSchema } from "@/lib/zod";
 import { handleCredentialsSignIn } from "@/actions/authActions";
 import { useDispatch } from "react-redux";
-import { setModalOnClose } from "@/Redux/slices/modalSlice";
+import { setModalOnClose } from "@/redux/slices/modalSlice";
 
 const SignInForm = () => {
   const dispatch = useDispatch();

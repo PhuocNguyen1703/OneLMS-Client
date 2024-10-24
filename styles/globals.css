@@ -72,11 +72,6 @@
   }
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: saturate(120%) blur(1px);
-}
-
 /* lucide icon custom */
 .lucide {
   stroke-width: 1px;
