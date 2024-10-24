@@ -21,7 +21,7 @@ import { ChevronDown, CopyPlus, FileDown } from "lucide-react";
 
 const Campuses = () => {
   return (
-    <section className="mx-5 my-4 border">
+    <section className="mx-5 mt-4 border">
       <nav className="flex items-center justify-between">
         <div>
           <span className="text-2xl font-semibold">Campus</span>
@@ -42,19 +42,19 @@ const Campuses = () => {
         <div className="flex items-center space-x-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <div className="flex items-center space-x-2 px-2 py-1 border rounded-sm cursor-pointer bg-gray-200 hover:bg-gray-300">
-                <FileDown size={20} />
+              <Button variant="outline" className="space-x-2">
+                <FileDown size={18} />
                 <span>Export</span>
                 <ChevronDown size={18} />
-              </div>
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>Export as PDF</DropdownMenuItem>
               <DropdownMenuItem>Export as Excel</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button variant="ghost" className="text-base border">
-            <CopyPlus size={20} className="mr-3" />
+          <Button>
+            <CopyPlus size={18} className="mr-3" />
             Add Campus
           </Button>
         </div>

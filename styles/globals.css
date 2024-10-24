@@ -72,6 +72,21 @@
   }
 }
 
+/* Scrollbar CSS */
+html *::-webkit-scrollbar {
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
 /* lucide icon custom */
 .lucide {
   stroke-width: 1px;

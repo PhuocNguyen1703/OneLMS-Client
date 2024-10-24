@@ -9,15 +9,18 @@ const NavigationLink = ({ item, subMenu }: any) => {
     <Link
       href={item.href}
       className={cn(
-        "flex items-center p-2 rounded-sm select-none whitespace-pre hover:bg-slate-200",
+        "flex items-center p-2 h-[38px] rounded-sm select-none whitespace-pre hover:bg-slate-200",
         subMenu && "pl-4 text-sm",
+        sidebarCollapsed && "w-[38px]",
         sidebarCollapsed & subMenu && "px-3"
       )}
     >
-      <span className="flex items-center justify-center">{item.icon}</span>
-      <span className={cn("ml-[10px]", sidebarCollapsed & subMenu && "ml-4")}>
-        {item.label}
-      </span>
+      <span>{item.icon}</span>
+      {!sidebarCollapsed && (
+        <span className={cn("ml-[10px]", sidebarCollapsed & subMenu && "ml-4")}>
+          {item.label}
+        </span>
+      )}
     </Link>
   );
 };

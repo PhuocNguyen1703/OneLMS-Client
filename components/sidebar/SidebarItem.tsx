@@ -16,27 +16,34 @@ const SidebarItem = ({ menu }: any) => {
   if (menu.subMenu) {
     return (
       <div
-        className={cn("rounded-md select-none", toggleSubMenu && "bg-gray-100")}
+        className={cn(
+          "rounded-md select-none",
+          toggleSubMenu && " bg-gray-100",
+          sidebarCollapsed && "w-[38px]"
+        )}
       >
         <div
           className={cn(
-            "flex items-center p-2 rounded-sm cursor-pointer hover:bg-slate-200",
+            "flex items-center p-2 h-[38px] rounded-sm cursor-pointer hover:bg-slate-200",
             toggleSubMenu && "border-b"
           )}
           onClick={handleToggleSubMenu}
         >
           <span>{menu.icon}</span>
 
-          <span
-            className={cn(
-              "flex flex-1 items-center justify-between ml-[10px] whitespace-pre"
-            )}
-          >
-            {menu.label}
-            <span className={cn(toggleSubMenu && "rotate-90")}>
-              <ChevronRight size={18} />
+          {!sidebarCollapsed && (
+            <span
+              className={cn(
+                "flex flex-1 items-center justify-between ml-[10px] whitespace-pre"
+              )}
+            >
+              {menu.label}
+              <ChevronRight
+                size={18}
+                className={cn(toggleSubMenu && "rotate-90")}
+              />
             </span>
-          </span>
+          )}
         </div>
 
         {toggleSubMenu && (

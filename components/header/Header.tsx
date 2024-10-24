@@ -1,11 +1,12 @@
 "use client";
 
-import { AlignStartVertical, Bell, Search } from "lucide-react";
-import SearchBar from "./Search";
+import { AlignStartVertical, Bell, Search, SquareMenu } from "lucide-react";
 import UserMenu from "./UserMenu";
 import { Button } from "../ui/button";
 import { useDispatch } from "react-redux";
 import { setSidebarCollapsed } from "@/redux/slices/layoutSlice";
+import Link from "next/link";
+import Logo from "../Logo";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -15,15 +16,21 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between py-3 mx-4 border-b">
+    <header className="flex items-center justify-between p-2 bg-white">
       <div className="flex items-center">
         <Button
-          variant="outline"
-          className="w-10 h-10 p-2"
+          variant="ghost"
+          className="p-2 rounded-full"
           onClick={handleToggleSidebar}
         >
-          <AlignStartVertical />
+          <SquareMenu />
         </Button>
+        <Link href="/" className="flex items-center">
+          <Logo width={39} height={39} />
+          <p className="ml-1 text-primary text-2xl font-bold select-none">
+            OneLMS
+          </p>
+        </Link>
       </div>
       <div className="flex items-center space-x-3">
         <Button

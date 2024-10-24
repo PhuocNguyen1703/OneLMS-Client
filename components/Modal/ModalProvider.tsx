@@ -2,11 +2,7 @@ import CreateNewCampus from "../../features/campus/components/forms/CreateCampus
 import ModalHeader from "./ModalHeader";
 
 const ModalProvider = () => {
-  return (
-    <>
-      <CreateNewCampus />
-    </>
-  );
+  return <>{/* <CreateNewCampus /> */}</>;
 };
 
 export default ModalProvider;
