@@ -17,35 +17,39 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, CopyPlus, FileDown } from "lucide-react";
+import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
+import CampusList from "@/features/campus/components/CampusList";
 
 const Campuses = () => {
   return (
-    <section className="mx-5 mt-4 border">
+    <section className="flex-1 p-4">
       <nav className="flex items-center justify-between">
         <div>
-          <span className="text-2xl font-semibold">Campus</span>
+          <span className="text-xl font-semibold">Campus</span>
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbLink className="text-base" asChild>
+                <BreadcrumbLink asChild>
                   <Link href="/">Dashboard</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
-              <BreadcrumbItem className="text-base">
+              <BreadcrumbItem>
                 <BreadcrumbPage>Campuses</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
         <div className="flex items-center space-x-2">
+          <Button variant="outline" className="w-10 p-0">
+            <PrinterCheck size={16} />
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="space-x-2">
-                <FileDown size={18} />
+                <FileDown size={16} />
                 <span>Export</span>
-                <ChevronDown size={18} />
+                <ChevronDown size={16} />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -54,12 +58,12 @@ const Campuses = () => {
             </DropdownMenuContent>
           </DropdownMenu>
           <Button>
-            <CopyPlus size={18} className="mr-3" />
+            <CopyPlus size={16} className="mr-3" />
             Add Campus
           </Button>
         </div>
       </nav>
-      <div></div>
+      <CampusList />
     </section>
   );
 };

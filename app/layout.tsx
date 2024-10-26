@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { poppins, roboto } from "@/utils/fonts";
-import "@/styles/globals.css";
+import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import { ModalProvider } from "@/components/modal";
 
