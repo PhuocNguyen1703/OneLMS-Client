@@ -9,7 +9,7 @@ export default function DashboardLayout({
   return (
     <main className="h-screen w-screen overflow-hidden">
       <Header />
-      <section className="flex h-full">
+      <section className="flex h-content">
         <Sidebar />
         {children}
       </section>

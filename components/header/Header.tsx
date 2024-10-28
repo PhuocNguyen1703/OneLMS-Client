@@ -16,14 +16,15 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between p-2 bg-white">
+    <header className="flex items-center justify-between h-navbar p-2 bg-white">
       <div className="flex items-center">
         <Button
           variant="ghost"
-          className="p-2 rounded-full"
+          size="icon"
+          className="rounded-full"
           onClick={handleToggleSidebar}
         >
-          <SquareMenu />
+          <SquareMenu size={20} />
         </Button>
         <Link href="/" className="flex items-center">
           <Logo width={39} height={39} />
@@ -33,20 +34,12 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex items-center space-x-3">
-        <Button
-          variant="ghost"
-          className="w-10 h-10 p-0 border border-gray-300 rounded-full"
-        >
-          <Search size={18} />
+        <Button variant="outline" size="icon" className=" rounded-full">
+          <Search size={20} />
         </Button>
-        <Button
-          variant="ghost"
-          className="relative w-10 h-10 p-0 border border-gray-300 rounded-full"
-        >
-          <Bell size={18} />
-          <span className="absolute -top-2 -right-2 flex items-center justify-center w-5 h-5 text-xs font-semibold text-white rounded-full bg-red-800">
-            2
-          </span>
+        <Button variant="outline" size="icon" className="relative rounded-full">
+          <Bell size={20} />
+          <span className="absolute top-2 right-2.5 w-1.5 h-1.5 rounded-full bg-red-800"></span>
         </Button>
         <UserMenu />
       </div>

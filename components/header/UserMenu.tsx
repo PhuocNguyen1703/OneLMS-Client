@@ -13,6 +13,7 @@ import {
   MessageSquare,
   Plus,
   PlusCircle,
+  Power,
   Settings,
   User,
   UserPlus,
@@ -38,13 +39,13 @@ import { japanFlag, ukFlag, vietnamFlag } from "@/public/images";
 
 const UserMenu = () => {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <div className="flex items-center gap-1 px-2 py-1 rounded-sm cursor-pointer hover:bg-gray-200">
-          <div className="flex flex-col items-end">
-            <span className="font-semibold">Jonh Smith</span>
-            <span className="text-sm text-gray-700 leading-none">Admin</span>
-          </div>
+    <div className="flex items-center space-x-2">
+      <div className="flex flex-col items-end">
+        <span className="font-semibold">Jonh Smith</span>
+        <span className="text-sm text-gray-500 leading-none">Admin</span>
+      </div>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="focus:outline-none">
           <Avatar>
             <AvatarImage
               src="https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -52,70 +53,70 @@ const UserMenu = () => {
             />
             <AvatarFallback>?</AvatarFallback>
           </Avatar>
-        </div>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-fit min-w-40 mr-1">
-        <DropdownMenuGroup>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-fit min-w-40 mr-1">
+          <DropdownMenuGroup>
+            <DropdownMenuItem>
+              <User size={20} className="mr-2" />
+              <span>Profile</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Settings size={20} className="mr-2" />
+              <span>Settings</span>
+            </DropdownMenuItem>
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger>
+                <Languages size={20} className="mr-2" />
+                <span>Language</span>
+              </DropdownMenuSubTrigger>
+              <DropdownMenuPortal>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem>
+                    <Image
+                      src={vietnamFlag}
+                      width={20}
+                      height={20}
+                      alt="flag"
+                      className="mr-2"
+                    />
+                    <span>Vietnamese</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Image
+                      src={japanFlag}
+                      width={20}
+                      height={20}
+                      alt="flag"
+                      className="mr-2"
+                    />
+                    <span>Japanese</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Image
+                      src={ukFlag}
+                      width={20}
+                      height={20}
+                      alt="flag"
+                      className="mr-2"
+                    />
+                    <span>English</span>
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuPortal>
+            </DropdownMenuSub>
+            <DropdownMenuItem>
+              <LifeBuoy size={20} className="mr-2" />
+              <span>Support</span>
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
+          <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
-            <span>Profile</span>
+            <Power size={20} className="mr-2" />
+            <span>Log out</span>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Settings className="mr-2 h-4 w-4" />
-            <span>Settings</span>
-          </DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>
-              <Languages className="mr-2 h-4 w-4" />
-              <span>Language</span>
-            </DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>
-                  <Image
-                    src={vietnamFlag}
-                    width={20}
-                    height={20}
-                    alt="flag"
-                    className="mr-2"
-                  />
-                  <span>Vietnamese</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Image
-                    src={japanFlag}
-                    width={20}
-                    height={20}
-                    alt="flag"
-                    className="mr-2"
-                  />
-                  <span>Japanese</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Image
-                    src={ukFlag}
-                    width={20}
-                    height={20}
-                    alt="flag"
-                    className="mr-2"
-                  />
-                  <span>English</span>
-                </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
-          <DropdownMenuItem>
-            <LifeBuoy className="mr-2 h-4 w-4" />
-            <span>Support</span>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut className="mr-2 h-4 w-4" />
-          <span>Log out</span>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 };
 

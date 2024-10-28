@@ -22,8 +22,8 @@ import CampusList from "@/features/campus/components/CampusList";
 
 const Campuses = () => {
   return (
-    <section className="flex-1 p-4">
-      <nav className="flex items-center justify-between">
+    <section className="flex flex-col flex-1 p-4">
+      <nav className="flex items-center justify-between pb-4">
         <div>
           <span className="text-xl font-semibold">Campus</span>
           <Breadcrumb>
