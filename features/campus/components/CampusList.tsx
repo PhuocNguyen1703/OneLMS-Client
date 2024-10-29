@@ -111,8 +111,8 @@ const CampusList = () => {
             />
           </CardHeader>
           <CardContent className="flex flex-col p-4">
-            <h3 className="text-3xl font-semibold">Campus</h3>
-            <span className="text-sm font-semibold">CP-101</span>
+            <h3 className="text-3xl font-semibold">{campus.name}</h3>
+            <span className="text-sm font-semibold">{campus.campusId}</span>
             <div className="flex items-center mt-2 text-sm gap-1 ">
               <MapPinHouse size={18} />
               <span className="line-clamp-1">{campus.address}</span>
@@ -154,12 +154,3 @@ const CampusList = () => {
 };
 
 export default CampusList;
-
-{
-  /* <Button
-  variant="ghost"
-  className="absolute top-0 right-1 w-8 h-8 p-0 rounded-full"
->
-  <EllipsisVertical size={20} />
-</Button>; */
-}

@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
 import CampusList from "@/features/campus/components/CampusList";
 
-const Campuses = () => {
+const Campus = () => {
   return (
     <section className="flex flex-col flex-1 p-4">
       <nav className="flex items-center justify-between pb-4">
@@ -35,7 +35,7 @@ const Campuses = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Campuses</BreadcrumbPage>
+                <BreadcrumbPage>Campus</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -68,4 +68,4 @@ const Campuses = () => {
   );
 };
 
-export default Campuses;
+export default Campus;
