@@ -5,8 +5,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ClassTableData } from "./table";
 import { Columns } from "./table/Columns";
+import { DataTable } from "@/components/table/DataTable";
 
 type ClassRoom = {
   id: string;
@@ -54,7 +54,7 @@ const classRoom: ClassRoom[] = [
   },
 ];
 
-const ClassTable = () => {
+const ClassRoomTable = () => {
   return (
     <div className="space-y-3">
       <nav>
@@ -69,9 +69,9 @@ const ClassTable = () => {
           </SelectContent>
         </Select>
       </nav>
-      <ClassTableData columns={Columns} data={classRoom} />
+      <DataTable columns={Columns} data={classRoom} />
     </div>
   );
 };
 
-export default ClassTable;
+export default ClassRoomTable;

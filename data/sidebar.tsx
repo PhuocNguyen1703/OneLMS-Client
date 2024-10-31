@@ -201,7 +201,7 @@ export const menu: MenuItems[] = [
           {
             icon: <BookText size={SUB_ICON_SIZE} />,
             label: "All Class",
-            href: "/",
+            href: "/class/all",
           },
           {
             icon: <CalendarFold size={SUB_ICON_SIZE} />,

@@ -13,16 +13,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import ClassTable from "@/features/class-room/components/ClassRoomTable";
+import ClassTable from "@/features/class/components/ClassTable";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
 import Link from "next/link";
 
-const AllClass = () => {
+const ClassList = () => {
   return (
     <section className="flex flex-col flex-1 p-4">
       <nav className="flex items-center justify-between pb-4">
         <div>
-          <span className="text-xl font-semibold">Class Room</span>
+          <span className="text-xl font-semibold">Class List</span>
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -32,7 +32,11 @@ const AllClass = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Class Room</BreadcrumbPage>
+                <BreadcrumbPage>Class</BreadcrumbPage>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>All Class</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -56,7 +60,7 @@ const AllClass = () => {
           </DropdownMenu>
           <Button>
             <CopyPlus size={16} className="mr-3" />
-            Add Class Room
+            Add Class
           </Button>
         </div>
       </nav>
@@ -65,4 +69,4 @@ const AllClass = () => {
   );
 };
 
-export default AllClass;
+export default ClassList;
