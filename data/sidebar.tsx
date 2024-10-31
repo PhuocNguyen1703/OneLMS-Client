@@ -218,7 +218,7 @@ export const menu: MenuItems[] = [
       {
         icon: <BookOpenCheck size={MAIN_ICON_SIZE} />,
         label: "Subject",
-        href: "/",
+        href: "/subject",
       },
       {
         icon: <BookPlus size={MAIN_ICON_SIZE} />,
