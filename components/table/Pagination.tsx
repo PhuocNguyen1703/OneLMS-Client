@@ -18,7 +18,6 @@ interface PaginationProps<TData> {
 
 export function Pagination<TData>({ table }: PaginationProps<TData>) {
   const paginationRange = PaginationRange({ table });
-  console.log(paginationRange);
 
   const handleOnClickPage = (pageNumber: number | string) => {
     if (typeof pageNumber === "number") {
@@ -26,6 +25,7 @@ export function Pagination<TData>({ table }: PaginationProps<TData>) {
       table.setPageIndex(pageIdx);
     }
   };
+  console.log(table);
 
   return (
     <div className="flex items-center justify-between px-2 mt-2">
@@ -46,7 +46,7 @@ export function Pagination<TData>({ table }: PaginationProps<TData>) {
               <SelectValue placeholder={table.getState().pagination.pageSize} />
             </SelectTrigger>
             <SelectContent side="top">
-              {[10, 20, 30].map((pageSize) => (
+              {[5, 10, 20, 30].map((pageSize) => (
                 <SelectItem key={pageSize} value={`${pageSize}`}>
                   {pageSize}
                 </SelectItem>
@@ -66,7 +66,7 @@ export function Pagination<TData>({ table }: PaginationProps<TData>) {
             disabled={!table.getCanPreviousPage()}
           >
             <span className="sr-only">Go to previous page</span>
-            <ChevronLeftIcon className="h-4 w-4" />
+            <ChevronLeftIcon size={18} />
           </Button>
           <div className="flex items-center gap-1">
             {paginationRange?.map((pageNumber, idx) => {
@@ -101,8 +101,7 @@ export function Pagination<TData>({ table }: PaginationProps<TData>) {
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-            <span className="sr-only">Go to next page</span>
-            <ChevronRightIcon className="h-4 w-4" />
+            <ChevronRightIcon size={18} />
           </Button>
         </div>
       </div>
