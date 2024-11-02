@@ -83,7 +83,7 @@ export const menu: MenuItems[] = [
     ],
   },
   {
-    title: "USER",
+    title: "USERS",
     menuItems: [
       {
         icon: <GraduationCap size={MAIN_ICON_SIZE} />,
@@ -91,17 +91,12 @@ export const menu: MenuItems[] = [
         subMenu: [
           {
             icon: <BookText size={SUB_ICON_SIZE} />,
-            label: "All Students",
-            href: "/",
-          },
-          {
-            icon: <ClipboardMinus size={SUB_ICON_SIZE} />,
-            label: "Student List",
+            label: "All Student",
             href: "/",
           },
           {
             icon: <FileText size={SUB_ICON_SIZE} />,
-            label: "Student Details",
+            label: "Student Detail",
             href: "/",
           },
           {
@@ -117,13 +112,8 @@ export const menu: MenuItems[] = [
         subMenu: [
           {
             icon: <BookText size={SUB_ICON_SIZE} />,
-            label: "All Guardians",
-            href: "/",
-          },
-          {
-            icon: <ClipboardMinus size={SUB_ICON_SIZE} />,
-            label: "Guardian List",
-            href: "/",
+            label: "All Guardian",
+            href: "/users/guardians",
           },
         ],
       },
@@ -133,17 +123,12 @@ export const menu: MenuItems[] = [
         subMenu: [
           {
             icon: <BookText size={SUB_ICON_SIZE} />,
-            label: "All Teachers",
-            href: "/",
-          },
-          {
-            icon: <ClipboardMinus size={SUB_ICON_SIZE} />,
-            label: "Teacher List",
+            label: "All Teacher",
             href: "/",
           },
           {
             icon: <FileText size={SUB_ICON_SIZE} />,
-            label: "Teacher Details",
+            label: "Teacher Detail",
             href: "/",
           },
           {
@@ -159,25 +144,15 @@ export const menu: MenuItems[] = [
         subMenu: [
           {
             icon: <BookText size={SUB_ICON_SIZE} />,
-            label: "All Staffs",
-            href: "/",
-          },
-          {
-            icon: <ClipboardMinus size={SUB_ICON_SIZE} />,
-            label: "Staff List",
+            label: "All Staff",
             href: "/",
           },
           {
             icon: <FileText size={SUB_ICON_SIZE} />,
-            label: "Staff Details",
+            label: "Staff Detail",
             href: "/",
           },
         ],
-      },
-      {
-        icon: <UserRoundSearch size={MAIN_ICON_SIZE} />,
-        label: "Others",
-        href: "/",
       },
     ],
   },
