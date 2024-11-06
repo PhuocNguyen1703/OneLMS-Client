@@ -18,10 +18,6 @@ const config = {
       },
     },
     extend: {
-      height: {
-        navbar: "var(--height-navbar)",
-        content: "calc(100vh - var(--height-navbar))",
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
