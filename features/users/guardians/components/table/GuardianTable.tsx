@@ -1,4 +1,4 @@
-import { Columns } from "./table/Columns";
+import { Columns } from "./Columns";
 import { DataTable } from "@/components/table/DataTable";
 
 type Guardian = {

@@ -13,7 +13,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { GuardianTable } from "@/features/users/guardians/components/GuardianTable";
+import { GuardianGrid } from "@/features/users/guardians/components/grid/GuardianGrid";
+import { GuardianTable } from "@/features/users/guardians/components/table/GuardianTable";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
 import Link from "next/link";
 
@@ -64,7 +65,8 @@ const Guardian = () => {
           </Button>
         </div>
       </nav>
-      <GuardianTable />
+      <GuardianGrid />
+      {/* <GuardianTable /> */}
     </section>
   );
 };
