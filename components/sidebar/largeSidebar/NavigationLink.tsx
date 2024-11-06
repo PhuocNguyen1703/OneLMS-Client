@@ -16,11 +16,9 @@ const NavigationLink = ({ item, subMenu }: any) => {
       )}
     >
       <span>{item.icon}</span>
-      {!sidebarCollapsed && (
-        <span className={cn("ml-[10px]", sidebarCollapsed & subMenu && "ml-4")}>
-          {item.label}
-        </span>
-      )}
+      <span className={cn("ml-[10px]", sidebarCollapsed & subMenu && "ml-4")}>
+        {item.label}
+      </span>
     </Link>
   );
 };

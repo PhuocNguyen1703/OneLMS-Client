@@ -17,12 +17,12 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between gap-10 h-14 pt-2 px-4 ">
+    <header className="flex items-center justify-between gap-10  p-2 pr-4">
       <div className="flex items-center gap-4">
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-full"
+          className="rounded-full shrink-0"
           onClick={handleToggleSidebar}
         >
           <Menu size={24} />

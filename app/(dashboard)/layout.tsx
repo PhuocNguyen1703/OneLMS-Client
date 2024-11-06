@@ -7,12 +7,12 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex flex-col max-h-screen">
+    <main className="flex flex-col h-screen">
       <Header />
-      {/* <section className="grid grid-cols-[auto,1fr] overflow-auto">
+      <section className="grid grid-cols-[auto,1fr] grow overflow-auto">
         <Sidebar />
         <div className="bg-slate-300">{children}</div>
-      </section> */}
+      </section>
     </main>
   );
 }
