@@ -32,9 +32,9 @@ export const LargeSidebar = () => {
         <div className="lg:hidden sticky top-0 py-2 bg-white z-[999]">
           <HeaderLogo />
         </div>
-        {menu.map((menuGroup: any) => (
-          <div key={menuGroup.title} className="ml-0.5">
-            {menuGroup.title !== null && (
+        {menu.map((menuGroup: any, idx) => (
+          <div key={idx} className="ml-0.5">
+            {menuGroup?.title && (
               <div className="relative mt-4">
                 <span className="absolute top-1/2 -translate-y-1/2 w-full h-[1px] bg-gray-300 rounded-full"></span>
                 <span className="relative pl-1 pr-3 text-slate-400 text-sm font-semibold leading-none bg-white select-none">
@@ -42,7 +42,7 @@ export const LargeSidebar = () => {
                 </span>
               </div>
             )}
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col gap-1 ">
               {menuGroup.menuItems.map((menu: any) => (
                 <LargeSidebarItem key={menu.label} menu={menu} />
               ))}

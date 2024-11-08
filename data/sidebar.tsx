@@ -33,26 +33,25 @@ const MAIN_ICON_SIZE = 22;
 const SUB_ICON_SIZE = 16;
 
 type SubMenu = {
-  icon: ReactElement;
+  icon?: ReactElement;
   label: string;
   href: string;
 };
 
 type MenuItem = {
-  icon: ReactElement;
+  icon?: ReactElement;
   label: string;
   href?: string;
   subMenu?: SubMenu[];
 };
 
 export type MenuItems = {
-  title: string | null;
+  title?: string;
   menuItems: MenuItem[];
 };
 
 export const menu: MenuItems[] = [
   {
-    title: null,
     menuItems: [
       {
         icon: <LayoutDashboard size={MAIN_ICON_SIZE} />,
@@ -64,17 +63,14 @@ export const menu: MenuItems[] = [
         label: "Application",
         subMenu: [
           {
-            icon: <MessageCircleMore size={SUB_ICON_SIZE} />,
             label: "Message",
             href: "/",
           },
           {
-            icon: <Notebook size={SUB_ICON_SIZE} />,
             label: "Note",
             href: "/",
           },
           {
-            icon: <CalendarDays size={SUB_ICON_SIZE} />,
             label: "Calendar",
             href: "/",
           },
@@ -90,17 +86,14 @@ export const menu: MenuItems[] = [
         label: "Students",
         subMenu: [
           {
-            icon: <BookText size={SUB_ICON_SIZE} />,
             label: "All Student",
             href: "/",
           },
           {
-            icon: <FileText size={SUB_ICON_SIZE} />,
             label: "Student Detail",
             href: "/",
           },
           {
-            icon: <Tickets size={SUB_ICON_SIZE} />,
             label: "Promotion",
             href: "/",
           },
@@ -111,7 +104,6 @@ export const menu: MenuItems[] = [
         label: "Guardians",
         subMenu: [
           {
-            icon: <BookText size={SUB_ICON_SIZE} />,
             label: "All Guardian",
             href: "/users/guardians",
           },
@@ -122,17 +114,14 @@ export const menu: MenuItems[] = [
         label: "Teachers",
         subMenu: [
           {
-            icon: <BookText size={SUB_ICON_SIZE} />,
             label: "All Teacher",
             href: "/",
           },
           {
-            icon: <FileText size={SUB_ICON_SIZE} />,
             label: "Teacher Detail",
             href: "/",
           },
           {
-            icon: <Waypoints size={SUB_ICON_SIZE} />,
             label: "Routine",
             href: "/",
           },
@@ -143,12 +132,10 @@ export const menu: MenuItems[] = [
         label: "Staffs",
         subMenu: [
           {
-            icon: <BookText size={SUB_ICON_SIZE} />,
             label: "All Staff",
             href: "/",
           },
           {
-            icon: <FileText size={SUB_ICON_SIZE} />,
             label: "Staff Detail",
             href: "/",
           },
@@ -174,12 +161,10 @@ export const menu: MenuItems[] = [
         label: "Class",
         subMenu: [
           {
-            icon: <BookText size={SUB_ICON_SIZE} />,
             label: "All Class",
             href: "/class/all",
           },
           {
-            icon: <CalendarFold size={SUB_ICON_SIZE} />,
             label: "Schedule",
             href: "/",
           },
@@ -215,27 +200,22 @@ export const menu: MenuItems[] = [
         label: "Examinations",
         subMenu: [
           {
-            icon: <File size={SUB_ICON_SIZE} />,
             label: "Exam",
             href: "/",
           },
           {
-            icon: <FileClock size={SUB_ICON_SIZE} />,
             label: "Exam Schedule",
             href: "/",
           },
           {
-            icon: <UserRoundCheck size={SUB_ICON_SIZE} />,
             label: "Exam Attendance",
             href: "/",
           },
           {
-            icon: <FileText size={SUB_ICON_SIZE} />,
             label: "Exam Results",
             href: "/",
           },
           {
-            icon: <GraduationCap size={SUB_ICON_SIZE} />,
             label: "Grade",
             href: "/",
           },
