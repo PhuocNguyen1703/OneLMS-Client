@@ -1,6 +1,9 @@
 import { LayoutDashboard } from "lucide-react";
 import { ReactElement } from "react";
 import { SmallSidebarItem } from "./SmallSidebarItem";
+import { useSelector } from "react-redux";
+import { layoutSelector } from "@/redux/slices/layoutSlice";
+import { cn } from "@/lib/utils";
 
 type smallMenu = {
   icon: ReactElement;
@@ -54,8 +57,16 @@ const smallSidebarMenu: smallMenu[] = [
 ];
 
 export const SmallSidebar = () => {
+  const { isLargeSidebarOpen, isSmallSidebarOpen } =
+    useSelector(layoutSelector);
+
   return (
-    <div className="sticky top-0 flex flex-col gap-1.5 pb-4 overflow-y-auto scrollbar-hidden px-2">
+    <div
+      className={cn(
+        "sticky top-0 flex flex-col gap-1.5 pb-4 overflow-y-auto scrollbar-hidden px-2",
+        isLargeSidebarOpen ? "lg:hidden" : "lg:flex"
+      )}
+    >
       {smallSidebarMenu.map((item, idx) => (
         <SmallSidebarItem key={idx} {...item} />
       ))}

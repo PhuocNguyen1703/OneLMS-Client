@@ -1,43 +1,17 @@
 "use client";
 
-import { Bell, Menu, Search } from "lucide-react";
+import { Bell, Search } from "lucide-react";
 import UserMenu from "./UserMenu";
-import { Button } from "../ui/button";
-import { useDispatch } from "react-redux";
-import { setSidebarCollapsed } from "@/redux/slices/layoutSlice";
-import Link from "next/link";
-import Logo from "../Logo";
-import { Input } from "../ui/input";
+import { Button } from "../../ui/button";
+import { Input } from "../../ui/input";
+import { toggleSidebar } from "@/redux/slices/layoutSlice";
+import { HeaderLogo } from "./HeaderLogo";
 
 const Header = () => {
-  const dispatch = useDispatch();
-
-  const handleToggleSidebar = () => {
-    dispatch(setSidebarCollapsed());
-  };
 
   return (
     <header className="flex items-center justify-between gap-10  p-2 pr-4">
-      <div className="flex items-center gap-4">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="rounded-full shrink-0"
-          onClick={handleToggleSidebar}
-        >
-          <Menu size={24} />
-        </Button>
-        <Link
-          href="/"
-          className="flex items-center shrink-0
-        "
-        >
-          <Logo width={30} height={30} />
-          <p className="ml-1 text-primary text-xl font-bold select-none">
-            OneLMS
-          </p>
-        </Link>
-      </div>
+      <HeaderLogo />
       <div className="flex items-center grow max-w-[500px] border rounded-full">
         <Input
           type="text"

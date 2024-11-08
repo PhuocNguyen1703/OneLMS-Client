@@ -46,13 +46,13 @@ type MenuItem = {
 };
 
 export type MenuItems = {
-  title: string;
+  title: string | null;
   menuItems: MenuItem[];
 };
 
 export const menu: MenuItems[] = [
   {
-    title: "MAIN",
+    title: null,
     menuItems: [
       {
         icon: <LayoutDashboard size={MAIN_ICON_SIZE} />,
