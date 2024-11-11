@@ -21,7 +21,7 @@ const GuardianCard = ({ data }: any) => {
   const { id, name, cover, email, phone, occupation } = data;
 
   return (
-    <Card className="w-[350px]">
+    <Card className="">
       <CardHeader className="flex-row items-center justify-between p-3">
         <CardTitle>{id}</CardTitle>
         <DropdownMenu>

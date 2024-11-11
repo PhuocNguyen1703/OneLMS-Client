@@ -30,7 +30,6 @@ import {
 import { ReactElement } from "react";
 
 const MAIN_ICON_SIZE = 22;
-const SUB_ICON_SIZE = 16;
 
 type SubMenu = {
   icon?: ReactElement;
@@ -86,11 +85,11 @@ export const menu: MenuItems[] = [
         label: "Students",
         subMenu: [
           {
-            label: "All Student",
+            label: "List",
             href: "/",
           },
           {
-            label: "Student Detail",
+            label: "Detail",
             href: "/",
           },
           {
@@ -104,7 +103,7 @@ export const menu: MenuItems[] = [
         label: "Guardians",
         subMenu: [
           {
-            label: "All Guardian",
+            label: "List",
             href: "/users/guardians",
           },
         ],
@@ -114,11 +113,11 @@ export const menu: MenuItems[] = [
         label: "Teachers",
         subMenu: [
           {
-            label: "All Teacher",
+            label: "List",
             href: "/",
           },
           {
-            label: "Teacher Detail",
+            label: "Detail",
             href: "/",
           },
           {
@@ -132,11 +131,11 @@ export const menu: MenuItems[] = [
         label: "Staffs",
         subMenu: [
           {
-            label: "All Staff",
+            label: "List",
             href: "/",
           },
           {
-            label: "Staff Detail",
+            label: "Detail",
             href: "/",
           },
         ],
@@ -161,7 +160,7 @@ export const menu: MenuItems[] = [
         label: "Class",
         subMenu: [
           {
-            label: "All Class",
+            label: "List",
             href: "/class/all",
           },
           {
@@ -204,15 +203,15 @@ export const menu: MenuItems[] = [
             href: "/",
           },
           {
-            label: "Exam Schedule",
+            label: "Schedule",
             href: "/",
           },
           {
-            label: "Exam Attendance",
+            label: "Attendance",
             href: "/",
           },
           {
-            label: "Exam Results",
+            label: "Results",
             href: "/",
           },
           {

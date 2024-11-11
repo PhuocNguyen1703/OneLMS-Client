@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoreProvider>
-        <body className={`${roboto.className} ${poppins.variable}`}>
+        <body
+          className={`${roboto.className} ${poppins.variable} overflow-hidden`}
+        >
           {children}
           <ModalProvider />
         </body>

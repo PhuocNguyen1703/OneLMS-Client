@@ -12,6 +12,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -25,6 +34,10 @@ type Guardian = {
   phone: number;
   address: string;
   status: "Active" | "InActive";
+};
+
+const handleToggleView = () => {
+  console.log("view");
 };
 
 export const Columns: ColumnDef<Guardian>[] = [
@@ -135,8 +148,10 @@ export const Columns: ColumnDef<Guardian>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>Edit</DropdownMenuItem>
-            <DropdownMenuItem>Delete</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleToggleView}>View</DropdownMenuItem>
+            <DropdownMenuItem className="text-red-900 focus:text-red-950">
+              Delete
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
