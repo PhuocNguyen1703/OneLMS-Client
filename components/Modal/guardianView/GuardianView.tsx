@@ -12,18 +12,6 @@ import { X } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Label } from "@/components/ui/label";
 
-type Guardian = {
-  id: string;
-  name: string;
-  cover: string;
-  email: string;
-  gender: string;
-  occupation: string;
-  phone: number;
-  address: string;
-  status: "Active" | "InActive";
-};
-
 const GuardianView = () => {
   return (
     <Modal>

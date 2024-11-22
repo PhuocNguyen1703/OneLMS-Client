@@ -78,11 +78,11 @@ export const menu: MenuItems[] = [
     ],
   },
   {
-    title: "USERS",
+    title: "USER",
     menuItems: [
       {
         icon: <GraduationCap size={MAIN_ICON_SIZE} />,
-        label: "Students",
+        label: "Student",
         subMenu: [
           {
             label: "List",
@@ -100,17 +100,17 @@ export const menu: MenuItems[] = [
       },
       {
         icon: <UsersRound size={MAIN_ICON_SIZE} />,
-        label: "Guardians",
+        label: "Guardian",
         subMenu: [
           {
             label: "List",
-            href: "/users/guardians",
+            href: "/user/guardian",
           },
         ],
       },
       {
         icon: <UserRoundPen size={MAIN_ICON_SIZE} />,
-        label: "Teachers",
+        label: "Teacher",
         subMenu: [
           {
             label: "List",
@@ -128,7 +128,7 @@ export const menu: MenuItems[] = [
       },
       {
         icon: <UserRoundPlus size={MAIN_ICON_SIZE} />,
-        label: "Staffs",
+        label: "Staff",
         subMenu: [
           {
             label: "List",
@@ -196,7 +196,7 @@ export const menu: MenuItems[] = [
       },
       {
         icon: <BookCheck size={MAIN_ICON_SIZE} />,
-        label: "Examinations",
+        label: "Examination",
         subMenu: [
           {
             label: "Exam",

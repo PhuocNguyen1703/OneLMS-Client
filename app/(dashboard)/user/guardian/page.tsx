@@ -17,8 +17,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-import { GuardianGrid } from "@/features/users/guardians/components/grid/GuardianGrid";
-import { Columns } from "@/features/users/guardians/components/table/Columns";
+import { GuardianGrid } from "@/features/user/guardian/components/grid/GuardianGrid";
+import { Columns } from "@/features/user/guardian/components/table/Columns";
 import {
   ChevronDown,
   CopyPlus,
