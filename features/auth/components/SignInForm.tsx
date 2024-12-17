@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
-import { SignInSchema } from "@/lib/zod";
+import { SignInSchema } from "../schemas";
 
 const SignInForm = () => {
   const form = useForm<z.infer<typeof SignInSchema>>({

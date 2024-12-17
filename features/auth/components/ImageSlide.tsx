@@ -1,10 +1,9 @@
-"use client";
 
 import { flower1, flower2, flower3 } from "@/public/images";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const ImageSlide = () => {

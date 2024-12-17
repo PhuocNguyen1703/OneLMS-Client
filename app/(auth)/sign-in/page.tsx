@@ -1,5 +1,4 @@
-import SignInForm from "@/components/auth/SignInForm";
-import { Button } from "@/components/ui/button";
+import SignInForm from "@/features/auth/components/SignInForm";
 
 const SignIn = () => {
   return (

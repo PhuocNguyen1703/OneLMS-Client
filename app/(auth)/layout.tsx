@@ -1,4 +1,4 @@
-import ImageSlide from "@/components/auth/ImageSlide";
+import ImageSlide from "@/features/auth/components/ImageSlide";
 import Logo from "@/components/Logo";
 
 export default function AuthLayout({

@@ -13,7 +13,7 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "../ui/checkbox";
+import { Checkbox } from "../../../components/ui/checkbox";
 import { PasswordInput } from "@/components/ui/password-input";
 
 const FormSchema = z.object({
