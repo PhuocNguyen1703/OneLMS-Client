@@ -16,13 +16,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 import { SignInSchema } from "@/lib/zod";
-import { handleCredentialsSignIn } from "@/actions/authActions";
-import { useDispatch } from "react-redux";
-import { setModalOnClose } from "@/redux/slices/modalSlice";
 
 const SignInForm = () => {
-  const dispatch = useDispatch();
-
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -33,9 +28,14 @@ const SignInForm = () => {
 
   const onSubmit = async (data: z.infer<typeof SignInSchema>) => {
     try {
-      const result = await handleCredentialsSignIn(data);
-      console.log(data);
-      dispatch(setModalOnClose());
+      const result = await fetch("http://localhost:5000/auth/login", {
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      }).then((res) => res.json());
+      console.log(result);
     } catch (error) {
       console.log("An unexpected error occurred. Please try again.");
     }
@@ -52,7 +52,7 @@ const SignInForm = () => {
               <FormLabel className="text-base">Email</FormLabel>
               <FormControl>
                 <Input
-                  className="h-12 rounded-[8px] text-base"
+                  className="text-base"
                   placeholder="Enter your email"
                   {...field}
                 />
@@ -69,7 +69,7 @@ const SignInForm = () => {
               <FormLabel className="text-base">Password</FormLabel>
               <FormControl>
                 <PasswordInput
-                  className="h-12 rounded-[8px] text-base pr-10"
+                  className="text-base pr-10"
                   placeholder="Enter your password"
                   {...field}
                 />
@@ -78,7 +78,9 @@ const SignInForm = () => {
             </FormItem>
           )}
         />
-        <p className="mt-5 text-right text-sm font-medium">Forgot Password?</p>
+        <p className="mt-2 text-right text-sm font-medium select-none">
+          Forgot Password?
+        </p>
         <Button className="w-full h-12 mt-10 text-base" type="submit">
           Sign In
         </Button>
