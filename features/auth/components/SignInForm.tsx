@@ -15,7 +15,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
+<<<<<<< HEAD:features/auth/components/SignInForm.tsx
 import { SignInSchema } from "../schemas";
+=======
+import { SignInSchema } from "@/lib/zod";
+>>>>>>> f14921c7571091c77bbd43d7304f47ebbbd6581b:components/auth/SignInForm.tsx
 
 const SignInForm = () => {
   const form = useForm<z.infer<typeof SignInSchema>>({

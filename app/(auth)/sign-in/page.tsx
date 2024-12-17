@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import SignInForm from "@/features/auth/components/SignInForm";
+=======
+import SignInForm from "@/components/auth/SignInForm";
+import { Button } from "@/components/ui/button";
+>>>>>>> f14921c7571091c77bbd43d7304f47ebbbd6581b
 
 const SignIn = () => {
   return (
