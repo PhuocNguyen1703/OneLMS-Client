@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 import { SignInSchema } from "../schemas";
+import authApiRequest from "@/apiRequests/auth";
 
 const SignInForm = () => {
   const form = useForm<z.infer<typeof SignInSchema>>({
@@ -28,13 +29,10 @@ const SignInForm = () => {
 
   const onSubmit = async (data: z.infer<typeof SignInSchema>) => {
     try {
-      const result = await fetch("http://localhost:5000/auth/login", {
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      }).then((res) => res.json());
+      const result: any = await authApiRequest.signIn(data);
+      await authApiRequest.auth({
+        accessToken: (result as any).payload.data.accessToken,
+      });
       console.log(result);
     } catch (error) {
       console.log("An unexpected error occurred. Please try again.");
