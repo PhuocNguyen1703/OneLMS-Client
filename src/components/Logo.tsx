@@ -1,5 +1,6 @@
 import { LogoProps } from "@/types";
 import Image from "next/image";
+import { logo } from "../../public/images";
 
 const Logo = ({ height, width }: LogoProps) => {
   return (
@@ -8,7 +9,7 @@ const Logo = ({ height, width }: LogoProps) => {
       alt="logo"
       height={height}
       width={width}
-      src="/images/logo.png"
+      src={logo}
     />
   );
 };

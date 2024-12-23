@@ -6,8 +6,10 @@ import vietnamFlag from "./vietnam_flag.png";
 import ukFlag from "./united-kingdom_flag.png";
 import checklist from "./checklist.png";
 import noImagePlaceholder from "./No-Image-Placeholder.svg";
+import logo from "./logo.png";
 
 export {
+  logo,
   flower1,
   flower2,
   flower3,

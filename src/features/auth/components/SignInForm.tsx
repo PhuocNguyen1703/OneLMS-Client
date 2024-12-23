@@ -17,8 +17,11 @@ import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 import { SignInSchema } from "../schemas";
 import authApiRequest from "@/apiRequests/auth";
+import { useRouter } from "next/navigation";
 
 const SignInForm = () => {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -30,9 +33,16 @@ const SignInForm = () => {
   const onSubmit = async (data: z.infer<typeof SignInSchema>) => {
     try {
       const result: any = await authApiRequest.signIn(data);
-      await authApiRequest.auth({
-        accessToken: (result as any).payload.data.accessToken,
-      });
+
+      if (!result.payload.data.verify.status) {
+        const userId = result.payload.data._id;
+        router.push(`/verify/${userId}`);
+      } else {
+        await authApiRequest.auth({
+          accessToken: (result as any).payload.data.accessToken,
+        });
+        router.push("/");
+      }
       console.log(result);
     } catch (error) {
       console.log("An unexpected error occurred. Please try again.");
