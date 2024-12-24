@@ -78,9 +78,6 @@ const OtpForm = () => {
         <Button className="w-2/3 h-12 mt-5 text-base" type="submit">
           Verify Account
         </Button>
-        <span className="block mt-5 text-center">
-          Don&apos;t receive code? <strong>Resend</strong>
-        </span>
       </form>
     </Form>
   );
