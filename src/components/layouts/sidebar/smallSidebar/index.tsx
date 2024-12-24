@@ -1,8 +1,6 @@
 import { LayoutDashboard } from "lucide-react";
 import { ReactElement } from "react";
 import { SmallSidebarItem } from "./SmallSidebarItem";
-import { useSelector } from "react-redux";
-import { layoutSelector } from "@/redux/slices/layoutSlice";
 import { cn } from "@/lib/utils";
 
 type smallMenu = {
@@ -57,8 +55,7 @@ const smallSidebarMenu: smallMenu[] = [
 ];
 
 export const SmallSidebar = () => {
-  const { isLargeSidebarOpen, isSmallSidebarOpen } =
-    useSelector(layoutSelector);
+  const  isLargeSidebarOpen, isSmallSidebarOpen ;
 
   return (
     <div

@@ -1,17 +1,13 @@
 import { menu } from "@/data/sidebar";
 import { LargeSidebarItem } from "./LargeSidebarItem";
-import { useDispatch, useSelector } from "react-redux";
-import { closeSidebar, layoutSelector } from "@/redux/slices/layoutSlice";
 import { cn } from "@/lib/utils";
 import { HeaderLogo } from "@/components/layouts/header/HeaderLogo";
 
 export const LargeSidebar = () => {
-  const { isLargeSidebarOpen, isSmallSidebarOpen } =
-    useSelector(layoutSelector);
-  const dispatch = useDispatch();
+  const isLargeSidebarOpen, isSmallSidebarOpen;
 
   const handleCloseSidebar = () => {
-    dispatch(closeSidebar());
+    // dispatch(closeSidebar());
   };
 
   return (

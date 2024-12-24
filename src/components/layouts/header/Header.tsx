@@ -4,7 +4,6 @@ import { Bell, Search } from "lucide-react";
 import UserMenu from "./UserMenu";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
-import { toggleSidebar } from "@/redux/slices/layoutSlice";
 import { HeaderLogo } from "./HeaderLogo";
 
 const Header = () => {

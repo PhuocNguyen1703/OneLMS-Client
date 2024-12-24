@@ -1,15 +1,12 @@
-import { toggleSidebar } from "@/redux/slices/layoutSlice";
-import { useDispatch } from "react-redux";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Logo from "../../Logo";
 import { Menu } from "lucide-react";
 
 export const HeaderLogo = () => {
-  const dispatch = useDispatch();
 
   const handleToggleSidebar = () => {
-    dispatch(toggleSidebar());
   };
 
   return (

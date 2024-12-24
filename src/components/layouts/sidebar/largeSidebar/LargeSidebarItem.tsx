@@ -4,12 +4,9 @@ import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import NavigationLink from "./NavigationLink";
-import { useSelector } from "react-redux";
-import { layoutSelector } from "@/redux/slices/layoutSlice";
 
 export const LargeSidebarItem = ({ menu }: any) => {
-  const { isLargeSidebarOpen, isSmallSidebarOpen } =
-    useSelector(layoutSelector);
+  const isLargeSidebarOpen, isSmallSidebarOpen;
   const [toggleSubMenu, setToggleSubMenu] = useState<Boolean>(false);
   const handleToggleSubMenu = () => {
     setToggleSubMenu((prevState) => !prevState);
