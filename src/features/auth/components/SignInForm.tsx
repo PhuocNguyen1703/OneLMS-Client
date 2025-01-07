@@ -15,13 +15,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
-import { SignInSchema } from "../schemas";
-import authApiRequest from "@/apiRequests/auth";
-import { useRouter } from "next/navigation";
+import { SignInSchema } from "../validation";
+import { useSignInHandler } from "@/features/auth/hooks/useAuth";
+import { cn } from "@/lib/utils";
 
 const SignInForm = () => {
-  const router = useRouter();
-
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -30,24 +28,7 @@ const SignInForm = () => {
     },
   });
 
-  const onSubmit = async (data: z.infer<typeof SignInSchema>) => {
-    try {
-      const result: any = await authApiRequest.signIn(data);
-
-      if (!result.payload.data.verify.status) {
-        const userId = result.payload.data._id;
-        router.push(`/verify/${userId}`);
-      } else {
-        await authApiRequest.auth({
-          accessToken: (result as any).payload.data.accessToken,
-        });
-        router.push("/");
-      }
-      console.log(result);
-    } catch (error) {
-      console.log("An unexpected error occurred. Please try again.");
-    }
-  };
+  const onSubmit = useSignInHandler();
 
   return (
     <Form {...form}>
@@ -56,11 +37,11 @@ const SignInForm = () => {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base">Email</FormLabel>
+            <FormItem className="space-y-1">
+              <FormLabel className="text-base text-primary">Email</FormLabel>
               <FormControl>
                 <Input
-                  className="text-base"
+                  className={form.formState.errors?.email && "input-err"}
                   placeholder="Enter your email"
                   {...field}
                 />
@@ -73,11 +54,14 @@ const SignInForm = () => {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem className="mt-5">
-              <FormLabel className="text-base">Password</FormLabel>
+            <FormItem className="mt-5 space-y-1">
+              <FormLabel className="text-base text-primary">Password</FormLabel>
               <FormControl>
                 <PasswordInput
-                  className="text-base pr-10"
+                  className={cn(
+                    "pr-10",
+                    form.formState.errors?.password && "input-err"
+                  )}
                   placeholder="Enter your password"
                   {...field}
                 />

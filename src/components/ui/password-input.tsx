@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { EyeIcon, EyeOffIcon } from "lucide-react";
+import { EyeIcon, EyeClosed } from "lucide-react";
 
 export interface PasswordInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -25,7 +25,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
           className="absolute top-1/2 -translate-y-1/2 right-2 p-1 rounded-full  cursor-pointer hover:bg-accent peer-placeholder-shown:hidden"
           onClick={() => setShowPassword((prevState) => !prevState)}
         >
-          {showPassword ? <EyeIcon size={20} /> : <EyeOffIcon size={20} />}
+          {showPassword ? <EyeIcon size={20} /> : <EyeClosed size={20} />}
         </span>
       </div>
     );
