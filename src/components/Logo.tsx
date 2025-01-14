@@ -10,6 +10,8 @@ const Logo = ({ height, width }: LogoProps) => {
       height={height}
       width={width}
       src={logo}
+      priority
+      quality={95}
     />
   );
 };

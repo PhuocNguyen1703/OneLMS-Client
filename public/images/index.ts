@@ -7,8 +7,10 @@ import ukFlag from "./united-kingdom_flag.png";
 import checklist from "./checklist.png";
 import noImagePlaceholder from "./No-Image-Placeholder.svg";
 import logo from "./logo.png";
+import home from "./home.png";
 
 export {
+  home,
   logo,
   flower1,
   flower2,

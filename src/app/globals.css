@@ -67,7 +67,7 @@
     @apply bg-background text-foreground;
 
     input {
-      @apply text-base focus-visible:ring-1 !important;
+      @apply text-base !important;
     }
   }
 }

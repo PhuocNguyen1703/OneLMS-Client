@@ -1,33 +1,20 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
 import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
+  Blend,
   Languages,
   LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
+  MonitorCog,
+  MoonStar,
   Power,
   Settings,
-  User,
-  UserPlus,
-  Users,
+  Sun,
 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
@@ -36,36 +23,81 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import { japanFlag, ukFlag, vietnamFlag } from "../../../../public/images";
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const UserMenu = () => {
   return (
-    <div className="flex items-center space-x-2">
-      <div className="flex flex-col items-end">
-        <span className="font-semibold">Jonh Smith</span>
-        <span className="text-sm text-gray-500 leading-none">Admin</span>
-      </div>
+    <>
       <DropdownMenu>
         <DropdownMenuTrigger className="focus:outline-none">
-          <Avatar>
-            <AvatarImage
-              src="https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="avatar"
-            />
-            <AvatarFallback>?</AvatarFallback>
-          </Avatar>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Avatar>
+                <AvatarImage
+                  src="https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="avatar"
+                />
+                <AvatarFallback>?</AvatarFallback>
+              </Avatar>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Account</p>
+            </TooltipContent>
+          </Tooltip>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-fit min-w-40 mr-1">
+        <DropdownMenuContent className="w-fit min-w-60 mr-1 p-2">
+          <div className="border rounded-sm p-2 mb-3 shadow-md">
+            <div className="flex items-center gap-2 border-b p-1">
+              <Avatar className="h-9 w-9">
+                <AvatarImage
+                  src="https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="avatar"
+                />
+                <AvatarFallback>?</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="font-semibold">Amazon antony</p>
+                <p className="text-xs">Admin</p>
+              </div>
+            </div>
+            <Button variant="secondary" size="sm" className="w-full mt-1">
+              See Profile
+            </Button>
+          </div>
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <User size={20} className="mr-2" />
-              <span>Profile</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Settings size={20} className="mr-2" />
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger className="p-2">
+                <Blend size={20} className="mr-2" />
+                <span>Mode</span>
+              </DropdownMenuSubTrigger>
+              <DropdownMenuPortal>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem className="space-x-1.5">
+                    <Sun size={16} />
+                    <span>Light</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="space-x-1.5">
+                    <MoonStar size={16} />
+                    <span>Dark</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="space-x-1.5">
+                    <MonitorCog size={16} />
+                    <span>System</span>
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuPortal>
+            </DropdownMenuSub>
+            <DropdownMenuItem className="p-2 space-x-2">
+              <Settings size={20} />
               <span>Settings</span>
             </DropdownMenuItem>
             <DropdownMenuSub>
-              <DropdownMenuSubTrigger>
+              <DropdownMenuSubTrigger className="p-2">
                 <Languages size={20} className="mr-2" />
                 <span>Language</span>
               </DropdownMenuSubTrigger>
@@ -104,19 +136,19 @@ const UserMenu = () => {
                 </DropdownMenuSubContent>
               </DropdownMenuPortal>
             </DropdownMenuSub>
-            <DropdownMenuItem>
-              <LifeBuoy size={20} className="mr-2" />
+            <DropdownMenuItem className="p-2 space-x-2">
+              <LifeBuoy size={20} />
               <span>Support</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Power size={20} className="mr-2" />
+          <DropdownMenuItem className="p-2 space-x-2">
+            <Power size={20} />
             <span>Log out</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </div>
+    </>
   );
 };
 
