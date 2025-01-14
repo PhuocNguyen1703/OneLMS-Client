@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Blend,
   Languages,
@@ -29,8 +31,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useTheme } from "next-themes";
 
 const UserMenu = () => {
+  const { setTheme } = useTheme();
+
   return (
     <>
       <DropdownMenu>
@@ -77,15 +82,24 @@ const UserMenu = () => {
               </DropdownMenuSubTrigger>
               <DropdownMenuPortal>
                 <DropdownMenuSubContent>
-                  <DropdownMenuItem className="space-x-1.5">
+                  <DropdownMenuItem
+                    className="space-x-1.5"
+                    onClick={() => setTheme("light")}
+                  >
                     <Sun size={16} />
                     <span>Light</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="space-x-1.5">
+                  <DropdownMenuItem
+                    className="space-x-1.5"
+                    onClick={() => setTheme("dark")}
+                  >
                     <MoonStar size={16} />
                     <span>Dark</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="space-x-1.5">
+                  <DropdownMenuItem
+                    className="space-x-1.5"
+                    onClick={() => setTheme("system")}
+                  >
                     <MonitorCog size={16} />
                     <span>System</span>
                   </DropdownMenuItem>
