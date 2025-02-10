@@ -39,7 +39,7 @@ const UserMenu = () => {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger className="focus:outline-none">
+        <DropdownMenuTrigger className="focus:outline-hidden">
           <Tooltip>
             <TooltipTrigger asChild>
               <Avatar>

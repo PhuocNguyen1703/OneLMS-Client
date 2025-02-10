@@ -142,7 +142,7 @@ export const Columns: ColumnDef<Guardian>[] = [
     cell: ({ row }) => {
       return (
         <DropdownMenu>
-          <DropdownMenuTrigger asChild className="focus:outline-none">
+          <DropdownMenuTrigger asChild className="focus:outline-hidden">
             <Button variant="ghost" size="icon">
               <FilePenLine size={16} />
             </Button>

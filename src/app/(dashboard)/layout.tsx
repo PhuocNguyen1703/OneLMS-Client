@@ -8,7 +8,7 @@ export default function DashboardLayout({
   return (
     <main className="flex flex-col h-screen">
       <Header />
-      <section className="grid grid-cols-[auto,1fr] grow overflow-auto">
+      <section className="grid grid-cols-[auto_1fr] grow overflow-auto">
         <div className="overflow-x-hidden">{children}</div>
       </section>
     </main>

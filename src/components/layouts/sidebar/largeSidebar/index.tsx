@@ -15,17 +15,17 @@ export const LargeSidebar = () => {
       {isSmallSidebarOpen && (
         <div
           onClick={handleCloseSidebar}
-          className="lg:hidden fixed inset-0 bg-black/20 z-[999]"
+          className="lg:hidden fixed inset-0 bg-black/20 z-999"
         />
       )}
       <div
         className={cn(
           "lg:sticky absolute top-0 flex-col w-56 pb-4 overflow-y-auto scrollbar-hidden px-2",
           isLargeSidebarOpen ? "lg:flex" : "lg:hidden",
-          isSmallSidebarOpen ? "flex z-[999] h-screen bg-white" : "hidden"
+          isSmallSidebarOpen ? "flex z-999 h-screen bg-white" : "hidden"
         )}
       >
-        <div className="lg:hidden sticky top-0 py-2 bg-white z-[999]">
+        <div className="lg:hidden sticky top-0 py-2 bg-white z-999">
           <HeaderLogo />
         </div>
         {menu.map((menuGroup: any, idx) => (

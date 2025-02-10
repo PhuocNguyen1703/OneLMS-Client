@@ -25,7 +25,7 @@ const GuardianCard = ({ data }: any) => {
       <CardHeader className="flex-row items-center justify-between p-3">
         <CardTitle>{id}</CardTitle>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild className="focus:outline-none">
+          <DropdownMenuTrigger asChild className="focus:outline-hidden">
             <Button variant="ghost" size="icon">
               <EllipsisVertical size={16} />
             </Button>
