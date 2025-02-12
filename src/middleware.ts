@@ -9,9 +9,9 @@ export function middleware(request: NextRequest) {
   const isPublicPath = publicPaths.some((path) => pathname.startsWith(path));
   const accessToken = request.cookies.get("accessToken")?.value;
 
-  if (!isPublicPath && !accessToken) {
-    return NextResponse.redirect(new URL("/sign-in", request.url));
-  }
+  // if (!isPublicPath && !accessToken) {
+  //   return NextResponse.redirect(new URL("/sign-in", request.url));
+  // }
 
   return NextResponse.next();
 }

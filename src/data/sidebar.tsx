@@ -32,13 +32,13 @@ import { ReactElement } from "react";
 const MAIN_ICON_SIZE = 22;
 
 type SubMenu = {
-  icon?: ReactElement;
+  icon?: ReactElement<any>;
   label: string;
   href: string;
 };
 
 type MenuItem = {
-  icon?: ReactElement;
+  icon?: ReactElement<any>;
   label: string;
   href?: string;
   subMenu?: SubMenu[];

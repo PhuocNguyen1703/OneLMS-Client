@@ -6,7 +6,7 @@ export type LogoProps = {
 };
 
 type MenuItem = {
-  icon: ReactElement;
+  icon: ReactElement<any>;
   label: string;
   href: string;
 };

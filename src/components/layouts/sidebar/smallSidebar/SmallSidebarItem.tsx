@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ReactElement } from "react";
 
 type SmallSidebarItemProps = {
-  icon: ReactElement;
+  icon: ReactElement<any>;
   label: string;
   url: string;
 };
