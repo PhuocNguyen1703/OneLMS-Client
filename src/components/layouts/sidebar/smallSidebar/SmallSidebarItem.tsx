@@ -5,32 +5,21 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
-import { ReactElement } from "react";
 
-type SmallSidebarItemProps = {
-  icon: ReactElement<any>;
-  label: string;
-  url: string;
-};
-
-export const SmallSidebarItem = ({
-  icon,
-  label,
-  url,
-}: SmallSidebarItemProps) => {
+export const SmallSidebarItem = ({ menu }: any) => {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
-            href={url}
-            className="flex flex-col items-center gap-1 p-2 rounded-md hover:bg-secondary"
+            href={menu.href}
+            className="flex flex-col items-center p-2 rounded-md hover:bg-accent"
           >
-            <span>{icon}</span>
+            <span>{menu.icon}</span>
           </Link>
         </TooltipTrigger>
         <TooltipContent side="right">
-          <p>{label}</p>
+          <p>{menu.label}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

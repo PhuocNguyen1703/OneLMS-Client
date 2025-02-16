@@ -1,71 +1,31 @@
-import { LayoutDashboard } from "lucide-react";
-import { ReactElement } from "react";
+"use client";
+
+import { Fragment } from "react";
 import { SmallSidebarItem } from "./SmallSidebarItem";
 import { cn } from "@/lib/utils";
-
-type smallMenu = {
-  icon: ReactElement;
-  label: string;
-  url: string;
-};
-
-const ICON_SIZE = 24;
-
-const smallSidebarMenu: smallMenu[] = [
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-  {
-    icon: <LayoutDashboard size={ICON_SIZE} />,
-    label: "Dashboard",
-    url: "/",
-  },
-];
+import { menu } from "@/data/sidebar";
+import { Separator } from "@/components/ui/separator";
+import useSidebarStore from "@/store/sidebar";
 
 export const SmallSidebar = () => {
-  const  isLargeSidebarOpen, isSmallSidebarOpen ;
+  const { isLargeSidebarOpen } = useSidebarStore();
 
   return (
     <div
       className={cn(
-        "sticky top-0 flex flex-col gap-1.5 pb-4 overflow-y-auto scrollbar-hidden px-2",
+        "sticky top-0 flex flex-col overflow-y-auto scrollbar-hidden px-2 pb-2",
         isLargeSidebarOpen ? "lg:hidden" : "lg:flex"
       )}
     >
-      {smallSidebarMenu.map((item, idx) => (
-        <SmallSidebarItem key={idx} {...item} />
+      {menu.map((menuGroup: any, idx) => (
+        <Fragment key={idx}>
+          {menuGroup?.title && <Separator className="mt-1.5" />}
+          <div className="flex flex-col gap-0.5 mt-1.5">
+            {menuGroup.menuItems.map((menu: any) => (
+              <SmallSidebarItem key={menu.label} menu={menu} />
+            ))}
+          </div>
+        </Fragment>
       ))}
     </div>
   );

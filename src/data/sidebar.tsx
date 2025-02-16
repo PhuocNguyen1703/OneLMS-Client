@@ -2,46 +2,25 @@ import {
   BookCheck,
   BookOpenCheck,
   BookPlus,
-  BookText,
-  Box,
   Building,
   Building2,
-  CalendarDays,
-  CalendarFold,
-  ClipboardMinus,
-  File,
-  FileClock,
-  FileText,
   GraduationCap,
   Grid2x2Check,
   LayoutDashboard,
-  MessageCircleMore,
-  Notebook,
+  Presentation,
   School,
   ScrollText,
-  Tickets,
-  UserRoundCheck,
   UserRoundPen,
   UserRoundPlus,
-  UserRoundSearch,
   UsersRound,
   Waypoints,
 } from "lucide-react";
 import { ReactElement } from "react";
 
-const MAIN_ICON_SIZE = 22;
-
-type SubMenu = {
-  icon?: ReactElement<any>;
-  label: string;
-  href: string;
-};
-
 type MenuItem = {
   icon?: ReactElement<any>;
   label: string;
   href?: string;
-  subMenu?: SubMenu[];
 };
 
 export type MenuItems = {
@@ -53,27 +32,14 @@ export const menu: MenuItems[] = [
   {
     menuItems: [
       {
-        icon: <LayoutDashboard size={MAIN_ICON_SIZE} />,
-        label: "Dashboard",
-        href: "/",
+        icon: <Presentation />,
+        label: "Notice",
+        href: "/notice",
       },
       {
-        icon: <Box size={MAIN_ICON_SIZE} />,
-        label: "Application",
-        subMenu: [
-          {
-            label: "Message",
-            href: "/",
-          },
-          {
-            label: "Note",
-            href: "/",
-          },
-          {
-            label: "Calendar",
-            href: "/",
-          },
-        ],
+        icon: <LayoutDashboard />,
+        label: "Dashboard",
+        href: "/",
       },
     ],
   },
@@ -81,64 +47,24 @@ export const menu: MenuItems[] = [
     title: "USER",
     menuItems: [
       {
-        icon: <GraduationCap size={MAIN_ICON_SIZE} />,
+        icon: <GraduationCap />,
         label: "Student",
-        subMenu: [
-          {
-            label: "List",
-            href: "/",
-          },
-          {
-            label: "Detail",
-            href: "/",
-          },
-          {
-            label: "Promotion",
-            href: "/",
-          },
-        ],
+        href: "/",
       },
       {
-        icon: <UsersRound size={MAIN_ICON_SIZE} />,
+        icon: <UsersRound />,
         label: "Guardian",
-        subMenu: [
-          {
-            label: "List",
-            href: "/user/guardian",
-          },
-        ],
+        href: "/",
       },
       {
-        icon: <UserRoundPen size={MAIN_ICON_SIZE} />,
+        icon: <UserRoundPen />,
         label: "Teacher",
-        subMenu: [
-          {
-            label: "List",
-            href: "/",
-          },
-          {
-            label: "Detail",
-            href: "/",
-          },
-          {
-            label: "Routine",
-            href: "/",
-          },
-        ],
+        href: "/",
       },
       {
-        icon: <UserRoundPlus size={MAIN_ICON_SIZE} />,
+        icon: <UserRoundPlus />,
         label: "Staff",
-        subMenu: [
-          {
-            label: "List",
-            href: "/",
-          },
-          {
-            label: "Detail",
-            href: "/",
-          },
-        ],
+        href: "/",
       },
     ],
   },
@@ -146,79 +72,49 @@ export const menu: MenuItems[] = [
     title: "ACADEMIC",
     menuItems: [
       {
-        icon: <School size={MAIN_ICON_SIZE} />,
+        icon: <School />,
         label: "Campus",
         href: "/campus",
       },
       {
-        icon: <Building size={MAIN_ICON_SIZE} />,
+        icon: <Building />,
         label: "Class Room",
         href: "/class-room",
       },
       {
-        icon: <Building2 size={MAIN_ICON_SIZE} />,
+        icon: <Building2 />,
         label: "Class",
-        subMenu: [
-          {
-            label: "List",
-            href: "/class/all",
-          },
-          {
-            label: "Schedule",
-            href: "/",
-          },
-        ],
+        href: "/",
       },
       {
-        icon: <Waypoints size={MAIN_ICON_SIZE} />,
+        icon: <Waypoints />,
         label: "Class Routine",
         href: "/",
       },
       {
-        icon: <BookOpenCheck size={MAIN_ICON_SIZE} />,
+        icon: <BookOpenCheck />,
         label: "Subject",
         href: "/subject",
       },
       {
-        icon: <BookPlus size={MAIN_ICON_SIZE} />,
+        icon: <BookPlus />,
         label: "Syllabus",
         href: "/",
       },
       {
-        icon: <Grid2x2Check size={MAIN_ICON_SIZE} />,
+        icon: <Grid2x2Check />,
         label: "Time Table",
         href: "/",
       },
       {
-        icon: <ScrollText size={MAIN_ICON_SIZE} />,
+        icon: <ScrollText />,
         label: "Home Work",
         href: "/",
       },
       {
-        icon: <BookCheck size={MAIN_ICON_SIZE} />,
+        icon: <BookCheck />,
         label: "Examination",
-        subMenu: [
-          {
-            label: "Exam",
-            href: "/",
-          },
-          {
-            label: "Schedule",
-            href: "/",
-          },
-          {
-            label: "Attendance",
-            href: "/",
-          },
-          {
-            label: "Results",
-            href: "/",
-          },
-          {
-            label: "Grade",
-            href: "/",
-          },
-        ],
+        href: "/",
       },
     ],
   },

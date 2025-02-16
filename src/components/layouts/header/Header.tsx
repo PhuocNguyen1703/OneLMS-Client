@@ -1,6 +1,4 @@
-"use client";
-
-import { Bell, LayoutList, Menu, Search } from "lucide-react";
+import { Bell, Search } from "lucide-react";
 import UserMenu from "./UserMenu";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
@@ -14,13 +12,11 @@ import {
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between gap-10 py-1.5 px-2 border-b">
-      <div className="flex items-center gap-2">
-        <Button size="icon">
-          <Menu />
-        </Button>
-        <HeaderLogo />
-      </div>
+    <header
+      className="flex items-center justify-between gap-10 h-[56px] py-1.5 px-2 border-b border-secondary
+    "
+    >
+      <HeaderLogo />
       <div className="flex items-center grow max-w-[500px] border rounded-full">
         <Input
           type="text"
