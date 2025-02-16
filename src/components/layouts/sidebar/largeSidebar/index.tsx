@@ -7,16 +7,10 @@ import { HeaderLogo } from "@/components/layouts/header/HeaderLogo";
 import { Separator } from "@/components/ui/separator";
 import { Fragment } from "react";
 import useSidebarStore from "@/store/sidebar";
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
 
 export const LargeSidebar = () => {
-  const {
-    isLargeSidebarOpen,
-    isSmallSidebarOpen,
-    toggleSidebar,
-    closeSidebar,
-  } = useSidebarStore();
+  const { isLargeSidebarOpen, isSmallSidebarOpen, closeSidebar } =
+    useSidebarStore();
 
   return (
     <>
@@ -28,7 +22,7 @@ export const LargeSidebar = () => {
       )}
       <div
         className={cn(
-          "lg:sticky absolute top-0 flex-col w-52 h-screen overflow-y-auto scrollbar-hidden px-2 pb-2 bg-white",
+          "lg:sticky absolute top-0 bottom-0 flex-col w-52 overflow-y-auto scrollbar-hidden px-2 pb-2 ",
           isLargeSidebarOpen ? "lg:flex" : "lg:hidden",
           isSmallSidebarOpen ? "flex max-h-screen z-999" : "hidden"
         )}

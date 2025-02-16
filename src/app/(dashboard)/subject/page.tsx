@@ -13,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SubjectTable } from "@/features/subject/components/SubjectTable";
+import { SubjectTable } from "@/app/(dashboard)/subject/_components/SubjectTable";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
 import Link from "next/link";
 

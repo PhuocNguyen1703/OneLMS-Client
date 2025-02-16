@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
-import { SignInSchema } from "../validation";
-import { useSignInHandler } from "@/features/auth/hooks/useAuth";
+import { SignInSchema } from "../_validation";
+import { useSignInHandler } from "@/app/(auth)/_hooks/useAuth";
 import { cn } from "@/lib/utils";
 
 const SignInForm = () => {

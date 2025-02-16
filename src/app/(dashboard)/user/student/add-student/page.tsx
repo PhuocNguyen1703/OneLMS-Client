@@ -6,7 +6,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import AddNewStudentForm from "@/features/user/student/components/AddNewStudentForm";
+import AddNewStudentForm from "@/app/(dashboard)/user/student/_components/AddNewStudentForm";
 import Link from "next/link";
 
 const AddStudent = () => {

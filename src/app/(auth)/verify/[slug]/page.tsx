@@ -1,4 +1,4 @@
-import OtpForm from "@/features/auth/components/OtpForm";
+import OtpForm from "@/app/(auth)/_components/OtpForm";
 
 const VerifyAccount = () => {
   return (

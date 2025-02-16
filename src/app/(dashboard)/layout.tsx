@@ -11,7 +11,7 @@ export default function DashboardLayout({
       <Header />
       <section className="grid grid-cols-[auto_1fr] grow">
         <Sidebar />
-        <div className="overflow-x-hidden">{children}</div>
+        <div className="p-1.5 bg-secondary overflow-x-hidden">{children}</div>
       </section>
     </main>
   );

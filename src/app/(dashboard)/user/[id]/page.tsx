@@ -6,7 +6,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import Profile from "@/features/user/components/Profile";
+import Profile from "@/app/(dashboard)/user/_components/Profile";
 import Link from "next/link";
 
 const UserDetail = () => {

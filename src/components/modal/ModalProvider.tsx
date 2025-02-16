@@ -1,4 +1,4 @@
-import CreateNewCampus from "../../features/campus/components/forms/CreateCampusForm";
+import CreateNewCampus from "../../app/(dashboard)/campus/_components/forms/CreateCampusForm";
 import GuardianView from "./guardianView/GuardianView";
 import ModalHeader from "./ModalHeader";
 

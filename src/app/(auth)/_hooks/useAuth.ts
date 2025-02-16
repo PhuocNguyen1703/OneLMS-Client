@@ -1,7 +1,7 @@
 "use client";
 
 import authApiRequest from "@/apiRequests/auth";
-import { SignInSchema } from "@/features/auth/validation";
+import { SignInSchema } from "@/app/(auth)/_validation";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 

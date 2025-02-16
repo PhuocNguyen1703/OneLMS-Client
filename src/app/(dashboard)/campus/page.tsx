@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
-import CampusList from "@/features/campus/components/CampusList";
+import CampusList from "@/app/(dashboard)/campus/_components/CampusList";
 
 const Campus = () => {
   return (
