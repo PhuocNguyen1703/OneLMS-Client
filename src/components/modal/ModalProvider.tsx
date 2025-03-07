@@ -1,10 +1,9 @@
-import CreateNewCampus from "../../app/(dashboard)/campus/_components/forms/CreateCampusForm";
-import GuardianView from "./guardianView/GuardianView";
-import ModalHeader from "./ModalHeader";
+import AddNewNoticeForm from "@/app/(dashboard)/notice/_components/AddNewNotice";
 
 const ModalProvider = () => {
   return (
     <>
+      {/* <AddNewNoticeForm /> */}
       {/* <CreateNewCampus /> */}
       {/* <GuardianView /> */}
     </>

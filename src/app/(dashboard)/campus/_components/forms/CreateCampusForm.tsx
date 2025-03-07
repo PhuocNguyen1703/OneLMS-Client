@@ -60,7 +60,7 @@ const CreateCampus = () => {
                 />
                 <Label
                   htmlFor="upload-image"
-                  className="flex items-center w-fit px-3 py-2 mt-2 gap-1 border rounded-sm cursor-pointer hover:bg-gray-200"
+                  className="flex-center w-fit px-3 py-2 mt-2 gap-1 border rounded-sm cursor-pointer hover:bg-gray-200"
                 >
                   <ImageUp size={16} />
                   Upload

@@ -72,7 +72,7 @@ export const Columns: ColumnDef<Guardian>[] = [
     cell: ({ row }) => {
       const guardian: Guardian = row.original;
       return (
-        <div className="flex items-center gap-2">
+        <div className="flex-center gap-2">
           <Avatar>
             <AvatarImage
               src={guardian.cover}

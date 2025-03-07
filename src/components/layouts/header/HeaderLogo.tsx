@@ -9,13 +9,13 @@ import { Menu } from "lucide-react";
 export const HeaderLogo = () => {
   const { toggleSidebar } = useSidebarStore();
   return (
-    <div className="flex items-center gap-2 shrink-0 ">
+    <div className="flex-center block gap-2 shrink-0 ">
       <Button variant="ghost" size="icon" onClick={toggleSidebar}>
         <Menu />
       </Button>
       <Link
         href="/"
-        className="flex items-center gap-1
+        className="flex-center gap-1
         "
       >
         <Logo width={32} height={32} />

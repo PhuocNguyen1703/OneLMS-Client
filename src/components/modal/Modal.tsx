@@ -19,7 +19,7 @@ const Modal = ({
         className={cn(
           "absolute left-0 top-0 w-screen h-screen z-50",
           overlay && "bg-black/50",
-          itemCenter && "flex items-center justify-center"
+          itemCenter && "flex-center justify-center"
         )}
       >
         {children}

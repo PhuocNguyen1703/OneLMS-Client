@@ -57,7 +57,7 @@ const UserMenu = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-fit min-w-60 mr-1 p-2">
           <div className="border rounded-sm p-2 mb-3 shadow-md">
-            <div className="flex items-center gap-2 border-b p-1">
+            <div className="flex-center gap-2 border-b p-1">
               <Avatar className="h-9 w-9">
                 <AvatarImage
                   src="https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

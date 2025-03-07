@@ -48,7 +48,7 @@ const Profile = () => {
             Allowed *.jpeg, *.jpg, *.png, *.gif
             <br /> max size of 3 Mb
           </span>
-          <div className="flex items-center justify-between space-x-3 w-full mt-10">
+          <div className="flex-center justify-between space-x-3 w-full mt-10">
             <Label htmlFor="banned" className="flex flex-col">
               <span className="text-base">Banned</span>
               <span className="text-gray-500 font-normal">
@@ -58,7 +58,7 @@ const Profile = () => {
 
             <Switch id="banned" />
           </div>
-          <div className="flex items-center justify-between space-x-3 w-full mt-5">
+          <div className="flex-center justify-between space-x-3 w-full mt-5">
             <Label htmlFor="verify-email" className="flex flex-col">
               <span className="text-base">Email verified</span>
               <span className="text-gray-500 font-normal">

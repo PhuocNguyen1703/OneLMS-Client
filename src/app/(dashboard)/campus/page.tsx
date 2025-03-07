@@ -23,7 +23,7 @@ import CampusList from "@/app/(dashboard)/campus/_components/CampusList";
 const Campus = () => {
   return (
     <section className="flex flex-col flex-1 p-4">
-      <nav className="flex items-center justify-between pb-4">
+      <nav className="flex-center justify-between pb-4">
         <div>
           <span className="text-xl font-semibold">Campus</span>
           <Breadcrumb>
@@ -40,7 +40,7 @@ const Campus = () => {
             </BreadcrumbList>
           </Breadcrumb>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex-center space-x-2">
           <Button variant="outline" className="w-10 p-0">
             <PrinterCheck size={16} />
           </Button>

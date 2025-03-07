@@ -22,7 +22,7 @@ export const LargeSidebar = () => {
       )}
       <div
         className={cn(
-          "lg:sticky absolute top-0 bottom-0 flex-col w-52 overflow-y-auto scrollbar-hidden px-2 pb-2 ",
+          "lg:sticky absolute top-0 bottom-0 flex-col w-52 overflow-y-auto scrollbar-hidden px-2 pb-2 bg-background",
           isLargeSidebarOpen ? "lg:flex" : "lg:hidden",
           isSmallSidebarOpen ? "flex max-h-screen z-999" : "hidden"
         )}

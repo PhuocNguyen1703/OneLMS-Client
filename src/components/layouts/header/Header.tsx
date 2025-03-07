@@ -13,11 +13,11 @@ import {
 const Header = () => {
   return (
     <header
-      className="flex items-center justify-between gap-10 h-[56px] py-1.5 px-2 border-b border-secondary
+      className="flex-center justify-between gap-10 h-[56px] py-1.5 px-2 border-b border-secondary
     "
     >
       <HeaderLogo />
-      <div className="flex items-center grow max-w-[500px] border rounded-full">
+      <div className="flex-center grow max-w-[500px] border rounded-full">
         <Input
           type="text"
           placeholder="Search..."
@@ -31,7 +31,7 @@ const Header = () => {
         </Button>
       </div>
       <TooltipProvider>
-        <div className="flex items-center space-x-2">
+        <div className="flex-center space-x-2">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button

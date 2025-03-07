@@ -236,7 +236,7 @@ const Guardian = () => {
   return (
     <>
       <nav className="sticky top-0 p-4 bg-white z-10">
-        <div className="flex items-center justify-between">
+        <div className="flex-center justify-between">
           <div>
             <span className="text-2xl font-semibold">Guardians</span>
             <Breadcrumb>
@@ -257,7 +257,7 @@ const Guardian = () => {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex-center space-x-2">
             <Button variant="outline" className="w-10 p-0">
               <PrinterCheck size={16} />
             </Button>
@@ -280,7 +280,7 @@ const Guardian = () => {
             </Button>
           </div>
         </div>
-        <div className="flex items-center justify-between mt-5">
+        <div className="flex-center justify-between mt-5">
           <div className="flex gap-2">
             <Button
               variant="outline"

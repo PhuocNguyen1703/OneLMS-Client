@@ -27,8 +27,8 @@ const GuardianView = () => {
           </Button>
         </CardHeader>
         <CardContent className="p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+          <div className="flex-center justify-between">
+            <div className="flex-center gap-2">
               <Avatar className="h-16 w-16">
                 <AvatarImage
                   src="https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -42,7 +42,7 @@ const GuardianView = () => {
                 <p className="text-xs">wil@gmail.com</p>
               </div>
             </div>
-            <div className="flex items-center gap-10">
+            <div className="flex-center gap-10">
               <div>
                 <p className="text-gray-400 font-semibold">Contact</p>
                 <span>08061083455</span>
@@ -56,12 +56,12 @@ const GuardianView = () => {
           <div className="mt-10">
             <span className=" font-semibold">Children Detail</span>
             <div className="p-4 mt-4 border rounded-md">
-              <div className="flex items-center justify-between pb-3 mb-3 border-b">
+              <div className="flex-center justify-between pb-3 mb-3 border-b">
                 <span>S123456</span>
                 <span>Active</span>
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+              <div className="flex-center justify-between">
+                <div className="flex-center gap-2">
                   <Avatar>
                     <AvatarImage
                       src="https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -75,7 +75,7 @@ const GuardianView = () => {
                     <p className="text-xs">wil@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-6">
+                <div className="flex-center gap-6">
                   <div>
                     <p className="text-gray-400 ">Gender</p>
                     <span>Male</span>
@@ -89,12 +89,12 @@ const GuardianView = () => {
               </div>
             </div>
             <div className="p-4 mt-4 border rounded-md">
-              <div className="flex items-center justify-between pb-3 mb-3 border-b">
+              <div className="flex-center justify-between pb-3 mb-3 border-b">
                 <span>S123456</span>
                 <span>Active</span>
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+              <div className="flex-center justify-between">
+                <div className="flex-center gap-2">
                   <Avatar>
                     <AvatarImage
                       src="https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -108,7 +108,7 @@ const GuardianView = () => {
                     <p className="text-xs">wil@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-6">
+                <div className="flex-center gap-6">
                   <div>
                     <p className="text-gray-400 ">Gender</p>
                     <span>Male</span>

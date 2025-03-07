@@ -37,7 +37,7 @@ const GuardianCard = ({ data }: any) => {
         </DropdownMenu>
       </CardHeader>
       <CardContent className="border-y p-3">
-        <div className="flex items-center gap-2">
+        <div className="flex-center gap-2">
           <Avatar>
             <AvatarImage src={cover} alt="avatar" className="object-cover" />
             <AvatarFallback>?</AvatarFallback>

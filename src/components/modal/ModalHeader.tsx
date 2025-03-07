@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 
 const ModalHeader = () => {
   return (
-    <header className="relative w-full flex items-center">
+    <header className="relative w-full flex-center">
       <Image src={checklist} width={70} height={70} alt="icon" />
       <div className="flex flex-col ml-2">
         <span className="text-3xl font-semibold">Create a new campus</span>

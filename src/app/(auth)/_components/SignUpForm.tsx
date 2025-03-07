@@ -49,7 +49,7 @@ const SignUpForm = () => {
   return (
     <Form {...form}>
       <form className="mt-10" onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="flex items-center gap-5">
+        <div className="flex-center gap-5">
           <FormField
             control={form.control}
             name="firstName"
@@ -115,7 +115,7 @@ const SignUpForm = () => {
             </FormItem>
           )}
         />
-        <div className="flex items-center space-x-2 mt-5 text-sm leading-none">
+        <div className="flex-center space-x-2 mt-5 text-sm leading-none">
           <Checkbox id="remember" />
           <span>
             I agree to the <strong>Terms &amp; Conditions</strong>

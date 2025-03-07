@@ -144,6 +144,12 @@
   }
 }
 
+@layer utilities {
+  .flex-center {
+    @apply flex items-center;
+  }
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -153,6 +159,22 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+  h1 {
+    @apply text-3xl font-semibold;
+  }
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+  h3 {
+    @apply text-xl font-semibold;
+  }
+  h4 {
+    @apply text-base font-semibold;
+  }
+  h5 {
+    @apply text-sm font-medium;
+  }
+
   *,
   ::after,
   ::before,
@@ -164,27 +186,27 @@
   button {
     @apply cursor-pointer;
   }
-}
 
-/* Scrollbar CSS */
-*::-webkit-scrollbar {
-  @apply bg-transparent w-2;
-}
+  /* Scrollbar CSS */
+  *::-webkit-scrollbar {
+    @apply bg-transparent w-2;
+  }
 
-*::-webkit-scrollbar-thumb {
-  @apply bg-black/50 rounded-full;
-}
+  *::-webkit-scrollbar-thumb {
+    @apply bg-black/50 rounded-full;
+  }
 
-*::-webkit-scrollbar-track {
-  @apply rounded-full;
-}
+  *::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
 
-.scrollbar-hidden::-webkit-scrollbar-thumb {
-  @apply bg-transparent;
-}
+  .scrollbar-hidden::-webkit-scrollbar-thumb {
+    @apply bg-transparent;
+  }
 
-.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
-  @apply bg-black/20;
+  .scrollbar-hidden:hover::-webkit-scrollbar-thumb {
+    @apply bg-black/20;
+  }
 }
 
 /* Custom style shadcn*/

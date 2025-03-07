@@ -47,7 +47,7 @@ const AddNewStudentForm = () => {
               Allowed *.jpeg, *.jpg, *.png, *.gif
               <br /> max size of 3 Mb
             </span>
-            <div className="flex items-center justify-between space-x-3 w-full mt-10">
+            <div className="flex-center justify-between space-x-3 w-full mt-10">
               <Label htmlFor="verify-email" className="flex flex-col">
                 <span className="text-base">Email verified</span>
                 <span className="text-gray-500 font-normal">
@@ -62,7 +62,7 @@ const AddNewStudentForm = () => {
         </Card>
         <Card className="flex-1">
           <CardHeader className="py-4 border-b bg-blue-50">
-            <span className="flex items-center gap-2 font-semibold text-xl">
+            <span className="flex-center gap-2 font-semibold text-xl">
               <BadgeInfo />
               Personal Information
             </span>
@@ -153,7 +153,7 @@ const AddNewStudentForm = () => {
 
       <Card className="mt-6">
         <CardHeader className="py-4 border-b bg-blue-50">
-          <span className="flex items-center gap-2 font-semibold text-xl">
+          <span className="flex-center gap-2 font-semibold text-xl">
             <MapPinHouse />
             Address
           </span>
@@ -223,7 +223,7 @@ const AddNewStudentForm = () => {
 
       <Card className="mt-6">
         <CardHeader className="py-4 border-b bg-blue-50">
-          <span className="flex items-center gap-2 font-semibold text-xl">
+          <span className="flex-center gap-2 font-semibold text-xl">
             <GraduationCap />
             Academic
           </span>

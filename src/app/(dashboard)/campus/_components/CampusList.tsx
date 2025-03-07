@@ -113,28 +113,28 @@ const CampusList = () => {
           <CardContent className="flex flex-col p-4">
             <h3 className="text-3xl font-semibold">{campus.name}</h3>
             <span className="text-sm font-semibold">{campus.campusId}</span>
-            <div className="flex items-center mt-2 text-sm gap-1 ">
+            <div className="flex-center mt-2 text-sm gap-1 ">
               <MapPinHouse size={18} />
               <span className="line-clamp-1">{campus.address}</span>
             </div>
-            <div className="flex items-center justify-between mt-2 py-2 text-sm border-y">
-              <div className="flex items-center gap-1">
+            <div className="flex-center justify-between mt-2 py-2 text-sm border-y">
+              <div className="flex-center gap-1">
                 <UsersRound size={18} />
                 <strong>{campus.teacher}</strong>
                 <span className="text-gray-400">teacher</span>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex-center gap-1">
                 <GraduationCap size={18} />
                 <strong>{campus.student}</strong>
                 <span className="text-gray-400">student</span>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex-center gap-1">
                 <House size={18} />
                 <strong>{campus.room}</strong>
                 <span className="text-gray-400">room</span>
               </div>
             </div>
-            <div className="flex items-center mt-4">
+            <div className="flex-center mt-4">
               <span className="p-2 border border-gray-300 rounded-full">
                 <ContactRound size={18} />
               </span>
