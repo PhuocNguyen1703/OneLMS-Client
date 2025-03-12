@@ -3,14 +3,13 @@ import { Button } from "@/components/ui/button";
 import { noticeList } from "@/data/notice";
 import Image from "next/image";
 import NoticeDetail from "./_components/NoticeDetail";
-import AddNewNoticeForm from "./_components/AddNewNotice";
+import AddNewNoticeForm from "./create/page";
 
 const NoticePage = () => {
   return (
     <section className="flex flex-col flex-1 h-full pb-4">
       <Header />
       <div className="flex flex-1 gap-4 px-4 overflow-y-auto">
-        <AddNewNoticeForm />
         <div className="flex flex-col w-2/3 gap-4">
           {noticeList.map((item, idx) => (
             <div

@@ -1,4 +1,4 @@
-import AddNewNoticeForm from "@/app/(dashboard)/notice/_components/AddNewNotice";
+import AddNewNoticeForm from "@/app/(dashboard)/notice/create/page";
 
 const ModalProvider = () => {
   return (
