@@ -17,7 +17,7 @@ const Header = () => {
     "
     >
       <HeaderLogo />
-      <div className="flex-center grow max-w-[500px] border rounded-full">
+      <div className="hidden sm:flex items-center grow max-w-[500px] border rounded-full">
         <Input
           type="text"
           placeholder="Search..."

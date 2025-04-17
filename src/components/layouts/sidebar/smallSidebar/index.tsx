@@ -13,7 +13,7 @@ export const SmallSidebar = () => {
   return (
     <div
       className={cn(
-        "sticky top-0 flex flex-col overflow-y-auto scrollbar-hidden px-2 pb-2",
+        "hidden sm:sticky top-0 sm:flex flex-col overflow-y-auto scrollbar-hidden px-2 pb-2",
         isLargeSidebarOpen ? "lg:hidden" : "lg:flex"
       )}
     >
