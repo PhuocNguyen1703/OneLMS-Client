@@ -9,8 +9,8 @@ import {
 } from "../ui/select";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { PaginationRange } from "@/hooks/usePagination";
-import { cn } from "@/lib/utils";
-import { DOTS } from "@/lib/constants";
+import { cn } from "@/libs/utils";
+import { DOTS } from "@/libs/constants";
 
 interface PaginationProps<TData> {
   table: Table<TData>;

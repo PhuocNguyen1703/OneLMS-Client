@@ -2,7 +2,7 @@
 
 import React from "react";
 import Portal from "../portal/Portal";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 const Modal = ({
   children,

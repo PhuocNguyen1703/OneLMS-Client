@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
 import { SignInSchema } from "../_validation";
 import { useSignInHandler } from "@/app/(auth)/_hooks/useAuth";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 const SignInForm = () => {
   const form = useForm<z.infer<typeof SignInSchema>>({

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 import { EyeIcon, EyeClosed } from "lucide-react";
 
 export interface PasswordInputProps

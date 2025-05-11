@@ -2,7 +2,7 @@
 
 import { menu } from "@/data/sidebar";
 import { LargeSidebarItem } from "./LargeSidebarItem";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 import { HeaderLogo } from "@/components/layouts/header/HeaderLogo";
 import { Separator } from "@/components/ui/separator";
 import { Fragment } from "react";

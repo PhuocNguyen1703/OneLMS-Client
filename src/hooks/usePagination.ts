@@ -1,4 +1,4 @@
-import { DOTS } from "@/lib/constants";
+import { DOTS } from "@/libs/constants";
 import { Table } from "@tanstack/react-table";
 import _ from "lodash";
 
