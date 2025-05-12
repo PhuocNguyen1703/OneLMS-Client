@@ -18,8 +18,7 @@
       }
     ],
     "paths": {
-      "@app/*": ["./app/*"],
-      "@features/*": ["./features/*"]
+      "@/*": ["./src/*"]
     },
     "target": "ES2017"
   },

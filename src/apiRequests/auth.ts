@@ -1,4 +1,4 @@
-import http from "@/libs/http";
+import http from "@/shared/libs/http";
 
 const authApiRequest = {
   signIn: (body: any) => http.post("/auth/login", body),

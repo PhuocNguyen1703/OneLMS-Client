@@ -4,9 +4,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/shared/components/ui/select";
 import { Columns } from "./table/Columns";
-import { DataTable } from "@/components/table/DataTable";
+import { DataTable } from "@/shared/components/table/DataTable";
 
 type ClassRoom = {
   id: string;

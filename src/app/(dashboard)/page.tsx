@@ -1,7 +1,4 @@
-import AccountsChart from "@/components/layouts/admin/AccountsChart";
-import CalendarEvent from "@/components/layouts/admin/CalendarEvent";
-import ProfileCard from "@/components/layouts/admin/ProfileCard";
-import Card from "@/components/layouts/Card";
+import Card from "@/shared/components/layouts/Card";
 
 const Home = () => {
   return (

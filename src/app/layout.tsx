@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { poppins, roboto } from "@/utils/fonts";
+import { poppins, roboto } from "@/shared/utils/fonts";
 import "./globals.css";
-import { ModalProvider } from "@/components/modal";
-import ThemeProvider from "@/components/theme-provider";
+import { ModalProvider } from "@/shared/components/modal";
+import ThemeProvider from "@/shared/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "OneLMS service",

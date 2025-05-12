@@ -1,5 +1,5 @@
 import ImageSlide from "@/app/(auth)/_components/ImageSlide";
-import Logo from "@/components/Logo";
+import Logo from "@/shared/components/Logo";
 
 export default function AuthLayout({
   children,

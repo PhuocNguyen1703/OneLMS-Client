@@ -1,6 +1,6 @@
 "use client";
 
-import { DataTable } from "@/components/table/DataTable";
+import { DataTable } from "@/shared/components/table/DataTable";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,15 +8,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
+} from "@/shared/components/ui/breadcrumb";
+import { Button } from "@/shared/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
+} from "@/shared/components/ui/dropdown-menu";
+import { Input } from "@/shared/components/ui/input";
 import { GuardianGrid } from "@/app/(dashboard)/user/guardian/_components/grid/GuardianGrid";
 import { Columns } from "@/app/(dashboard)/user/guardian/_components/table/Columns";
 import {
@@ -48,7 +48,7 @@ const Guardian = () => {
       name: "John Doe",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "johndoe@example.com",
+      email: "johndoe@/example.com",
       gender: "Male",
       occupation: "Teacher",
       phone: 1234567890,
@@ -60,7 +60,7 @@ const Guardian = () => {
       name: "Alice Smith",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "alice@example.com",
+      email: "alice@/example.com",
       gender: "Female",
       occupation: "Teacher",
       phone: 1234567890,
@@ -72,7 +72,7 @@ const Guardian = () => {
       name: "Bob Johnson",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "bob@example.com",
+      email: "bob@/example.com",
       gender: "Male",
       occupation: "Engineer",
       phone: 9876543210,
@@ -84,7 +84,7 @@ const Guardian = () => {
       name: "Charlie Brown",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "charlie@example.com",
+      email: "charlie@/example.com",
       gender: "Non-binary",
       occupation: "Designer",
       phone: 5555555555,
@@ -96,7 +96,7 @@ const Guardian = () => {
       name: "Diana Prince",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "diana@example.com",
+      email: "diana@/example.com",
       gender: "Female",
       occupation: "Doctor",
       phone: 1122334455,
@@ -108,7 +108,7 @@ const Guardian = () => {
       name: "Ethan Hunt",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "ethan@example.com",
+      email: "ethan@/example.com",
       gender: "Male",
       occupation: "Scientist",
       phone: 3344556677,
@@ -120,7 +120,7 @@ const Guardian = () => {
       name: "Fiona Green",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "fiona@example.com",
+      email: "fiona@/example.com",
       gender: "Female",
       occupation: "Artist",
       phone: 4455667788,
@@ -132,7 +132,7 @@ const Guardian = () => {
       name: "George Williams",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "george@example.com",
+      email: "george@/example.com",
       gender: "Male",
       occupation: "Manager",
       phone: 6677889900,
@@ -144,7 +144,7 @@ const Guardian = () => {
       name: "Hannah Lee",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "hannah@example.com",
+      email: "hannah@/example.com",
       gender: "Female",
       occupation: "Engineer",
       phone: 7788990011,
@@ -156,7 +156,7 @@ const Guardian = () => {
       name: "Ivy Green",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "ivy@example.com",
+      email: "ivy@/example.com",
       gender: "Female",
       occupation: "Nurse",
       phone: 9988776655,
@@ -168,7 +168,7 @@ const Guardian = () => {
       name: "Jack Daniels",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "jack@example.com",
+      email: "jack@/example.com",
       gender: "Male",
       occupation: "Chef",
       phone: 1122334455,
@@ -180,7 +180,7 @@ const Guardian = () => {
       name: "Kelly Clarkson",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "kelly@example.com",
+      email: "kelly@/example.com",
       gender: "Female",
       occupation: "Singer",
       phone: 2233445566,
@@ -192,7 +192,7 @@ const Guardian = () => {
       name: "Liam Neeson",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "liam@example.com",
+      email: "liam@/example.com",
       gender: "Male",
       occupation: "Actor",
       phone: 5566778899,
@@ -204,7 +204,7 @@ const Guardian = () => {
       name: "Megan Fox",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "megan@example.com",
+      email: "megan@/example.com",
       gender: "Female",
       occupation: "Actress",
       phone: 6677889900,
@@ -216,7 +216,7 @@ const Guardian = () => {
       name: "Nathan Drake",
       cover:
         "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      email: "nathan@example.com",
+      email: "nathan@/example.com",
       gender: "Male",
       occupation: "Explorer",
       phone: 9988776655,

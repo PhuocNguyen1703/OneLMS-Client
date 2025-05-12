@@ -1,6 +1,6 @@
 import Header from "@/app/(dashboard)/notice/_components/Header";
-import { Button } from "@/components/ui/button";
-import { noticeList } from "@/data/notice";
+import { Button } from "@/shared/components/ui/button";
+import { noticeList } from "@/shared/data/notice";
 import Image from "next/image";
 import NoticeDetail from "./_components/NoticeDetail";
 import AddNewNoticeForm from "./create/page";
