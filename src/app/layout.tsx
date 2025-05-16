@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import { poppins, roboto } from "@/shared/utils/fonts";
 import "./globals.css";
 import { ModalProvider } from "@/shared/components/modal";
@@ -9,13 +11,15 @@ export const metadata: Metadata = {
   description: "OneLMS service",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${roboto.className} ${poppins.variable} overflow-hidden`}
       >
@@ -25,8 +29,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <ModalProvider />
+          <NextIntlClientProvider>
+            {children}
+            <ModalProvider />
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
