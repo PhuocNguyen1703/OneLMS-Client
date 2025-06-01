@@ -9,18 +9,18 @@ import {
   FormField,
   FormItem,
   FormLabel,
-} from "@/shared/components/ui/form";
-import { Input } from "@/shared/components/ui/input";
-import { Label } from "@/shared/components/ui/label";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { CalendarIcon, ChevronLeftIcon, FileUp } from "lucide-react";
-import { Button } from "@/shared/components/ui/button";
-import { Calendar } from "@/shared/components/ui/calendar";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/shared/components/ui/popover";
-import { cn } from "@/shared/libs/utils";
+} from "@/components/ui/popover";
+import { cn } from "@/libs/utils";
 import { format } from "date-fns";
 import Link from "next/link";
 

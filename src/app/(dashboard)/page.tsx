@@ -1,4 +1,4 @@
-import Card from "@/shared/components/layouts/Card";
+import Card from "@/components/layouts/Card";
 
 const Home = () => {
   return (

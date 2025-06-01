@@ -4,9 +4,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/shared/components/ui/select";
+} from "@/components/ui/select";
 import { Columns } from "./table/Columns";
-import { DataTable } from "@/shared/components/table/DataTable";
+import { DataTable } from "@/components/table/DataTable";
 
 type Class = {
   id: string;

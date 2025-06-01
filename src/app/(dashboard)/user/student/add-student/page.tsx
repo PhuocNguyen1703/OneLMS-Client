@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/shared/components/ui/breadcrumb";
+} from "@/components/ui/breadcrumb";
 import AddNewStudentForm from "@/app/(dashboard)/user/student/_components/AddNewStudentForm";
 import Link from "next/link";
 

@@ -4,7 +4,7 @@ import { zodResolver } from "@/hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/shared/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -12,12 +12,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/shared/components/ui/form";
-import { Input } from "@/shared/components/ui/input";
-import { PasswordInput } from "@/shared/components/ui/password-input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
 import { SignInSchema } from "../schemas";
 import { useSignInHandler } from "@/features/auth/hooks/useAuth";
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/libs/utils";
 
 const SignInForm = () => {
   const form = useForm<z.infer<typeof SignInSchema>>({

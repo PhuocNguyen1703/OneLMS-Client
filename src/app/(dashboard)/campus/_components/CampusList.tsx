@@ -1,12 +1,12 @@
-import { Button } from "@/shared/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/shared/components/ui/card";
-import { Label } from "@/shared/components/ui/label";
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 import { noImagePlaceholder } from "@/public/images";
 import {
   ClipboardPenLine,

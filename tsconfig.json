@@ -17,8 +17,10 @@
         "name": "next"
       }
     ],
+    // "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
+      // "@/components/*": ["src/components/*"]
     },
     "target": "ES2017"
   },

@@ -1,6 +1,6 @@
 "use client";
 
-import { DataTable } from "@/shared/components/table/DataTable";
+import { DataTable } from "@/components/table/DataTable";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,15 +8,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/shared/components/ui/breadcrumb";
-import { Button } from "@/shared/components/ui/button";
+} from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/shared/components/ui/dropdown-menu";
-import { Input } from "@/shared/components/ui/input";
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
 import { GuardianGrid } from "@/app/(dashboard)/user/guardian/_components/grid/GuardianGrid";
 import { Columns } from "@/app/(dashboard)/user/guardian/_components/table/Columns";
 import {

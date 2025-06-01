@@ -4,17 +4,17 @@ import { zodResolver } from "@/hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/shared/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-} from "@/shared/components/ui/form";
-import { Input } from "@/shared/components/ui/input";
-import { Checkbox } from "../../../shared/components/ui/checkbox";
-import { PasswordInput } from "@/shared/components/ui/password-input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "../../../components/ui/checkbox";
+import { PasswordInput } from "@/components/ui/password-input";
 
 const FormSchema = z.object({
   firstName: z.string().min(2, {

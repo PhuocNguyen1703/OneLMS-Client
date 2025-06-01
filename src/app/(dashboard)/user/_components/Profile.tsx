@@ -1,14 +1,14 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/shared/components/ui/avatar";
-import { Button } from "@/shared/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/shared/components/ui/card";
-import { FloatingLabelInput } from "@/shared/components/ui/floating-input";
-import { Label } from "@/shared/components/ui/label";
-import { Switch } from "@/shared/components/ui/switch";
+} from "@/components/ui/card";
+import { FloatingLabelInput } from "@/components/ui/floating-input";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 const user = {
   id: "G12345",

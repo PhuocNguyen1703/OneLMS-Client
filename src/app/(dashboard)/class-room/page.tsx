@@ -5,14 +5,14 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/shared/components/ui/breadcrumb";
-import { Button } from "@/shared/components/ui/button";
+} from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/shared/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import ClassTable from "@/app/(dashboard)/class-room/_components/ClassRoomTable";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
 import Link from "next/link";

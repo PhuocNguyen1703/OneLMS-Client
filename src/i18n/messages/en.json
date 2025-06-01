@@ -1,5 +1,57 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "Components": {
+    "Header": {
+      "appName": "OneLMS",
+      "notificationTooltip": "Notifications"
+    },
+    "Sidebar": {
+      "menu": {
+        "notice": "Notice",
+        "dashboard": "Dashboard",
+        "userTitle": "USER",
+        "student": "Student",
+        "guardian": "Guardian",
+        "teacher": "Teacher",
+        "other": "Other",
+        "academicTitle": "ACADEMIC",
+        "campus": "Campus",
+        "classRoom": "ClassRoom",
+        "class": "Class",
+        "classRoutine": "Class Routine",
+        "subject": "Subject",
+        "syllabus": "Syllabus",
+        "timetable": "Timetable",
+        "homework": "Homework",
+        "examination": "Exam"
+      }
+    },
+    "Search": {
+      "placeholder": "Search..."
+    },
+    "LocaleSwitcher": {
+      "label": "Language",
+      "en": "English",
+      "jp": "Japanese",
+      "vi": "Vietnamese"
+    },
+    "UserMenu": {
+      "tooltip": "Account",
+      "username": "Amazon antony",
+      "role": "Admin",
+      "Button": {
+        "profile": "See Profile",
+        "setting": "Settings",
+        "support": "Support",
+        "signout": "Sign Out"
+      },
+      "Dropdown": {
+        "title": "Mode",
+        "item": {
+          "light": "Light",
+          "dark": "Dark",
+          "system": "System"
+        }
+      }
+    }
   }
 }

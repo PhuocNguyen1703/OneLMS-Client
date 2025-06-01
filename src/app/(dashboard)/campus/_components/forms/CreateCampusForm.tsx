@@ -4,21 +4,21 @@ import { zodResolver } from "@/hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { object, string, z } from "zod";
 
-import { Modal } from "@/shared/components/modal";
-import ModalHeader from "@/shared/components/modal/ModalHeader";
+import { Modal } from "@/components/modal";
+import ModalHeader from "@/components/modal/ModalHeader";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-} from "@/shared/components/ui/form";
-import { Input } from "@/shared/components/ui/input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { noImagePlaceholder } from "@/public/images";
-import { Label } from "@/shared/components/ui/label";
+import { Label } from "@/components/ui/label";
 import { ImageUp } from "lucide-react";
-import { Button } from "@/shared/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const CreateCampus = () => {
   const CampusSchema = object({

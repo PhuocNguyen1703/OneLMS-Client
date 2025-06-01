@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/shared/components/ui/breadcrumb";
+} from "@/components/ui/breadcrumb";
 import Profile from "@/app/(dashboard)/user/_components/Profile";
 import Link from "next/link";
 
