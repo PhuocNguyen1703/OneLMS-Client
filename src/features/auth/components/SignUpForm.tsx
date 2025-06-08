@@ -1,6 +1,6 @@
 "use client";
 
-import { zodResolver } from "@/hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -15,36 +15,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "../../../components/ui/checkbox";
 import { PasswordInput } from "@/components/ui/password-input";
-
-const FormSchema = z.object({
-  firstName: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  lastName: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  email: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  password: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
+import { useSignUpForm } from "../hooks/useSignUpForm";
 
 const SignUpForm = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    },
-  });
-
-  const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log(data);
-  };
+  const { form, onSubmit } = useSignUpForm();
 
   return (
     <Form {...form}>

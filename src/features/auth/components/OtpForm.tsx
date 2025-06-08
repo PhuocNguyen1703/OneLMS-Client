@@ -1,34 +1,22 @@
 "use client";
 
-import { zodResolver } from "@/hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
-
-const FormSchema = z.object({
-  pin: z.string().min(6, {
-    message: "Your one-time password must be 6 characters.",
-  }),
-});
+import { useOTPForm } from "../hooks/useOTPForm";
 
 const OtpForm = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      pin: "",
-    },
-  });
-
-  const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log(data);
-  };
+  const { form, onSubmit } = useOTPForm();
 
   return (
     <Form {...form}>
@@ -71,12 +59,13 @@ const OtpForm = () => {
                   </InputOTPGroup>
                 </InputOTP>
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
 
         <Button className="w-2/3 h-12 mt-5 text-base" type="submit">
-          Verify Account
+          Send OTP
         </Button>
       </form>
     </Form>

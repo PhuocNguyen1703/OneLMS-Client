@@ -11,3 +11,5 @@ export const SignInSchema = z.object({
     .min(8, "Password must be more than 8 characters")
     .max(20, "Password must be less than 20 characters"),
 });
+
+export type SignInBodyType = z.infer<typeof SignInSchema>;
