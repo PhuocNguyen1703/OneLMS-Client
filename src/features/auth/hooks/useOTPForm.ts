@@ -7,11 +7,16 @@ export const useOTPForm = () => {
   const form = useForm<OTPBodyType>({
     resolver: zodResolver(OTPSchema),
     defaultValues: {
+      _id: "",
       pin: "",
     },
   });
 
-  const onSubmit = VerifyAccount();
+  const verifyAccount = VerifyAccount();
+
+  const onSubmit = (data: OTPBodyType, userId: string) => {
+    verifyAccount({ ...data, _id: userId });
+  };
 
   return { form, onSubmit };
 };

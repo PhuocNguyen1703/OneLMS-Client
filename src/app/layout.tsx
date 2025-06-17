@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
-import { poppins, roboto } from "@/utils/fonts";
+import { poppins, roboto } from "@/libs/fonts";
 import "./globals.css";
 import { ModalProvider } from "@/components/modal";
 import ThemeProvider from "@/components/theme-provider";
+import { Toaster } from "sonner";
+import ActionAlertDialog from "@/components/layouts/AlertDialog";
 
 export const metadata: Metadata = {
   title: "OneLMS service",
@@ -31,6 +33,8 @@ export default async function RootLayout({
         >
           <NextIntlClientProvider>
             {children}
+            <Toaster position="top-center" richColors duration={2000} />
+            <ActionAlertDialog />
             <ModalProvider />
           </NextIntlClientProvider>
         </ThemeProvider>

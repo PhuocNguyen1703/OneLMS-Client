@@ -1,4 +1,3 @@
-import ImageSlide from "@/app/(auth)/_components/ImageSlide";
 import Logo from "@/components/Logo";
 
 export default function AuthLayout({
@@ -8,7 +7,7 @@ export default function AuthLayout({
 }>) {
   return (
     <section className="flex-center justify-center h-screen">
-      <div className="flex p-5 border rounded-lg bg-primary-foreground">
+      <div className="relative flex p-5 border rounded-lg bg-primary-foreground">
         {/* <div className="rounded-lg">
           <ImageSlide />
         </div> */}

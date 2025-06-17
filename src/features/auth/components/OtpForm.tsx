@@ -15,13 +15,13 @@ import {
 } from "@/components/ui/input-otp";
 import { useOTPForm } from "../hooks/useOTPForm";
 
-const OtpForm = () => {
+const OtpForm = ({ userId }: { userId: string }) => {
   const { form, onSubmit } = useOTPForm();
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit((data) => onSubmit(data, userId))}
         className="flex flex-col mt-5 items-center"
       >
         <FormField

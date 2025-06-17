@@ -4,7 +4,7 @@ import { LargeSidebarItem } from "./LargeSidebarItem";
 import { HeaderLogo } from "@/components/layouts/header/HeaderLogo";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/libs/utils";
-import useSidebarStore from "@/store/sidebar";
+import useSidebarStore from "@/stores/sidebar.store";
 import { Fragment } from "react";
 import { MenuItems } from "../Sidebar";
 

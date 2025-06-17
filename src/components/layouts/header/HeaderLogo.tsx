@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "../../Logo";
-import useSidebarStore from "@/store/sidebar";
+import useSidebarStore from "@/stores/sidebar.store";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";

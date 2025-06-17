@@ -3,7 +3,7 @@
 import { Fragment } from "react";
 import { SmallSidebarItem } from "./SmallSidebarItem";
 import { Separator } from "@/components/ui/separator";
-import useSidebarStore from "@/store/sidebar";
+import useSidebarStore from "@/stores/sidebar.store";
 import { cn } from "@/libs/utils";
 import { MenuItems } from "../Sidebar";
 
