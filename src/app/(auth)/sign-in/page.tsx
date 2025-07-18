@@ -2,11 +2,9 @@ import SignInForm from "@/features/auth/components/SignInForm";
 
 const SignIn = () => {
   return (
-    <div className="relative">
-      <h1 className="text-4xl font-bold text-center">Welcome</h1>
-      <p className="mt-2 text-base text-center">
-        Welcome back! Please sign in to continue.
-      </p>
+    <div className="p-5 mt-5 prose">
+      <h1 className="text-center mb-0">Welcome back!</h1>
+      <p className="mt-2 text-base text-center">Please sign in to continue.</p>
       <SignInForm />
     </div>
   );

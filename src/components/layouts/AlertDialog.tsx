@@ -11,6 +11,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import useAlertDialogStore from "@/stores/alertDialog.store";
+import { GradientButton } from "../ui/gradient-button";
 
 const ActionAlertDialog = () => {
   const { isOpen, title, description, cancel, action } = useAlertDialogStore();
@@ -22,17 +23,14 @@ const ActionAlertDialog = () => {
     <AlertDialog open>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </AlertDialogDescription>
+          <AlertDialogTitle>{title}</AlertDialogTitle>
+          <AlertDialogDescription>{description}</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={cancel} className="focus:!outline-hidden">
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction onClick={action}>Continue</AlertDialogAction>
+          <GradientButton onClick={action}>Continue</GradientButton>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

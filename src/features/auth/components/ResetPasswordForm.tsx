@@ -1,9 +1,5 @@
 "use client";
-import { zodResolver } from "@/hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -11,48 +7,70 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
+import { cn } from "@/libs/utils";
+import { GradientButton } from "@/components/ui/gradient-button";
+import { CustomFormMessage } from "@/components/ui/custom-form-message";
+import { useResetPassword } from "../hooks/useResetPassword";
+import { useEffect } from "react";
 
-const FormSchema = z.object({
-  email: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-});
+const ResetPasswordForm = ({ token }: { token: string }) => {
+  const { form, onSubmit } = useResetPassword();
+  const { errors } = form.formState;
 
-const ResetPasswordForm = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      email: "",
-    },
-  });
-
-  const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log(data);
-  };
+  useEffect(() => {
+    form.setValue("token", token);
+  }, [token, form]);
 
   return (
     <Form {...form}>
-      <form className="mt-8" onSubmit={form.handleSubmit(onSubmit)}>
+      <form className=" mt-10" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base">Email</FormLabel>
+          name="password"
+          render={({ field, fieldState }) => (
+            <FormItem className="mt-5 space-y-0.5">
+              <FormLabel className="text-primary">Password</FormLabel>
               <FormControl>
-                <Input
-                  className="h-12 rounded-[8px] text-base"
-                  placeholder="Enter your email"
+                <PasswordInput
+                  className={cn("pr-10", errors?.password && "input-err")}
+                  placeholder="Enter your password"
                   {...field}
                 />
               </FormControl>
+              <CustomFormMessage error={fieldState.error} />
             </FormItem>
           )}
         />
-        <Button className="w-full h-12 mt-10 text-base" type="submit">
-          Send OTP
-        </Button>
+        <FormField
+          control={form.control}
+          name="confirmPassword"
+          render={({ field, fieldState }) => (
+            <FormItem className="mt-5 space-y-0.5">
+              <FormLabel className="text-primary">Confirm password</FormLabel>
+              <FormControl>
+                <PasswordInput
+                  className={cn(
+                    "pr-10",
+                    errors?.confirmPassword && "input-err"
+                  )}
+                  placeholder="Enter confirm password"
+                  {...field}
+                />
+              </FormControl>
+              <CustomFormMessage error={fieldState.error} />
+            </FormItem>
+          )}
+        />
+        {errors?.root && (
+          <CustomFormMessage
+            message={errors?.root?.message}
+            className="mt-4 px-2 py-3 border border-destructive rounded-sm bg-destructive/5"
+          />
+        )}
+        <GradientButton className="w-full h-12 mt-8 text-base" type="submit">
+          Set new password
+        </GradientButton>
       </form>
     </Form>
   );

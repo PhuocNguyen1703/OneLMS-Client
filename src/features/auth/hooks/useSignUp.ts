@@ -1,9 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignUpSchema, SignUpBodyType } from "../schemas/signUpSchema";
-import { SignUp } from "../actions/auth";
 
-export const useSignUpForm = () => {
+export const useSignUp = () => {
   const form = useForm<SignUpBodyType>({
     resolver: zodResolver(SignUpSchema),
     defaultValues: {
@@ -14,7 +13,9 @@ export const useSignUpForm = () => {
     },
   });
 
-  const onSubmit = SignUp();
+  const signUp = async (data: SignUpBodyType) => {
+    console.log(data);
+  };
 
-  return { form, onSubmit };
+  return { form, signUp };
 };

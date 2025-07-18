@@ -1,28 +1,34 @@
+"use client";
+
+import BackToSignIn from "@/components/layouts/BackToSignIn";
 import ForgotPasswordForm from "@/features/auth/components/ForgotPasswordForm";
-import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
+import { Fingerprint } from "lucide-react";
+import { useState } from "react";
 
 const ForgotPassword = () => {
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
   return (
-    <>
-      <div className="flex flex-col items-center justify-center gap-4">
-        <Link
-          href="/sign-in"
-          className="absolute top-5 left-5 flex items-center gap-1 text-primary transition-colors hover:text-primary/80"
-        >
-          <ChevronLeft size={26} />
-          <span className="text-base font-medium">Back</span>
-        </Link>
-        <div className="flex flex-col items-center justify-center gap-2 ">
-          <h1 className="text-3xl font-bold text-center">Find Your Account</h1>
-          <p className="text-base text-center">
-            Please enter your email address or mobile number to search for your
-            account.
+    <div className="p-5 prose">
+      <span className="flex items-center justify-center w-fit mx-auto p-3 border rounded-xl shadow-lg">
+        <Fingerprint size={28} />
+      </span>
+      {isSubmitted ? (
+        <>
+          <h2 className="text-center mt-5 mb-0">Recovery link sent!</h2>
+          <p className="mt-2 text-2xl text-center">Now, check your email.</p>
+        </>
+      ) : (
+        <>
+          <h2 className="text-center mt-5 mb-0">Forgot Password?</h2>
+          <p className="mt-2 text-base text-center">
+            No worries,We&apos;ll send you a link to reset your password.
           </p>
-        </div>
-        <ForgotPasswordForm />
-      </div>
-    </>
+          <ForgotPasswordForm setIsSubmitted={setIsSubmitted} />
+        </>
+      )}
+      <BackToSignIn />
+    </div>
   );
 };
 

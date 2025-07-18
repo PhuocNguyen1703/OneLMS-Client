@@ -9,8 +9,8 @@ import { Toaster } from "sonner";
 import ActionAlertDialog from "@/components/layouts/AlertDialog";
 
 export const metadata: Metadata = {
-  title: "OneLMS service",
-  description: "OneLMS service",
+  title: "OnePlus service",
+  description: "OnePlus service",
 };
 
 export default async function RootLayout({

@@ -1,47 +1,67 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
+  FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForgotPasswordForm } from "../hooks/useForgotPasswordForm";
+import { useForgotPassword } from "../hooks/useForgotPassword";
+import { CustomFormMessage } from "@/components/ui/custom-form-message";
+import { GradientButton } from "@/components/ui/gradient-button";
+import Loader from "@/components/ui/loader";
+import { useEffect } from "react";
 
-const ForgotPasswordForm = () => {
-  const { form, onSubmit } = useForgotPasswordForm();
+type ForgotPasswordProps = {
+  setIsSubmitted: (value: boolean) => void;
+};
+
+const ForgotPasswordForm = ({ setIsSubmitted }: ForgotPasswordProps) => {
+  const { form, isPending, onSubmit } = useForgotPassword();
+  const { errors, isSubmitSuccessful } = form.formState;
+
+  useEffect(() => {
+    if (isSubmitSuccessful) return setIsSubmitted(true);
+  }, [isSubmitSuccessful, setIsSubmitted]);
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col mt-5 w-full"
+        className="flex flex-col mt-5 items-center"
       >
         <FormField
           control={form.control}
-          name="email_or_phone"
-          render={({ field }) => (
-            <FormItem className="space-y-1">
+          name="email"
+          render={({ field, fieldState }) => (
+            <FormItem className="space-y-1 w-full">
+              <FormLabel className="text-primary">Email</FormLabel>
               <FormControl>
                 <Input
-                  className={
-                    form.formState.errors?.email_or_phone && "input-err"
-                  }
-                  placeholder="Email address or mobile number."
+                  className={errors?.email && "input-err"}
+                  placeholder="Enter your email."
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
+              <CustomFormMessage error={fieldState.error} />
             </FormItem>
           )}
         />
-
-        <Button className="w-fit mt-5 mx-auto text-base" type="submit">
-          Search
-        </Button>
+        {errors?.root && (
+          <CustomFormMessage
+            message={errors?.root?.message}
+            className="px-2 py-3 mt-4 border border-destructive rounded-sm bg-destructive/5"
+          />
+        )}
+        <GradientButton
+          className="w-1/2 h-12 mt-8 text-base"
+          type="submit"
+          disabled={isPending}
+        >
+          {isPending ? <Loader /> : "Send reset link"}
+        </GradientButton>
       </form>
     </Form>
   );

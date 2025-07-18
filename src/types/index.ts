@@ -1,9 +1,6 @@
 import { ReactElement } from "react";
 
-export type LogoProps = {
-  height: number;
-  width: number;
-};
+export type FieldError = { field: string; message: string };
 
 type MenuItem = {
   icon: ReactElement<any>;

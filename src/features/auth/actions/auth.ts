@@ -1,89 +1,79 @@
-import { SignInBodyType } from "@/features/auth/schemas/signInSchema";
-import { SignUpBodyType } from "../schemas/signUpSchema";
+"use server";
+
+import { ZodSchema } from "zod";
+import { FieldError } from "@/types";
 import authApiRequest from "@/apiRequests/auth";
-import { useRouter } from "next/navigation";
-import { OTPBodyType } from "../schemas/otpSchema";
-import { toast } from "sonner";
-import { useState } from "react";
-import { useAlertDialog } from "@/hooks/showAlertDialog";
-import { ForgotPasswordBodyType } from "../schemas/forgotPasswordSchema";
-import useAuthStore from "@/stores/auth.store";
+import {
+  ForgotPasswordBodyType,
+  ForgotPasswordSchema,
+  OTPBodyType,
+  OTPSchema,
+  ResetPasswordBodyType,
+  ResetPasswordSchema,
+  SignInBodyType,
+  SignInSchema,
+} from "../schemas";
 
-type FieldError = { field: string; message: string };
+export async function handleFormAction<T extends object, R>(
+  schema: ZodSchema<T>,
+  formData: T,
+  apiRequest: (data: T) => Promise<R>
+) {
+  const validatedFields = schema.safeParse(formData);
 
-export const SignIn = () => {
-  const { setAuthState } = useAuthStore();
-  const showAlertDialog = useAlertDialog();
-  const router = useRouter();
+  if (!validatedFields.success) {
+    const error = validatedFields.error.flatten().fieldErrors as Record<
+      string,
+      string[]
+    >;
+    return {
+      success: false,
+      type: "Validation in server action.",
+      message: Object.values(error)[0]?.[0] || "Invalid input",
+    };
+  }
 
-  const onSubmit = async (data: SignInBodyType) => {
-    console.log(data);
+  try {
+    const result: any = await apiRequest(formData);
 
-    setAuthState({ isLoading: true, error: null });
-    try {
-      const result: any = await authApiRequest.signIn(data);
+    return {
+      success: true,
+      data: result.payload?.data ?? result,
+    };
+  } catch (error: any) {
+    const errors = error?.payload?.errors?.error;
 
-      const { _id, verify, accessToken } = result.payload.data;
+    return {
+      success: false,
+      type: "server",
+      message:
+        errors?.fields?.[0]?.message ||
+        errors?.message ||
+        "Something went wrong!",
+    };
+  }
+}
 
-      if (!verify.status) {
-        showAlertDialog({
-          onAction: () => {
-            router.push(`/verify/${_id}`);
-          },
-        });
-        setAuthState({ isLoading: false });
-      } else {
-        await authApiRequest.auth({
-          accessToken,
-        });
-        router.push("/");
-        setAuthState({ isAuthenticated: true, isLoading: false });
-      }
-    } catch (error: any) {
-      const errors = error?.payload?.errors?.error?.fields as
-        | FieldError[]
-        | undefined;
-      setAuthState({
-        isLoading: false,
-        error: errors || [
-          { field: "unknown", message: "Something went wrong!" },
-        ],
-      });
-    }
-  };
-  return onSubmit;
+export const signIn = async (formData: SignInBodyType) => {
+  return handleFormAction(SignInSchema, formData, authApiRequest.signIn);
 };
 
-export const SignUp = () => {
-  const onSubmit = async (data: SignUpBodyType) => {
-    console.log(data);
-  };
-  return onSubmit;
+export const verifyEmail = async (formData: OTPBodyType) => {
+  return handleFormAction(OTPSchema, formData, authApiRequest.verifyEmail);
 };
 
-export const VerifyAccount = () => {
-  const router = useRouter();
-  const onSubmit = async (data: OTPBodyType) => {
-    console.log(data);
-
-    try {
-      // const result: any = await authApiRequest.verifyAccount(data);
-      // console.log(result);
-      toast.success("Account verified successfully", {
-        description: "You can now login to your account",
-      });
-      router.push("/sign-in");
-    } catch (error) {
-      toast.error("An unexpected error occurred. Please try again.");
-    }
-  };
-  return onSubmit;
+export const forgotPassword = async (formData: ForgotPasswordBodyType) => {
+  return handleFormAction(
+    ForgotPasswordSchema,
+    formData,
+    authApiRequest.forgotPassword
+  );
 };
 
-export const ForgotPassword = () => {
-  const onSubmit = async (data: ForgotPasswordBodyType) => {
-    console.log(data);
-  };
-
-  return onSubmit;
+export const resetPassword = async (formData: ResetPasswordBodyType) => {
+  return handleFormAction(
+    ResetPasswordSchema,
+    formData,
+    authApiRequest.resetPassword
+  );
 };

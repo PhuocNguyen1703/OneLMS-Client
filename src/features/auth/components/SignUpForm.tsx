@@ -1,9 +1,5 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,10 +11,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "../../../components/ui/checkbox";
 import { PasswordInput } from "@/components/ui/password-input";
-import { useSignUpForm } from "../hooks/useSignUpForm";
+import { useSignUp } from "../hooks/useSignUp";
+import { SignUpBodyType } from "../schemas";
 
 const SignUpForm = () => {
-  const { form, onSubmit } = useSignUpForm();
+  const { form, signUp } = useSignUp();
+
+  const onSubmit = async (signUpData: SignUpBodyType) => {
+    await signUp(signUpData);
+  };
 
   return (
     <Form {...form}>

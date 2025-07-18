@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -22,7 +23,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 203 98% 44%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -131,11 +132,47 @@
       opacity: 0;
     }
   }
+
+  @keyframes dots-loader {
+    33% {
+      background-size: calc(100% / 3) 0%, calc(100% / 3) 100%,
+        calc(100% / 3) 100%;
+    }
+    50% {
+      background-size: calc(100% / 3) 100%, calc(100% / 3) 0%,
+        calc(100% / 3) 100%;
+    }
+    66% {
+      background-size: calc(100% / 3) 100%, calc(100% / 3) 100%,
+        calc(100% / 3) 0%;
+    }
+  }
 }
 
 @layer utilities {
   .flex-center {
     @apply flex items-center;
+  }
+
+  .shadow-multilayer {
+    box-shadow: inset 0 1px 0 0 #f4f4f4, 0 1px 0 0 #efefef, 0 1px 0 0 #ececec,
+      0 2px 0 0 #e0e0e0, 0 3px 0 0 #dedede, 0 4px 0 0 #dcdcdc, 0 4px 0 0 #cacaca,
+      0 4px 5px 0 #cecece;
+  }
+  .shadow-multilayer:hover {
+    transform: translateY(1px);
+    box-shadow: inset 0 1px 0 0 #f4f4f4, 0 1px 0 0 #efefef, 0 0.5px 0 0 #ececec,
+      0 1px 0 0 #e0e0e0, 0 1.5px 0 0 #dedede, 0 2px 0 0 #dcdcdc,
+      0 2px 0 0 #cacaca, 0 2px 3px 0 #cecece;
+  }
+
+  .loader {
+    width: 60px;
+    aspect-ratio: 4;
+    --_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000);
+    background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+    background-size: calc(100% / 3) 100%;
+    animation: dots-loader 1s infinite linear;
   }
 }
 
@@ -148,22 +185,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  h1 {
-    @apply text-3xl font-semibold;
-  }
-  h2 {
-    @apply text-2xl font-semibold;
-  }
-  h3 {
-    @apply text-xl font-semibold;
-  }
-  h4 {
-    @apply text-base font-semibold;
-  }
-  h5 {
-    @apply text-sm font-medium;
-  }
-
   *,
   ::after,
   ::before,
