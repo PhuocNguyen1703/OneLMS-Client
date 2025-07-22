@@ -35,7 +35,7 @@ export const useSignIn = () => {
         return;
       }
 
-      const { _id, isActive, accessToken } = res.data;
+      const { _id, isActive, accessToken, refreshToken } = res.data;
 
       if (!isActive) {
         showAlertDialog({
@@ -49,6 +49,7 @@ export const useSignIn = () => {
       } else {
         await authApiRequest.auth({
           accessToken,
+          refreshToken,
         });
         router.push("/");
       }

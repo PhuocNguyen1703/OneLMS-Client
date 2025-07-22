@@ -1,6 +1,9 @@
+import { cookies } from "next/headers";
+
 export const POST = async (request: Request) => {
-  const body = await request.json();
-  const accessToken = body.accessToken as string;
+  const body: { accessToken: string; refreshToken: string } =
+    await request.json();
+  const { accessToken, refreshToken } = body;
 
   if (!accessToken) {
     return Response.json({
@@ -9,10 +12,20 @@ export const POST = async (request: Request) => {
     });
   }
 
-  return Response.json(body, {
-    status: 200,
-    headers: {
-      "Set-Cookie": `accessToken=${accessToken}; Path=/; HttpOnly;SameSite=Lax; Secure`,
-    },
+  const cookieStore = await cookies();
+
+  cookieStore.set("accessToken", accessToken, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "lax",
+    path: "/",
   });
+  cookieStore.set("refreshToken", refreshToken, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "lax",
+    path: "/",
+  });
+
+  return Response.json({ message: "Set cookie successfully." });
 };

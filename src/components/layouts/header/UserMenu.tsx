@@ -31,10 +31,12 @@ import {
 } from "@/components/ui/tooltip";
 import { useTheme } from "next-themes";
 import { useTranslations } from "next-intl";
+import { useSignOut } from "@/features/auth/hooks/useSignOut";
 
 const UserMenu = () => {
   const t = useTranslations("Components.UserMenu");
   const { setTheme } = useTheme();
+  const { signOut } = useSignOut();
 
   return (
     <>
@@ -116,7 +118,7 @@ const UserMenu = () => {
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="p-2 space-x-2">
+          <DropdownMenuItem className="p-2 space-x-2" onClick={signOut}>
             <Power size={20} />
             <span>{t("Button.signout")}</span>
           </DropdownMenuItem>

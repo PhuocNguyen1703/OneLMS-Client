@@ -8,7 +8,7 @@ import http from "@/libs/http";
 
 const authApiRequest = {
   signIn: (body: SignInBodyType) => http.post("/api/auth/login", body),
-  auth: (body: { accessToken: string }) =>
+  auth: (body: { accessToken: string; refreshToken: string }) =>
     http.post("/api/auth", body, {
       baseUrl: "",
     }),
@@ -20,6 +20,24 @@ const authApiRequest = {
     http.post(`/api/auth/reset-password/${body.token}`, {
       password: body.password,
     }),
+  signOutFromNextServerToServer: (accessToken: string) =>
+    http.post(
+      "/api/auth/logout",
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    ),
+  signOutFromNextClientToNextServer: () =>
+    http.post(
+      "/api/auth/sign-out",
+      {},
+      {
+        baseUrl: "",
+      }
+    ),
 };
 
 export default authApiRequest;

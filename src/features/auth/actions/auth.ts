@@ -1,7 +1,6 @@
 "use server";
 
 import { ZodSchema } from "zod";
-import { FieldError } from "@/types";
 import authApiRequest from "@/apiRequests/auth";
 import {
   ForgotPasswordBodyType,
@@ -35,7 +34,6 @@ export async function handleFormAction<T extends object, R>(
 
   try {
     const result: any = await apiRequest(formData);
-
     return {
       success: true,
       data: result.payload?.data ?? result,
