@@ -3,9 +3,9 @@ import { HttpError } from "@/libs/http";
 import { cookies } from "next/headers";
 
 export const POST = async () => {
-  const cookieStore = cookies();
-  console.log("All cookies:", cookieStore.getAll());
+  const cookieStore = await cookies();
   const accessToken = cookieStore.get("accessToken");
+  // const refreshToken = cookieStore.get("refreshToken");
 
   if (!accessToken) {
     return Response.json(
@@ -21,7 +21,7 @@ export const POST = async () => {
     const result = await authApiRequest.signOutFromNextServerToServer(
       accessToken.value
     );
-    // cookieStore.delete("accessToken");
+    cookieStore.delete("accessToken");
 
     return Response.json(result.payload, {
       status: 200,

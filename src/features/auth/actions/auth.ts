@@ -12,6 +12,8 @@ import {
   SignInBodyType,
   SignInSchema,
 } from "../schemas";
+import { cookies } from "next/headers";
+import { jwtDecode } from "jwt-decode";
 
 export async function handleFormAction<T extends object, R>(
   schema: ZodSchema<T>,
@@ -34,6 +36,7 @@ export async function handleFormAction<T extends object, R>(
 
   try {
     const result: any = await apiRequest(formData);
+
     return {
       success: true,
       data: result.payload?.data ?? result,
@@ -53,7 +56,44 @@ export async function handleFormAction<T extends object, R>(
 }
 
 export const signIn = async (formData: SignInBodyType) => {
-  return handleFormAction(SignInSchema, formData, authApiRequest.signIn);
+  const result = await handleFormAction(
+    SignInSchema,
+    formData,
+    authApiRequest.signIn
+  );
+
+  if (result.data?.tokens) {
+    const cookieStore = await cookies();
+    const { accessToken, refreshToken } = result.data.tokens;
+
+    const accessTokenExp = jwtDecode(accessToken).exp as number;
+    const refreshTokenExp = jwtDecode(refreshToken).exp as number;
+
+    if (accessToken) {
+      cookieStore.set("accessToken", accessToken, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "lax",
+        path: "/",
+        maxAge: accessTokenExp - Math.floor(Date.now() / 1000),
+      });
+    }
+    if (refreshToken) {
+      cookieStore.set("refreshToken", refreshToken, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "lax",
+        path: "/",
+        maxAge: refreshTokenExp - Math.floor(Date.now() / 1000),
+      });
+    }
+
+    result.data.tokenExp = accessTokenExp;
+    delete result.data.tokens;
+  }
+  console.log(result);
+
+  return result;
 };
 
 export const verifyEmail = async (formData: OTPBodyType) => {

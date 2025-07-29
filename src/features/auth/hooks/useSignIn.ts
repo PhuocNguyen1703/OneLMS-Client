@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignInSchema, SignInBodyType } from "../schemas/signInSchema";
 import { useRouter } from "next/navigation";
-import authApiRequest from "@/apiRequests/auth";
 import { useAlertDialog } from "@/hooks/showAlertDialog";
 import { useState } from "react";
 import { signIn } from "../actions/auth";
@@ -35,7 +34,7 @@ export const useSignIn = () => {
         return;
       }
 
-      const { _id, isActive, accessToken, refreshToken } = res.data;
+      const { _id, isActive, tokenExp } = res.data;
 
       if (!isActive) {
         showAlertDialog({
@@ -47,10 +46,10 @@ export const useSignIn = () => {
           },
         });
       } else {
-        await authApiRequest.auth({
-          accessToken,
-          refreshToken,
-        });
+        if (tokenExp) {
+          localStorage.setItem("tokenExp", tokenExp);
+        }
+
         router.push("/");
       }
     } catch (error: any) {

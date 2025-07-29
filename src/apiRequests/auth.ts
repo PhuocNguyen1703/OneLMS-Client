@@ -8,10 +8,6 @@ import http from "@/libs/http";
 
 const authApiRequest = {
   signIn: (body: SignInBodyType) => http.post("/api/auth/login", body),
-  auth: (body: { accessToken: string; refreshToken: string }) =>
-    http.post("/api/auth", body, {
-      baseUrl: "",
-    }),
   verifyEmail: (body: OTPBodyType) =>
     http.post(`/api/auth/verify-email/${body._id}`, { code: body.code }),
   forgotPassword: (body: ForgotPasswordBodyType) =>
