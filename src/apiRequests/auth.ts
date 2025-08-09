@@ -16,13 +16,25 @@ const authApiRequest = {
     http.post(`/api/auth/reset-password/${body.token}`, {
       password: body.password,
     }),
-  signOutFromNextServerToServer: (accessToken: string) =>
+  refreshTokenFromNextServerToServer: (refreshToken: string) =>
+    http.post(
+      "/api/auth/refresh-token",
+      {},
+      {
+        headers: {
+          Cookie: refreshToken,
+        },
+      }
+    ),
+  refreshTokenFromNextClientToNextServer: () =>
+    http.post("/api/auth/refresh-token", {}, { baseUrl: "" }),
+  signOutFromNextServerToServer: (refreshToken: string) =>
     http.post(
       "/api/auth/logout",
       {},
       {
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Cookie: refreshToken,
         },
       }
     ),

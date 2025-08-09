@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation";
 import { useAlertDialog } from "@/hooks/showAlertDialog";
 import { useState } from "react";
 import { signIn } from "../actions/auth";
+import { useAuthStore } from "@/stores/auth.store";
 
 export const useSignIn = () => {
+  const { setAuth } = useAuthStore();
   const router = useRouter();
   const showAlertDialog = useAlertDialog();
   const [isPending, setIsPending] = useState<boolean>(false);
@@ -25,6 +27,7 @@ export const useSignIn = () => {
     setIsPending(true);
     try {
       const res = await signIn(formData);
+      console.log(res);
 
       if (!res.success) {
         form.setError("root", {
@@ -34,20 +37,20 @@ export const useSignIn = () => {
         return;
       }
 
-      const { _id, isActive, tokenExp } = res.data;
+      const { user, tokenExp } = res.data;
 
-      if (!isActive) {
+      if (!user.isActive) {
         showAlertDialog({
           title: `Verify It's You`,
           description:
             "For your security, we need to verify your identity before you can proceed. Please complete the next step.",
           onAction: () => {
-            router.push(`/verify-email/${_id}`);
+            router.push(`/verify-email/${user._id}`);
           },
         });
       } else {
         if (tokenExp) {
-          localStorage.setItem("tokenExp", tokenExp);
+          setAuth(tokenExp);
         }
 
         router.push("/");

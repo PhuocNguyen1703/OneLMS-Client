@@ -12,3 +12,14 @@ export type MenuItems = {
   title: string;
   items: MenuItem[];
 };
+
+export interface ApiErrorFromServer {
+  payload: {
+    errors: {
+      error: {
+        message: string;
+        fields?: { message: string }[];
+      };
+    };
+  };
+}

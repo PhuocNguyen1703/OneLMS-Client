@@ -1,10 +1,11 @@
 import envConfig from "@/config";
+import { redirect } from "next/navigation";
 
 type CustomOptions = Omit<RequestInit, "method"> & {
   baseUrl?: string | undefined;
 };
 
-type EntityErrorType = {
+type EntityErrorPayload = {
   message: string;
   errors: {
     field: string;
@@ -30,14 +31,22 @@ export class HttpError extends Error {
 
 export class EntityError extends HttpError {
   status: 422;
-  payload: EntityErrorType;
-  constructor({ status, payload }: { status: 422; payload: EntityErrorType }) {
+  payload: EntityErrorPayload;
+  constructor({
+    status,
+    payload,
+  }: {
+    status: 422;
+    payload: EntityErrorPayload;
+  }) {
     super({ status, payload });
     this.status = status;
     this.payload = payload;
   }
 }
 
+let clientLogoutRequest: Promise<any> | null = null;
+const isClient = () => typeof window !== "undefined";
 const request = async <Response>(
   method: "GET" | "POST" | "PUT" | "DELETE",
   url: string,
@@ -74,11 +83,52 @@ const request = async <Response>(
     payload,
   };
 
+  const handleClientAuthError = async () => {
+    if (clientLogoutRequest) return;
+
+    clientLogoutRequest = fetch("/api/auth/sign-out", {
+      method: "POST",
+      body: JSON.stringify({ force: true }),
+      headers: { ...baseHeaders } as any,
+    });
+
+    try {
+      await clientLogoutRequest;
+    } catch (error) {
+      console.error("Logout request failed:", error);
+    } finally {
+      localStorage.removeItem("tokenExp");
+      clientLogoutRequest = null;
+      // location.href = "/sign-in";
+    }
+  };
+
+  const handleServerAuthError = () => {
+    fetch("/api/auth/sign-out", {
+      method: "POST",
+      headers: { ...baseHeaders } as any,
+    }).catch(() => {});
+    // redirect("/sign-in");
+  };
+
+  //Interceptor
   if (!res.ok) {
-    if (res.status === ENTITY_ERR_STATUS_CODE) {
-      throw new EntityError(data as { status: 422; payload: EntityErrorType });
-    } else {
-      throw new HttpError(data);
+    switch (res.status) {
+      case ENTITY_ERR_STATUS_CODE:
+        throw new EntityError(
+          data as { status: 422; payload: EntityErrorPayload }
+        );
+
+      case AUTHENTICATION_ERR_STATUS_CODE:
+        if (isClient()) {
+          handleClientAuthError();
+        } else {
+          handleServerAuthError();
+        }
+        break;
+
+      default:
+        throw new HttpError(data);
     }
   }
 

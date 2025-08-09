@@ -1,36 +1,49 @@
+"use client";
+import dayjs from "dayjs";
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type FieldError = { field: string; message: string };
 
 type AuthState = {
-  isAuthenticated?: boolean;
-  error?: FieldError[] | null;
-  isLoading?: boolean;
-  isCheckingAuth?: boolean;
-  message?: string | null;
+  tokenExp: number | null;
+  isRefreshing: boolean;
 };
 
 type AuthAction = {
-  setAuthState: (state?: AuthState) => void;
+  setAuth: (tokenExp: number) => void;
+  clearAuth: () => void;
+  setRefreshing: (status: boolean) => void;
+  isTokenValid: () => boolean;
+  willExpireSoon: (seconds: number) => boolean;
 };
 
-const initialState: AuthState = {
-  isAuthenticated: false,
-  error: null,
-  isLoading: false,
-  message: null,
-};
+export const useAuthStore = create<AuthState & AuthAction>()(
+  persist(
+    (set, get) => ({
+      tokenExp: null,
+      isRefreshing: false,
 
-const useAuthStore = create<AuthState & AuthAction>()((set) => ({
-  ...initialState,
-  setAuthState: (state = {}) => {
-    set({
-      isAuthenticated: state.isAuthenticated,
-      error: state.error,
-      isLoading: state.isLoading,
-      message: state.message,
-    });
-  },
-}));
+      setAuth: (tokenExp) => set({ tokenExp }),
+      clearAuth: () => set({ tokenExp: null }),
+      setRefreshing: (status) => set({ isRefreshing: status }),
 
-export default useAuthStore;
+      isTokenValid: () => {
+        const exp = get().tokenExp;
+        if (!exp) return false;
+        return dayjs.unix(exp).isAfter(dayjs());
+      },
+
+      willExpireSoon: (seconds) => {
+        const exp = get().tokenExp;
+        if (!exp) return true;
+        const remaining = dayjs.unix(exp).diff(dayjs(), "second");
+        return remaining <= seconds;
+      },
+    }),
+    {
+      name: "auth-storage",
+      partialize: (state) => ({ tokenExp: state.tokenExp }),
+    }
+  )
+);
