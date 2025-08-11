@@ -13,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import ClassTable from "@/app/(dashboard)/class/_components/ClassTable";
+import ClassTable from "@/app/(root)/class/_components/ClassTable";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
 import Link from "next/link";
 

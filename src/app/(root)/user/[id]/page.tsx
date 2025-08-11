@@ -6,19 +6,19 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import AddNewStudentForm from "@/app/(dashboard)/user/student/_components/AddNewStudentForm";
+import Profile from "@/app/(root)/user/_components/Profile";
 import Link from "next/link";
 
-const AddStudent = () => {
+const UserDetail = () => {
   return (
     <>
-      <nav className="sticky top-0 p-4 bg-white z-10">
-        <span className="text-2xl font-semibold">Add Student</span>
+      <nav className="sticky top-0 p-4 bg-white z-10 overflow-hidden">
+        <span className="text-2xl font-semibold">User</span>
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/">Dashboard</Link>
+                <Link href="/">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -27,20 +27,16 @@ const AddStudent = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Student</BreadcrumbPage>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Add Student</BreadcrumbPage>
+              <BreadcrumbPage>William</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </nav>
-      <div className="px-4">
-        <AddNewStudentForm />
+      <div className="p-4">
+        <Profile />
       </div>
     </>
   );
 };
 
-export default AddStudent;
+export default UserDetail;

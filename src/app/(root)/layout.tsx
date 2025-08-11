@@ -1,4 +1,3 @@
-import CheckExpToken from "@/components/check-exp-token";
 import CheckToken from "@/components/check-token";
 import Header from "@/components/layouts/header/Header";
 import Sidebar from "@/components/layouts/sidebar/Sidebar";
@@ -19,7 +18,7 @@ export default function DashboardLayout({
           </div>
         </section>
       </main>
-      <CheckToken />
+      {/* <CheckToken /> */}
     </>
   );
 }

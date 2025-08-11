@@ -1,7 +1,3 @@
-"use client";
-
-import Link from "next/link";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,22 +6,23 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+import { SubjectTable } from "@/app/(root)/subject/_components/SubjectTable";
 import { ChevronDown, CopyPlus, FileDown, PrinterCheck } from "lucide-react";
-import CampusList from "@/app/(dashboard)/campus/_components/CampusList";
+import Link from "next/link";
 
-const Campus = () => {
+const Subject = () => {
   return (
     <section className="flex flex-col flex-1 p-4">
       <nav className="flex-center justify-between pb-4">
         <div>
-          <span className="text-xl font-semibold">Campus</span>
+          <span className="text-xl font-semibold">Class List</span>
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -35,7 +32,11 @@ const Campus = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Campus</BreadcrumbPage>
+                <BreadcrumbPage>Academic</BreadcrumbPage>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Subject</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -59,13 +60,13 @@ const Campus = () => {
           </DropdownMenu>
           <Button>
             <CopyPlus size={16} className="mr-3" />
-            Add Campus
+            Add Subject
           </Button>
         </div>
       </nav>
-      <CampusList />
+      <SubjectTable />
     </section>
   );
 };
 
-export default Campus;
+export default Subject;

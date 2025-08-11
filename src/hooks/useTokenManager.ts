@@ -9,10 +9,12 @@ export const useTokenManager = () => {
   const { setAuth, isTokenValid, willExpireSoon, isRefreshing, setRefreshing } =
     useAuthStore();
 
+  const refreshFailedRef = useRef(false);
+
   // const bcRef = useRef<BroadcastChannel | null>(null);
 
   const refreshToken = async () => {
-    if (isRefreshing) return;
+    if (isRefreshing || refreshFailedRef.current) return;
     setRefreshing(true);
 
     try {
@@ -21,6 +23,7 @@ export const useTokenManager = () => {
 
       if (newTokenExp) {
         setAuth(newTokenExp);
+        refreshFailedRef.current = false;
 
         // bcRef.current?.postMessage({
         //   type: "tokenRefreshed",
@@ -28,9 +31,11 @@ export const useTokenManager = () => {
         // });
       } else {
         console.error("Invalid token response:", res);
+        refreshFailedRef.current = true;
       }
     } catch (error) {
       console.error("Refresh error:", error);
+      refreshFailedRef.current = true;
     } finally {
       setRefreshing(false);
     }

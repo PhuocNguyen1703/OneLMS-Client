@@ -15,13 +15,8 @@ export const HeaderLogo = () => {
       <Button variant="ghost" size="icon" onClick={toggleSidebar}>
         <Menu />
       </Button>
-      <Link
-        href="/"
-        className="flex-center gap-1
-        "
-      >
-        <Logo width={32} height={32} />
-        <p className="text-xl font-extrabold">{t("appName")}</p>
+      <Link href="/">
+        <Logo size={34} />
       </Link>
     </div>
   );

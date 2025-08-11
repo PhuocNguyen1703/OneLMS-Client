@@ -1,4 +1,4 @@
-import Header from "@/app/(dashboard)/notice/_components/Header";
+import Header from "@/app/(root)/notice/_components/Header";
 import { Button } from "@/components/ui/button";
 import { noticeList } from "@/data/notice";
 import Image from "next/image";
