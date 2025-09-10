@@ -34,7 +34,6 @@ export default async function RootLayout({
             {children}
             <Toaster position="top-center" richColors duration={2000} />
             <ActionAlertDialog />
-            <ModalProvider />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

@@ -13,9 +13,7 @@ export default function DashboardLayout({
         <Header />
         <section className="flex flex-1 overflow-hidden">
           <Sidebar />
-          <div className="flex-1 p-2 md:p-4 bg-secondary overflow-auto">
-            {children}
-          </div>
+          <div className="flex-1 bg-secondary overflow-auto">{children}</div>
         </section>
       </main>
       {/* <CheckToken /> */}

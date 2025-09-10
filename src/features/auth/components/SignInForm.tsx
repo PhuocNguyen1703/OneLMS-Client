@@ -70,7 +70,7 @@ const SignInForm = () => {
           />
         )}
         <GradientButton
-          className="w-full h-12 my-8 text-base"
+          className="w-full h-12 my-8 text-base shadow-multilayer"
           type="submit"
           disabled={isPending}
         >

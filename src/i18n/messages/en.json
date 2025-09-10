@@ -1,28 +1,18 @@
 {
   "Components": {
     "Header": {
-      "appName": "OneLMS",
+      "appName": "OnePlus",
       "notificationTooltip": "Notifications"
     },
     "Sidebar": {
       "menu": {
         "notice": "Notice",
-        "dashboard": "Dashboard",
+        "kanban": "Kanban",
         "userTitle": "USER",
         "student": "Student",
         "guardian": "Guardian",
         "teacher": "Teacher",
-        "other": "Other",
-        "academicTitle": "ACADEMIC",
-        "campus": "Campus",
-        "classRoom": "ClassRoom",
-        "class": "Class",
-        "classRoutine": "Class Routine",
-        "subject": "Subject",
-        "syllabus": "Syllabus",
-        "timetable": "Timetable",
-        "homework": "Homework",
-        "examination": "Exam"
+        "other": "Other"
       }
     },
     "Search": {

@@ -1,21 +1,12 @@
 import { SmallSidebar } from "./smallSidebar";
 import { LargeSidebar } from "./largeSidebar";
 import {
-  BookCheck,
-  BookOpenCheck,
-  BookPlus,
-  Building,
-  Building2,
   GraduationCap,
-  Grid2x2Check,
-  LayoutDashboard,
+  LayoutPanelLeftIcon,
   Presentation,
-  School,
-  ScrollText,
   UserRoundPen,
   UserRoundPlus,
   UsersRound,
-  Waypoints,
 } from "lucide-react";
 import { ReactElement } from "react";
 import { useTranslations } from "next-intl";
@@ -42,9 +33,9 @@ const Sidebar = () => {
           href: "/notice",
         },
         {
-          icon: <LayoutDashboard />,
-          label: t("dashboard"),
-          href: "/",
+          icon: <LayoutPanelLeftIcon />,
+          label: t("kanban"),
+          href: "/kanban",
         },
       ],
     },
@@ -69,56 +60,6 @@ const Sidebar = () => {
         {
           icon: <UserRoundPlus />,
           label: t("other"),
-          href: "/",
-        },
-      ],
-    },
-    {
-      title: t("academicTitle"),
-      menuItems: [
-        {
-          icon: <School />,
-          label: t("campus"),
-          href: "/campus",
-        },
-        {
-          icon: <Building />,
-          label: t("classRoom"),
-          href: "/class-room",
-        },
-        {
-          icon: <Building2 />,
-          label: t("class"),
-          href: "/",
-        },
-        {
-          icon: <Waypoints />,
-          label: t("classRoutine"),
-          href: "/",
-        },
-        {
-          icon: <BookOpenCheck />,
-          label: t("subject"),
-          href: "/subject",
-        },
-        {
-          icon: <BookPlus />,
-          label: t("syllabus"),
-          href: "/",
-        },
-        {
-          icon: <Grid2x2Check />,
-          label: t("timetable"),
-          href: "/",
-        },
-        {
-          icon: <ScrollText />,
-          label: t("homework"),
-          href: "/",
-        },
-        {
-          icon: <BookCheck />,
-          label: t("examination"),
           href: "/",
         },
       ],
