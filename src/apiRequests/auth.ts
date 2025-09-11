@@ -7,18 +7,18 @@ import {
 import http from "@/libs/http";
 
 const authApiRequest = {
-  signIn: (body: SignInBodyType) => http.post("/api/auth/login", body),
+  signIn: (body: SignInBodyType) => http.post("/api/v1/auth/login", body),
   verifyEmail: (body: OTPBodyType) =>
-    http.post(`/api/auth/verify-email/${body._id}`, { code: body.code }),
+    http.post(`/api/v1/auth/verify-email/${body._id}`, { code: body.code }),
   forgotPassword: (body: ForgotPasswordBodyType) =>
-    http.post("/api/auth/forgot-password", body),
+    http.post("/api/v1/auth/forgot-password", body),
   resetPassword: (body: ResetPasswordBodyType) =>
-    http.post(`/api/auth/reset-password/${body.token}`, {
+    http.post(`/api/v1/auth/reset-password/${body.token}`, {
       password: body.password,
     }),
   refreshTokenFromNextServerToServer: (refreshToken: string) =>
     http.post(
-      "/api/auth/refresh-token",
+      "/api/v1/auth/refresh-token",
       {},
       {
         headers: {
@@ -27,10 +27,10 @@ const authApiRequest = {
       }
     ),
   refreshTokenFromNextClientToNextServer: () =>
-    http.post("/api/auth/refresh-token", {}, { baseUrl: "" }),
+    http.post("/api/v1/auth/refresh-token", {}, { baseUrl: "" }),
   signOutFromNextServerToServer: (refreshToken: string) =>
     http.post(
-      "/api/auth/logout",
+      "/api/v1/auth/logout",
       {},
       {
         headers: {
@@ -40,7 +40,7 @@ const authApiRequest = {
     ),
   signOutFromNextClientToNextServer: () =>
     http.post(
-      "/api/auth/sign-out",
+      "/api/v1/auth/sign-out",
       {},
       {
         baseUrl: "",

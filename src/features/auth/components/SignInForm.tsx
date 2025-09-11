@@ -25,18 +25,18 @@ const SignInForm = () => {
       <form className=" mt-10" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
-          name="email"
+          name="username"
           render={({ field }) => (
             <FormItem className="space-y-0.5">
-              <FormLabel className="text-primary">Email</FormLabel>
+              <FormLabel className="text-primary">Username</FormLabel>
               <FormControl>
                 <Input
-                  className={errors?.email && "input-err"}
-                  placeholder="Enter your email"
+                  className={errors?.username && "input-err"}
+                  placeholder="Enter your username"
                   {...field}
                 />
               </FormControl>
-              <CustomFormMessage error={errors?.email} />
+              <CustomFormMessage error={errors?.username} />
             </FormItem>
           )}
         />

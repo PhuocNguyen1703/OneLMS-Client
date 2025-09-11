@@ -6,8 +6,9 @@ type CustomOptions = Omit<RequestInit, "method"> & {
 };
 
 type EntityErrorPayload = {
+  success: boolean;
   message: string;
-  errors: {
+  fields: {
     field: string;
     message: string;
   }[];

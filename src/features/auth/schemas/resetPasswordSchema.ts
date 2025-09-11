@@ -11,8 +11,8 @@ export const ResetPasswordSchema = z
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Confirm password does not match",
     path: ["confirmPassword"],
-  });
+    message: "Confirm password does not match",
+});
 
 export type ResetPasswordBodyType = z.infer<typeof ResetPasswordSchema>;

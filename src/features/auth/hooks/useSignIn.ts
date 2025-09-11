@@ -16,7 +16,7 @@ export const useSignIn = () => {
   const form = useForm<SignInBodyType>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
-      email: "",
+      username: "",
       password: "",
     },
   });
@@ -37,15 +37,15 @@ export const useSignIn = () => {
         return;
       }
 
-      const { user, tokenExp } = res.data;
+      const { _id, tokenExp, isActive } = res.data;
 
-      if (!user.isActive) {
+      if (!isActive) {
         showAlertDialog({
           title: `Verify It's You`,
           description:
             "For your security, we need to verify your identity before you can proceed. Please complete the next step.",
           onAction: () => {
-            router.push(`/verify-email/${user._id}`);
+            router.push(`/verify-email/${_id}`);
           },
         });
       } else {

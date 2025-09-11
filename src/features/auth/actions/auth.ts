@@ -45,6 +45,7 @@ export async function handleFormAction<T extends object, R>(
 
   try {
     const result = await apiRequest(validatedFields.data);
+
     const payload = (result as any)?.payload?.data ?? result;
 
     return {
@@ -52,9 +53,10 @@ export async function handleFormAction<T extends object, R>(
       data: payload,
     };
   } catch (error: any) {
-    const errors = error?.payload?.errors?.error;
+    const errors = error?.payload;
+
     const errorMessage =
-      errors?.fields?.[0]?.message ||
+      errors?.fields[0]?.message ||
       errors?.message ||
       "An error occurred from the server.";
 
@@ -75,24 +77,22 @@ export const signIn = async (
     authApiRequest.signIn
   );
 
-  const condition = result.success && (result.data as any).tokens;
+  if (!result.success) return result;
 
-  if (condition) {
-    const { accessToken, refreshToken } = (result.data as any).tokens;
+  const { accessToken, refreshToken } = result.data as any;
 
-    if (accessToken && refreshToken) {
-      const tokenExp = await setAuthCookie("accessToken", accessToken);
-      await setAuthCookie("refreshToken", refreshToken);
+  if (accessToken && refreshToken) {
+    const tokenExp = await setAuthCookie("accessToken", accessToken);
+    await setAuthCookie("refreshToken", refreshToken);
+    delete (result.data as any).accessToken;
+    delete (result.data as any).refreshToken;
 
-      return {
-        success: true,
-        data: {
-          tokenExp,
-          user: (result.data as any).user,
-        },
-      };
-    }
+    return {
+      success: true,
+      data: { ...result.data, tokenExp },
+    };
   }
+
   return result;
 };
 

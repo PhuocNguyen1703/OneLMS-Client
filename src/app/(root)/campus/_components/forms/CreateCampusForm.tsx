@@ -22,10 +22,18 @@ import { Button } from "@/components/ui/button";
 
 const CreateCampus = () => {
   const CampusSchema = object({
-    campusId: string(string({ required_error: "" }).min(1)),
-    phoneNumber: string(string({ required_error: "" }).min(1)),
-    campusName: string({ required_error: "" }).min(1).max(32),
-    address: string({ required_error: "" }).min(1).max(32),
+    campusId: string(string({
+        error: (issue) => issue.input === undefined ? "" : undefined
+    }).min(1)),
+    phoneNumber: string(string({
+        error: (issue) => issue.input === undefined ? "" : undefined
+    }).min(1)),
+    campusName: string({
+        error: (issue) => issue.input === undefined ? "" : undefined
+    }).min(1).max(32),
+    address: string({
+        error: (issue) => issue.input === undefined ? "" : undefined
+    }).min(1).max(32),
   });
 
   const form = useForm<z.infer<typeof CampusSchema>>({
