@@ -8,13 +8,12 @@ import {
   UserRoundPlus,
   UsersRound,
 } from "lucide-react";
-import { ReactElement } from "react";
 import { useTranslations } from "next-intl";
 
-type MenuItem = {
-  icon?: ReactElement<any>;
+export type MenuItem = {
+  icon?: React.ReactNode;
   label: string;
-  href?: string;
+  href: string;
 };
 
 export type MenuItems = {
@@ -45,22 +44,22 @@ const Sidebar = () => {
         {
           icon: <GraduationCap />,
           label: t("student"),
-          href: "/",
+          href: "/s",
         },
         {
           icon: <UsersRound />,
           label: t("guardian"),
-          href: "/",
+          href: "/g",
         },
         {
           icon: <UserRoundPen />,
           label: t("teacher"),
-          href: "/",
+          href: "/t",
         },
         {
           icon: <UserRoundPlus />,
           label: t("other"),
-          href: "/",
+          href: "/o",
         },
       ],
     },

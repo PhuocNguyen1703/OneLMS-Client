@@ -6,6 +6,8 @@ import { Separator } from "@/components/ui/separator";
 import useSidebarStore from "@/stores/sidebar.store";
 import { cn } from "@/libs/utils";
 import { MenuItems } from "../Sidebar";
+import { HeaderLogo } from "../../header/HeaderLogo";
+import { SidebarToggle } from "../SidebarToggle";
 
 type Props = {
   menu: MenuItems[];
@@ -17,10 +19,13 @@ export const SmallSidebar = ({ menu }: Props) => {
   return (
     <div
       className={cn(
-        "hidden sm:sticky top-0 sm:flex flex-col overflow-y-auto scrollbar-hidden px-2 pb-2",
+        "hidden sm:sticky top-0 sm:flex flex-col relative w-14 h-full overflow-y-auto scrollbar-hidden px-2 pb-2 bg-background",
         isLargeSidebarOpen ? "lg:hidden" : "lg:flex"
       )}
     >
+      <div className="flex h-[56px] ml-[5px] border-b border-secondary z-999">
+        <HeaderLogo hideText />
+      </div>
       {menu.map((menuGroup: any, idx) => (
         <Fragment key={idx}>
           {menuGroup?.title && <Separator className="mt-1.5" />}
@@ -31,6 +36,7 @@ export const SmallSidebar = ({ menu }: Props) => {
           </div>
         </Fragment>
       ))}
+      <SidebarToggle />
     </div>
   );
 };

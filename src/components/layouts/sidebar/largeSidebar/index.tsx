@@ -7,6 +7,7 @@ import { cn } from "@/libs/utils";
 import useSidebarStore from "@/stores/sidebar.store";
 import { Fragment } from "react";
 import { MenuItems } from "../Sidebar";
+import { SidebarToggle } from "../SidebarToggle";
 
 type Props = {
   menu: MenuItems[];
@@ -26,12 +27,12 @@ export const LargeSidebar = ({ menu }: Props) => {
       )}
       <div
         className={cn(
-          "lg:sticky absolute top-0 bottom-0 flex-col w-52 overflow-y-auto scrollbar-hidden px-2 pb-2 bg-background",
+          "lg:sticky absolute top-0 bottom-0 flex-col w-52 h-full overflow-y-auto scrollbar-hidden px-2 pb-2 bg-background",
           isLargeSidebarOpen ? "lg:flex" : "lg:hidden",
           isSmallSidebarOpen ? "flex max-h-screen z-999" : "hidden"
         )}
       >
-        <div className="lg:hidden sticky top-0 flex items-center h-[56px] border-b border-secondary z-999">
+        <div className="sticky top-0 flex h-[56px] ml-[5px] border-b border-secondary z-999">
           <HeaderLogo />
         </div>
         {menu.map((menuGroup: any, idx) => (
@@ -44,6 +45,7 @@ export const LargeSidebar = ({ menu }: Props) => {
             </div>
           </Fragment>
         ))}
+        <SidebarToggle />
       </div>
     </>
   );

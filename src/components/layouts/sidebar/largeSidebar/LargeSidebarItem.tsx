@@ -1,13 +1,6 @@
-import Link from "next/link";
+import { MenuItem } from "../Sidebar";
+import { SidebarItem } from "../SidebarItem";
 
-export const LargeSidebarItem = ({ menu }: any) => {
-  return (
-    <Link
-      href={menu.href}
-      className="flex-center gap-[18px] p-2 rounded-lg select-none whitespace-pre hover:bg-accent hover:text-accent-foreground"
-    >
-      {menu.icon}
-      {menu.label}
-    </Link>
-  );
+export const LargeSidebarItem = ({ menu }: { menu: MenuItem }) => {
+  return <SidebarItem menu={menu} variant="large" />;
 };

@@ -7,16 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-export const HeaderLogo = () => {
+export const HeaderLogo = ({ hideText = false }: { hideText?: boolean }) => {
   const t = useTranslations("Components.Header");
-  const { toggleSidebar } = useSidebarStore();
   return (
     <div className="flex-center block gap-2 shrink-0 ">
-      <Button variant="ghost" size="icon" onClick={toggleSidebar}>
-        <Menu />
-      </Button>
       <Link href="/">
-        <Logo size={34} />
+        <Logo size={30} styleText={hideText ? "hidden" : ""} />
       </Link>
     </div>
   );

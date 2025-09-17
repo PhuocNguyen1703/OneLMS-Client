@@ -17,10 +17,9 @@ const Header = () => {
 
   return (
     <header
-      className="flex-center justify-between gap-10 h-[56px] py-1.5 px-2 border-b border-secondary
+      className="flex-center justify-between gap-10 h-[56px] py-1.5 px-2 border-b border-secondary bg-amber-500
     "
     >
-      <HeaderLogo />
       <div className="hidden sm:flex items-center grow max-w-[500px] border rounded-full">
         <Input
           type="text"

@@ -22,7 +22,7 @@ const Logo = ({
         priority
         quality={95}
       />
-      <p className={cn("text-2xl font-semibold", styleText)}>
+      <p className={cn("text-xl font-semibold", styleText)}>
         One
         <span className=" bg-[linear-gradient(100deg,_#40ddff_-6.08%,_#7612fa_25.08%,_#fa12e3)] bg-clip-text text-transparent">
           Plus
