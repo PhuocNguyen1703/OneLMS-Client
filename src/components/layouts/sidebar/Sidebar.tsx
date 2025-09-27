@@ -33,8 +33,8 @@ const Sidebar = () => {
         },
         {
           icon: <LayoutPanelLeftIcon />,
-          label: t("kanban"),
-          href: "/kanban",
+          label: t("tables"),
+          href: "/tables",
         },
       ],
     },

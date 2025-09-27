@@ -8,7 +8,7 @@ export const useSignUp = () => {
     defaultValues: {
       firstName: "",
       lastName: "",
-      email: "",
+      username: "",
       password: "",
     },
   });

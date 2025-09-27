@@ -7,7 +7,7 @@
     "Sidebar": {
       "menu": {
         "notice": "Notice",
-        "kanban": "Kanban",
+        "tables": "Table",
         "userTitle": "USER",
         "student": "Student",
         "guardian": "Guardian",

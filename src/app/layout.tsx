@@ -3,7 +3,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import { poppins, roboto } from "@/libs/fonts";
 import "./globals.css";
-import { ModalProvider } from "@/components/modal";
 import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "sonner";
 import ActionAlertDialog from "@/components/layouts/AlertDialog";

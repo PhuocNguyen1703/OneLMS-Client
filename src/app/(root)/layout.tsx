@@ -10,9 +10,11 @@ export default function RootLayout({
     <>
       <main className="flex h-screen">
         <Sidebar />
-        <section className="flex-col flex-1 overflow-hidden bg-secondary">
+        <section className="flex flex-col flex-1 overflow-hidden border border-l-accent bg-background">
           <Header />
-          <div className=" flex-1 bg-secondary overflow-auto">{children}</div>
+          <div className="flex-1 overflow-y-auto overflow-x-hidden">
+            {children}
+          </div>
         </section>
       </main>
       {/* <CheckToken /> */}
