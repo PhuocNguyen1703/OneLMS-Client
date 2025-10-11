@@ -1,16 +1,15 @@
 import { SmallSidebar } from "./smallSidebar";
 import { LargeSidebar } from "./largeSidebar";
 import {
+  ClipboardListIcon,
   GraduationCap,
   LayoutPanelLeftIcon,
-  PlugIcon,
   Presentation,
   UserRoundPen,
   UserRoundPlus,
   UsersRound,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
 
 export type MenuItem = {
   icon?: React.ReactNode;
@@ -29,14 +28,14 @@ const Sidebar = () => {
     {
       menuItems: [
         {
-          icon: <Presentation />,
-          label: t("notice"),
-          href: "/notice",
-        },
-        {
           icon: <LayoutPanelLeftIcon />,
           label: t("tables"),
           href: "/tables",
+        },
+        {
+          icon: <ClipboardListIcon />,
+          label: t("menus"),
+          href: "/menus",
         },
       ],
     },
@@ -48,27 +47,12 @@ const Sidebar = () => {
           label: t("student"),
           href: "/s",
         },
-        {
-          icon: <UsersRound />,
-          label: t("guardian"),
-          href: "/g",
-        },
-        {
-          icon: <UserRoundPen />,
-          label: t("teacher"),
-          href: "/t",
-        },
-        {
-          icon: <UserRoundPlus />,
-          label: t("other"),
-          href: "/o",
-        },
       ],
     },
   ];
 
   return (
-    <section className="border-r z-50">
+    <section className="border-r z-999">
       <SmallSidebar menu={menu} />
       <LargeSidebar menu={menu} />
     </section>

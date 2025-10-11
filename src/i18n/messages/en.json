@@ -6,13 +6,9 @@
     },
     "Sidebar": {
       "menu": {
-        "notice": "Notice",
         "tables": "Table",
-        "userTitle": "USER",
-        "student": "Student",
-        "guardian": "Guardian",
-        "teacher": "Teacher",
-        "other": "Other"
+        "menus": "Menu",
+        "student": "Student"
       }
     },
     "Search": {

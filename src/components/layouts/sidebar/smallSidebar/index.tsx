@@ -7,7 +7,6 @@ import useSidebarStore from "@/stores/sidebar.store";
 import { cn } from "@/libs/utils";
 import { MenuItems } from "../Sidebar";
 import { HeaderLogo } from "../../header/HeaderLogo";
-import { SidebarToggle } from "../SidebarToggle";
 
 type Props = {
   menu: MenuItems[];
@@ -36,7 +35,6 @@ export const SmallSidebar = ({ menu }: Props) => {
           </div>
         </Fragment>
       ))}
-      <SidebarToggle />
     </div>
   );
 };

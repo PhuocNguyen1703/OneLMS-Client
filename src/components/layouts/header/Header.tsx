@@ -8,19 +8,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useTranslations } from "next-intl";
+import { SidebarToggle } from "../sidebar/SidebarToggle";
 
 const Header = () => {
   const t = useTranslations("Components");
 
   return (
     <header
-      className="sticky top-0 left-0 right-0 flex-center justify-between h-[56px] p-4 mx-2 border-b z-50
+      className="sticky top-0 left-0 right-0 flex-center justify-between h-[56px] p-4 border-b z-50
     "
     >
-      <div className="flex flex-col">
-        <span className="text-xl font-semibold">Title</span>
-        <span className="text-sm">breadcrumb</span>
-      </div>
+      <SidebarToggle />
       <TooltipProvider>
         <div className="flex-center space-x-3">
           <Tooltip>
