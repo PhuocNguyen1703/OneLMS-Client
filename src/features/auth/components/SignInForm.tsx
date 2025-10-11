@@ -15,6 +15,7 @@ import { GradientButton } from "@/components/ui/gradient-button";
 import { CustomFormMessage } from "@/components/ui/custom-form-message";
 import Loader from "@/components/ui/loader";
 import { useSignIn } from "../hooks/useSignIn";
+import { Button } from "@/components/ui/button";
 
 const SignInForm = () => {
   const { form, isPending, onSubmit } = useSignIn();
@@ -28,7 +29,7 @@ const SignInForm = () => {
           name="username"
           render={({ field }) => (
             <FormItem className="space-y-0.5">
-              <FormLabel className="text-primary">Username</FormLabel>
+              <FormLabel>Username</FormLabel>
               <FormControl>
                 <Input
                   className={errors?.username && "input-err"}
@@ -45,7 +46,7 @@ const SignInForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem className="mt-5 space-y-0.5">
-              <FormLabel className="text-primary">Password</FormLabel>
+              <FormLabel>Password</FormLabel>
               <FormControl>
                 <PasswordInput
                   className={cn("pr-10", errors?.password && "input-err")}
@@ -59,7 +60,7 @@ const SignInForm = () => {
         />
         <Link
           href="/forgot-password"
-          className="block w-fit mt-2 ml-auto no-underline hover:underline hover:underline-offset-2 hover:text-blue-800"
+          className="block w-fit mt-2 ml-auto no-underline hover:underline hover:underline-offset-2 hover:text-primary"
         >
           <span className=" text-sm font-medium">Forgot Password?</span>
         </Link>
@@ -69,13 +70,13 @@ const SignInForm = () => {
             className="px-2 py-3 border border-destructive rounded-sm bg-destructive/5"
           />
         )}
-        <GradientButton
+        <Button
           className="w-full h-12 my-8 text-base shadow-multilayer"
           type="submit"
           disabled={isPending}
         >
           {isPending ? <Loader /> : "Sign In"}
-        </GradientButton>
+        </Button>
       </form>
     </Form>
   );

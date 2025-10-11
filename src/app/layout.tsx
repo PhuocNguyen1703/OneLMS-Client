@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
-import { poppins, roboto } from "@/libs/fonts";
+import { roboto } from "@/libs/fonts";
 import "./globals.css";
 import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "sonner";
@@ -21,7 +21,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${roboto.className} ${poppins.variable} overflow-hidden`}
+        className={`${roboto.className} overflow-hidden`}
       >
         <ThemeProvider
           attribute="class"

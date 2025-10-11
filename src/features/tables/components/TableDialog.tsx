@@ -2,9 +2,9 @@
 
 import { useDialogActions, useDialogState } from "@/stores/table.store";
 import {
+  AvailableDialog,
   CleaningDialog,
   EditTableDialog,
-  NewOrderDialog,
   OccupiedDialog,
   ReservationDialog,
 } from "./dialog";
@@ -48,9 +48,9 @@ export const TableDialogs = () => {
           onOpenChange={closeDialog}
         />
       );
-    case "new-order":
+    case "available":
       return (
-        <NewOrderDialog
+        <AvailableDialog
           open={true}
           table={selectedTable}
           onOpenChange={closeDialog}

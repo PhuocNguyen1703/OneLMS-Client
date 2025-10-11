@@ -23,12 +23,14 @@ export const SidebarItem = ({ menu, variant = "large", onClick }: Props) => {
     pathname === menu.href || pathname.startsWith(menu.href + "/");
 
   const largeBase =
-    "flex-center gap-[18px] p-2 rounded-lg select-none whitespace-pre hover:bg-amber-100 hover:text-amber-600 transition-colors";
-  const largeActive = "bg-amber-100 text-amber-600 font-semibold";
+    "flex-center gap-[18px] p-2 rounded-lg select-none whitespace-pre text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors";
+  const largeActive =
+    "bg-primary text-primary-foreground font-medium hover:bg-primary hover:text-primary-foreground";
 
   const smallBase =
-    "flex flex-col p-2 rounded-md hover:bg-amber-100 hover:text-amber-600 transition-colors";
-  const smallActive = "bg-amber-100 text-amber-600";
+    "flex flex-col p-2 rounded-md text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors";
+  const smallActive =
+    "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground";
 
   const className =
     variant === "large"
@@ -38,7 +40,7 @@ export const SidebarItem = ({ menu, variant = "large", onClick }: Props) => {
   const link = (
     <div className="relative">
       {isActive && (
-        <div className="absolute top-1/2 -left-1.5 -translate-y-1/2 h-4/5 w-[3px] rounded-sm bg-amber-600" />
+        <div className="absolute top-1/2 -left-1.5 -translate-y-1/2 h-4/5 w-[3px] rounded-sm bg-primary" />
       )}
       <Link
         href={menu.href}

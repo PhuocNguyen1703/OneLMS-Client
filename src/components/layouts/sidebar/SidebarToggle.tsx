@@ -14,7 +14,7 @@ export const SidebarToggle = () => {
       onClick={toggleSidebar}
       aria-pressed={isLargeSidebarOpen}
       aria-label={isLargeSidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
-      className={cn("mt-auto ml-auto w-10 rounded-md transition-colors z-999")}
+      className={cn(" mt-auto ml-auto w-10 rounded-md transition-colors z-999")}
     >
       <ChevronsLeftRightIcon />
     </Button>

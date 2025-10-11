@@ -10,7 +10,7 @@ export type DialogType =
   | "reservation"
   | "occupied"
   | "cleaning"
-  | "new-order"
+  | "available"
   | null;
 
 export type Option = {

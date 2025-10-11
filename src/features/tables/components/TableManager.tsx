@@ -11,26 +11,16 @@ const TableManager = ({ initialTables }: { initialTables: TableProps[] }) => {
 
   const filteredTables = filterTables(initialTables, filterOptions);
 
+  const dialogMap: Record<TableProps["status"], (table: TableProps) => void> = {
+    locked: (table) => openDialog("edit", table),
+    reserved: (table) => openDialog("reservation", table),
+    occupied: (table) => openDialog("occupied", table),
+    cleaning: (table) => openDialog("cleaning", table),
+    available: (table) => openDialog("available", table),
+  };
+
   const handleTableClick = (table: TableProps) => {
-    switch (table.status) {
-      case "locked":
-        openDialog("edit", table);
-        break;
-      case "reserved":
-        openDialog("reservation", table);
-        break;
-      case "occupied":
-        openDialog("occupied", table);
-        break;
-      case "cleaning":
-        openDialog("cleaning", table);
-        break;
-      case "available":
-        openDialog("new-order", table);
-        break;
-      default:
-        break;
-    }
+    dialogMap[table.status]?.(table);
   };
 
   return (
@@ -38,11 +28,7 @@ const TableManager = ({ initialTables }: { initialTables: TableProps[] }) => {
       <div className="px-5 py-4 w-full flex-1 overflow-y-auto">
         <div className="flex flex-wrap gap-x-10 gap-y-14 p-5 justify-evenly">
           {filteredTables.map((table, _) => (
-            <div
-              key={table._id}
-              onClick={() => handleTableClick(table)}
-              className="mx-auto"
-            >
+            <div key={table._id} onClick={() => handleTableClick(table)}>
               <Table {...table} />
             </div>
           ))}

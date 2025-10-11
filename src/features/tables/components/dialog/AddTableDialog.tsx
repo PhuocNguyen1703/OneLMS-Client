@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import { TableForm } from "../TableForm";
+import { Button } from "@/components/ui/button";
 
 const AddTableDialog = () => {
   const [open, setOpen] = useState(false);
@@ -19,9 +20,9 @@ const AddTableDialog = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <GradientButton className="rounded-full">
+        <Button className="rounded-full">
           <PlusIcon /> Add Table
-        </GradientButton>
+        </Button>
       </DialogTrigger>
 
       <DialogContent

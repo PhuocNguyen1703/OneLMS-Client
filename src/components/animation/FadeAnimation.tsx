@@ -30,7 +30,7 @@ export const FadeAnimation = ({
       {...variants}
       transition={transition}
       className={cn(
-        "flex flex-col w-[470px] p-5 pb-0 border rounded-lg bg-primary-foreground shadow-2xl",
+        "flex flex-col w-[470px] p-5 pb-0 border rounded-lg shadow-2xl",
         className
       )}
     >

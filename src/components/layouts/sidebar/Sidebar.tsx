@@ -3,12 +3,14 @@ import { LargeSidebar } from "./largeSidebar";
 import {
   GraduationCap,
   LayoutPanelLeftIcon,
+  PlugIcon,
   Presentation,
   UserRoundPen,
   UserRoundPlus,
   UsersRound,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
 
 export type MenuItem = {
   icon?: React.ReactNode;
@@ -66,10 +68,10 @@ const Sidebar = () => {
   ];
 
   return (
-    <>
+    <section className="border-r z-50">
       <SmallSidebar menu={menu} />
       <LargeSidebar menu={menu} />
-    </>
+    </section>
   );
 };
 

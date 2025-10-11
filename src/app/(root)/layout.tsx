@@ -8,9 +8,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <main className="flex h-screen">
+      <main className="flex h-screen bg-background">
         <Sidebar />
-        <section className="flex flex-col flex-1 overflow-hidden border border-l-accent bg-background">
+        <section className="flex flex-col flex-1 overflow-hidden">
           <Header />
           <div className="flex-1 overflow-y-auto overflow-x-hidden">
             {children}
