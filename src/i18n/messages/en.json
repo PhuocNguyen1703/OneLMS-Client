@@ -5,7 +5,7 @@
       "notificationTooltip": "Notifications"
     },
     "Sidebar": {
-      "menu": {
+      "item": {
         "tables": "Table",
         "menus": "Menu",
         "student": "Student"

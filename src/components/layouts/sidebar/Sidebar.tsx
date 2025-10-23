@@ -23,7 +23,7 @@ export type MenuItems = {
 };
 
 const Sidebar = () => {
-  const t = useTranslations("Components.Sidebar.menu");
+  const t = useTranslations("Components.Sidebar.item");
   const menu: MenuItems[] = [
     {
       menuItems: [
@@ -40,7 +40,6 @@ const Sidebar = () => {
       ],
     },
     {
-      title: t("userTitle"),
       menuItems: [
         {
           icon: <GraduationCap />,
