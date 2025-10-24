@@ -20,7 +20,7 @@ const Logo = ({
         width={size}
         src={logo}
         priority
-        quality={95}
+        quality={100}
       />
       <p className={cn("text-xl font-semibold", styleText)}>
         One

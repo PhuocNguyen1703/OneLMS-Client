@@ -19,10 +19,8 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body
-        className={`${roboto.className} overflow-hidden`}
-      >
+    <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
+      <body className={`${roboto.className} overflow-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
