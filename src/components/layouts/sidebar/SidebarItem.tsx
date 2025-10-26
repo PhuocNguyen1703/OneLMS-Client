@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MenuItem } from "./Sidebar";
+import { Item } from "./Sidebar";
 import { usePathname } from "next/navigation";
 import {
   Tooltip,
@@ -12,18 +12,17 @@ import {
 import { cn } from "@/libs/utils";
 
 type Props = {
-  menu: MenuItem;
+  item: Item;
   variant?: "large" | "small";
   onClick?: () => void;
 };
 
-export const SidebarItem = ({ menu, variant = "large", onClick }: Props) => {
+export const SidebarItem = ({ item, variant = "large", onClick }: Props) => {
   const pathname = usePathname() || "/";
-  const isActive =
-    pathname === menu.href || pathname.startsWith(menu.href + "/");
+  const isActive = pathname === item.url || pathname.startsWith(item.url + "/");
 
   const largeBase =
-    "flex-center gap-[18px] p-2 rounded-lg select-none whitespace-pre text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors";
+    "flex-center gap-2 p-2 rounded-md select-none whitespace-pre hover:bg-accent hover:text-accent-foreground transition-colors";
   const largeActive =
     "bg-primary text-primary-foreground font-medium hover:bg-primary hover:text-primary-foreground";
 
@@ -37,19 +36,20 @@ export const SidebarItem = ({ menu, variant = "large", onClick }: Props) => {
       ? cn(largeBase, isActive ? largeActive : "")
       : cn(smallBase, isActive ? smallActive : "");
 
+  const Icon = item.icon as any;
+
   const link = (
     <div className="relative">
-      {isActive && (
-        <div className="absolute top-1/2 -left-1.5 -translate-y-1/2 h-4/5 w-[3px] rounded-sm bg-primary" />
-      )}
       <Link
-        href={menu.href}
+        href={item.url}
         className={className}
         onClick={onClick}
         aria-current={isActive ? "page" : undefined}
       >
-        {menu.icon}
-        {variant === "large" ? menu.label : null}
+        {Icon ? <Icon size={16} /> : null}
+        {variant === "large" ? (
+          <span className="text-sm">{item.title}</span>
+        ) : null}
       </Link>
     </div>
   );
@@ -60,7 +60,7 @@ export const SidebarItem = ({ menu, variant = "large", onClick }: Props) => {
         <Tooltip>
           <TooltipTrigger asChild>{link}</TooltipTrigger>
           <TooltipContent side="right">
-            <p>{menu.label}</p>
+            <p>{item.title}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

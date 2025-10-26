@@ -5,14 +5,14 @@ import { SmallSidebarItem } from "./SmallSidebarItem";
 import { Separator } from "@/components/ui/separator";
 import useSidebarStore from "@/stores/sidebar.store";
 import { cn } from "@/libs/utils";
-import { MenuItems } from "../Sidebar";
+import { Item, NavMain } from "../Sidebar";
 import { HeaderLogo } from "../../header/HeaderLogo";
 
 type Props = {
-  menu: MenuItems[];
+  nav: NavMain[];
 };
 
-export const SmallSidebar = ({ menu }: Props) => {
+export const SmallSidebar = ({ nav }: Props) => {
   const { isLargeSidebarOpen } = useSidebarStore();
 
   return (
@@ -25,15 +25,12 @@ export const SmallSidebar = ({ menu }: Props) => {
       <div className="flex h-[56px] ml-[5px] border-b border-secondary z-999">
         <HeaderLogo hideText />
       </div>
-      {menu.map((menuGroup: any, idx) => (
-        <Fragment key={idx}>
-          {menuGroup?.title && <Separator className="mt-1.5" />}
-          <div className="flex flex-col gap-0.5 mt-1.5">
-            {menuGroup.menuItems.map((menu: any) => (
-              <SmallSidebarItem key={menu.label} menu={menu} />
-            ))}
-          </div>
-        </Fragment>
+      {nav.map((navGroup: NavMain, idx) => (
+        <div key={idx} className="flex flex-col gap-0.5 mt-1.5">
+          {navGroup.items?.map((item: Item) => (
+            <SmallSidebarItem key={item.title} item={item} />
+          ))}
+        </div>
       ))}
     </div>
   );

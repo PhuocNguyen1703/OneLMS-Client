@@ -1,59 +1,55 @@
+"use client";
+
 import { SmallSidebar } from "./smallSidebar";
 import { LargeSidebar } from "./largeSidebar";
 import {
   ClipboardListIcon,
   GraduationCap,
   LayoutPanelLeftIcon,
-  Presentation,
-  UserRoundPen,
-  UserRoundPlus,
-  UsersRound,
+  type LucideIcon,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
 
-export type MenuItem = {
-  icon?: React.ReactNode;
-  label: string;
-  href: string;
+export type Item = {
+  title: string;
+  url: string;
+  icon?: LucideIcon;
 };
 
-export type MenuItems = {
-  title?: string;
-  menuItems: MenuItem[];
+export type NavMain = Item & {
+  items?: Item[];
 };
 
 const Sidebar = () => {
-  const t = useTranslations("Components.Sidebar.item");
-  const menu: MenuItems[] = [
+  // const t = useTranslations("Components.Sidebar.item");
+
+  const navMain: NavMain[] = [
     {
-      menuItems: [
+      title: "Playground",
+      icon: LayoutPanelLeftIcon,
+      url: "#",
+      items: [
+        { icon: LayoutPanelLeftIcon, title: "History", url: "#" },
         {
-          icon: <LayoutPanelLeftIcon />,
-          label: t("tables"),
-          href: "/tables",
+          title: "Starred",
+          url: "#",
         },
         {
-          icon: <ClipboardListIcon />,
-          label: t("menus"),
-          href: "/menus",
+          title: "Settings",
+          url: "#",
         },
       ],
     },
     {
-      menuItems: [
-        {
-          icon: <GraduationCap />,
-          label: t("student"),
-          href: "/s",
-        },
-      ],
+      title: "Play",
+      icon: LayoutPanelLeftIcon,
+      url: "#",
     },
   ];
 
   return (
     <section className="border-r z-999">
-      <SmallSidebar menu={menu} />
-      <LargeSidebar menu={menu} />
+      {/* <SmallSidebar nav={navMain} /> */}
+      <LargeSidebar nav={navMain} />
     </section>
   );
 };

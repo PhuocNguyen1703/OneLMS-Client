@@ -1,6 +1,8 @@
-import { MenuItem } from "../Sidebar";
+"use client";
+
+import { Item } from "../Sidebar";
 import { SidebarItem } from "../SidebarItem";
 
-export const LargeSidebarItem = ({ menu }: { menu: MenuItem }) => {
-  return <SidebarItem menu={menu} variant="large" />;
+export const LargeSidebarItem = ({ item }: { item: Item }) => {
+  return <SidebarItem item={item} variant="large" />;
 };
